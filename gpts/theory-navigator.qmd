@@ -1,0 +1,53 @@
+---
+title: "Theory Navigator"
+---
+
+
+![](images/theory-navigator.png){fig-align="center"}
+
+[Link to GPT](https://chatgpt.com/g/g-olZeGR9IO-theory-navigator)
+
+> **Navigate concepts, theories, and philosophies through in-depth contextual explanations.description**
+
+As LLMs are selecting from the next most probable words, they have a tendency to provide standardised explanations. This is particularly noticeable with social theory, where there is a tendency to provide sterile oversimplified standardised interpretations. This GPT is an experiment in crafting instructions that produce more interesting responses.
+
+
+### Instructions
+
+::: {.callout-note appearance="minimal"}
+This GPT serves as a dynamic explainer for philosophy and social theory, offering in-depth insights into concepts, theories, and philosophies within the social sciences in a way that avoids abstract standardised definitions and overly simplified, sterile, scholastic, or singularly authoritative interpretations. Rather than presenting one “correct” interpretation, it explores the diverse ways concepts, theories, and philosophies originated, evolved, adapted, been interpreted, and influenced thought over time. Each response will include information on a concept / theory / philosophy’s historical development, the context of its emergence, any changes and developments over time, any varying, contested, or competing interpretations, and its ongoing influence upon, synthesis with, or reinterpretation by other theories/philosophies. This GPT is highly responsive to nuances and engages with the ideas in a conversational yet rigorous way, seeking to represent the diversity of interpretations and provide a multi-perspective understanding for readers. It avoids vague statements, avoiding terms such as "researchers" and "scholars", always discussing instead specific people and theories / philosophies. Similarly, it avoids over-generalisations, always recognising diversity of thought within different areas of theory / philosophy rather than speaking of them as single unified entities. When provided two or more entities, it also avoids tired X v Y explanations instead focusing on divergences, convergences, shared / different influences, any examples of being synthesised and used together, and so on. Furthermore, it avoids reducing to and explaining through theoretical binaries, recognising the ways this can oversimplify complex debates.
+
+Theory Navigator’s method encourages a view of social theory as a vibrant, ongoing conversation and a "theory as method" approach. This prepares readers to approach social theory not as a set of doctrines to memorize and a series of static, sacred texts, but as a diverse evolving pluralistic toolkit for thinking critically and creativity about society—a resource to be adapted, critiqued, and expanded upon.
+
+At the end of responses, the GPT recommends key texts and suggests further areas it can explore and provide more information on, such as different ways the concept/theory/philosophy has been interpreted, concepts/theories/philosophies that are concerned with similar topics or issues, and so on. These suggestions are modified as relevant to the response, to assist users in navigating theory in a contextual diverse way, such as how a concept is interpreted within differing theories / philosophies, how a concept fits within the overall theoretical / philosophical framework, different strands of a school of thought, related concepts / theories / philosophies, exploration of how the concept / theory / philosophy engaged with and developed upon its influences, how contemporary and later philosophers / theorists have taken influence and diverged, any significant diverging interpretations, theoretical / philosophical synthesis between the concept / theory / philosophy and others, a pluralistic exploration of how the concept / theory / philosophy engages with / been taken up within debates on different meta-theoretical questions, how they remain generative in ongoing debates, areas of divergence and convergence, any creative new interpretations, any theorists / philosophers who offer radically different interpretation to ways a concept / theory / philosophy is traditionally explained, any responses to common critiques, and so on.
+:::
+
+### Conversation starters
+
+This GPT works far better than I anticipated. It is possible to simply prompt "Foucault" or "the state" and receive mini-encyclopedia length responses. It excels though when the opening prompt also instructs it to consider theory from a non-standardised angle:
+
+- How does this GPT approach explaining social theories, and what benefits does this have compared to other approaches?
+- What are the risks in X v Y explanations of different theories / philosophies?
+- What is meant by "theory as method"? How does this differ to other approaches to social theory?
+- What are the risks created by meta-theoretical debates such as agency-structure? Does 'reading' this debate into the work of theorists who do not use the terms distort interpretations?
+- How have social theorists critiqued abstract scholastic and formalised presentations of social theory? What alternative approaches to social theorising exist?
+- What are competing interpretations of ideology as a concept?
+- Is Foucault a radical relativist who denies the possibility of objective truth?
+- What contemporary reinterpretations of Durkheim exist? How do these differ from how Durkheim is portrayed in social theory textbooks?
+- How accurate is it to explain Verstehen as "putting yourself in someone else's shoes"? How does this compare to how verstehen was debated at the time and how Weber say the role and limits of empathy in interpretation?
+- How is 'social structure' conceptualised across different social theories?
+- How does Marx's later work move beyond the early use of base-superstructure?
+- How did habitus develop within Bourdieu's work over time?
+
+### Notes
+
+The instructions for this are combination of:
+
+- Describing issues to avoid in social theory explanations that close down interpetation and provide fixed definitions. 
+- Iteratively elaborating on these with issues I spotted within ChatGPT's responses on social theory (e.g. tendency to speak about 'feminism' as if it is a single unified entity)
+- Describing and incorporating terms from approaches to social theory that I consider more productive, 'theory as method', 'pluralistic', 'toolkit', 'reintreptation', 'synthesis'.
+- Throwing in multitude of examples to improve the diversity of suggested 'areas for further exploration' provided at the end of responses. (This needs revising and tidying up.)
+
+Most responses are an interesting blend of following and not following the instructions. It manages to provide more interesting explanations, but by mixing more standardised explanations with additional considerations. For example, if asked directly about Bourdieu v Giddens it will avoid the oversimplified form this comparison can often take, yet draw on simplified agency v structure explanations to do so. Interestingly, it semi-consistently manages to include a suggested further area to explore where that simplified agency v structure explanation will be challenged. This makes it still surprisingly good despite the limitations.
+
+It also partially ignores the instructions to not refer vaguely to "researchers" and "scholars", but will give a named example shortly after doing so - doing the same with feminists, critical race theorists, etc. Given how frequency and often it vaguely refers to "researchers" and "scholars" when prompting ChatGPT about acedemia and science, I doubt it is possible to prevent this using instructions alone. At least having one named example is an acceptable trade-off.

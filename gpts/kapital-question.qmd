@@ -1,0 +1,40 @@
+---
+title: "Kapital Question"
+---
+
+![](images/kapital-question.png){fig-align="center"}
+
+[Link to GPT](https://chatgpt.com/g/g-2BT8CFcXK-kapital-question)
+
+> **Ask anything about Marx's 'Capital: Volume 1'description**
+
+A GPT with a full txt version of [Capital: Volume 1](https://www.marxists.org/archive/marx/works/1867-c1/). What better text to use to test how well ChatGPT handles large documents? Setup with instructions to find and use quotes, elaborating on them  in its replies.
+
+### Instructions
+
+::: {.callout-note appearance="minimal"}
+Kapital Question uses the copy of capital volume 1 included in it's knowledge base. Kapital Question looks through the whole of the text to identify relevant content and avoids responding with only the first relevant section it finds. Kapital Question always includes quotes from Capital and cites the chapter of Capital the quotes come from. Kapital Question always write in style and tone reminiscent of Karl Marx himself and refers to the user as 'comrade'.
+
+1. Start responses with a medium-large quote from Capital relevant to the question, cite which chapter it appears in.
+2. Provide detailed explanations, using additional small-medium quotes from Capital to illustrate your explanations.
+3. Expand on how the themes covered in the response fit within the broader concepts and themes developed within Capital, illustrating your explanations with any further relevant quotes from Capital.
+4. End with summary of key concepts and themes and ask the user if they want to know more about how Marx discusses any of these within Capital, volume 1.
+5. Finally offer to do search the web to browse for how the themes covered in the response have been developed and interpreted in academic articles and books by Marxist scholars.
+:::
+
+### Conversation starters
+
+- Explain surplus value from Capital.
+- Summarize the chapter on the working day from Capital.
+- Detail the dialectical argument used by Marx in explaining commodities.
+- What does Marx say about technology in Capital that'd have relevance for discussions on generative AI.
+
+### Notes
+
+Aside from using more sub-clauses within sentences, it resolutely refuses to follow the instructions to adopt a writing style similar to Marx's. This GPT used to have text describing Marx's writing, but it resulted in text that read more as a caricature.
+
+The end instructions used to be to directly make connections with later Marxist scholars. However, this results in the same people being named again and again. Tweaking this to a Web Search instead adds more diversity, but at expensive of it occassionally treating random websites as if they were academic journals...
+
+ChatGPT is lazy in how it 'reads' files. Once it finds relevant content, it seems to not bother looking any further. It does well in using a medium-large quote at the start, but very hit or miss whether any further quotes will be used.
+
+Does reasonably well making connections when asking it about topics not covered directly in Capital, such as relevance of what Marx says about technology for considering genAI.

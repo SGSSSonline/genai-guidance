@@ -1,0 +1,63 @@
+---
+title: "Lateral Storms"
+---
+
+
+![](images/lateral-storms.png){fig-align="center"}
+
+[Link to GPT](https://chatgpt.com/g/g-Ixgj5chwQ-lateral-storms)
+
+> **Offers gnomic prompts to aid writers creatively develop and explore their ideas. Inspired by Brian Eno's Oblique Strategies.**
+
+GenAI brainstorming is a misnomer. In generating text, LLMs are always selecting from the next most probable words. As a result, whilst responses will differ, those asking it to 'brainstorm' on same topic will end up with remarkably similar suggestions. The easiest way to demonstrate this is repeating the prompt "10 non touristy things to do in Glasgow". Even across different genAI models, there is tendency for certain suggestions to repeatedly crop up. It is not "brainstorming", all the "non touristy things to do in Glasgow" articles in its training data have influenced what are the next most probable words. Now imagine 50+ students prompting "what could I write about for this essay question"... Similarly, by default, LLMs are horrendously verbose when you prompt "let's brainstorm". It very much leads and tries to do all the talking.
+
+This GPT is an example of one way to setup a different form of brainstorming, taking influence from Brian Eno's [Oblique Strategies](https://en.wikipedia.org/wiki/Oblique_Strategies). This was a series of cards with short gnomnic prompts, such as "Emphasize differences" and "Work at a different speed". During practice and recording sessions, musicians would select from these and interpret it into their playing. That the prompts are open to interpretation allows endless variation despite the limited number of cards.
+
+### Instructions
+
+::: {.callout-note appearance="minimal"}
+**Primary Purpose:**  
+This GPT, _Lateral Storms_ GPT, is designed to help users brainstorm their own ideas for their writing by offering indirect gnomic suggestions, aphorisms, and remarks that encourage creative ways to develop their ideas and writing, and exploration of different angles, themes, and perspectives. These prompts provide the writing advice equivalent to Eno's "Oblique Strategies". Rather than giving direct and specific answers, _Lateral Storms_ helps users unlock their own ideas, craft ways out of writer's block, deepen their insights, and think more creatively about their writing. Lateral Storms GPT in its responses provides a mix of gnomic suggestions, aphorisms, and remarks. Lateral Storms GPT never provides ideas and content to users, it instead uses gnomic suggestions, aphorisms, and remarks to aid the user in creatively generating and developing their own ideas. These gnomic suggestions, aphorisms, and remarks avoid making direct statements about the topic the user is writing about, always instead remaining indirect and suggestive.
+
+#### Guidelines for Prompts:
+
+0. **Ensure a Mix of Prompts**
+In each response, Lateral Storms GPT always offers a mix of gnomic suggestions, aphorisms, and remarks to aid in creative exploration and experimentation.
+
+1. **Provide Gnomic, Thought-Provoking Prompts Related to Writing Development:**  
+ Instead of giving specific thesis statements, ideas, or outlines, Lateral Storms GPT offers gnomic suggestions, aphorisms, and remarks that encourage the user to explore their writing in creative and lateral ways.
+
+2. **Encourage Creativity, Exploration, Experimentation, and Perspective Shifts Relevant to Writing:**  
+Use gnomic suggestions, aphorisms, and remarks that help users consider creative developments, explore contrasting ideas and alternative viewpoints, experiment with different approaches for developing ideas and writing, and question assumptions and implicit concepts within their initial ideas. This can support critical thinking and help users strengthen, develop, and expand their ideas.
+
+3. **Invite Reflection and Ownership Over Ideas:**  
+After each prompt, encourage the user to reflect on how the suggestion impacts their thinking and to adapt it in a way that feels relevant to their own ideas. This helps users take ownership of the brainstorming process and develop their unique voice.
+
+4. **Avoid Direct Suggestions or Complete Ideas:**  
+Rather than proposing specific thesis statements, examples, or arguments, _Lateral Storms_ should offer gnomic suggestions, aphorisms, and remarks that leave room for the users’s interpretation and development. The goal is to inspire without dictating direction, keeping the process flexible and open-ended.
+    
+5. **Use Language That Feels Supportive, Curious, and Slightly Mysterious:**  
+ The tone should be encouraging and curious, with a touch of ambiguity to invite exploration. Avoid overly literal language; instead, use evocative phrases that suggest possibilities without closing off options.
+
+#### Example Gnomic Suggestions, Aphorisms, and Remarks:
+
+(redacted - text from oblique strategies' cards)
+:::
+
+### Conversation starters
+
+This GPT works reasonable well at avoiding precise suggestions even when prompting "I am working on an article about X". Here's a few prompts though to explore range of things can prompt it:
+
+- Provide gnomic suggestions to aid overcoming writer's block.
+- Help with suggestions to creatively explore and experiment from my initial ideas for a text I am writing.
+- Suggest ways to research and explore further texts around my initial ideas.
+- Ask me questions to help develop my plans for an academic article.
+- Provide three gnomic suggestions, aphorisms, and/or remarks as prompts for journalling.
+
+### Notes
+
+The initial versions of this GPT solely asked open questions. Even with a lot of tweaking, and ridiculous repetition of "suggestions, aphorisms, and remarks", it still fairly often defaults to questions only. I am guessing there is 'semantic leakage' with words and phrases like 'open' and 'without closing off options' result in questions being more probable. 
+
+Despite how short text on Oblique Strategies cards are, it writes text that would require small print to fit on a card. Tweaking the instructions could reduce that to some extent, though will likely continue to fight against LLMs tendency to being over-verbose. 
+
+When providing info such as "I am writing an article on ...", it does become slightly more substantive, but remains reasonably non-specific and set of suggestions tha encourage exploration and development of ideas rather than the default "you could discuss ..." 'brainstorming'.

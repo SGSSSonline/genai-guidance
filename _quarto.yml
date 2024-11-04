@@ -1,0 +1,64 @@
+project:
+  type: website
+  output-dir: docs
+
+callout-appearance: simple
+
+website:
+  title: "genAI"
+  announcement:
+    icon: info-circle
+    dismissable: true
+    content: "**Work in Progress** - these additional online materials are work in progress and will continue to be updated following the session."
+    type: info
+    position: below-navbar
+  bread-crumbs: false
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+  sidebar:
+    style: "floating"
+    border: false
+    contents:
+      - section: "**Custom GPTs**"
+        contents:
+        - section: "**Sounding Boards**"
+          contents:
+            - gpts/writing-aid.qmd
+            - gpts/word-phrasing-finder.qmd
+            - gpts/academic-exercises.qmd
+            - gpts/lateral-storms.qmd
+        - section: "**Learning Aids**"
+          contents:
+            - gpts/accessible-python.qmd
+            - gpts/rstudio-helper.qmd
+            - gpts/polish-companion.qmd
+            - gpts/theory-navigator.qmd
+        - section: "**Files, Web, Data**"
+          contents:
+            - gpts/uk-bull-dung.qmd
+            - gpts/kapital-question.qmd
+            - gpts/uk-sdg-insights.qmd
+            - gpts/parser-gpt.qmd
+        - section: "**Additional**"
+          contents:
+            - gpts/spook-school.qmd
+            - gpts/simple-short-email.qmd
+            - gpts/exploring-home.qmd
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+
+
+

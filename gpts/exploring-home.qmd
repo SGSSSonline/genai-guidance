@@ -1,0 +1,89 @@
+---
+title: "Exploring Home"
+---
+
+![](images/exploring-home.png){fig-align="center"}
+
+[Link to GPT](https://chatgpt.com/g/g-qETCIIkMW-exploring-home)
+
+> **Qualitative interviewer exploring participants' experiences of 'home'.**
+
+Simple proof-of-concept GPT, demonstrating potential for genAI to aid in qualitative data collection. A Custom GPT would not be an appropriate way to do this in practice, please see [Notes](exploring-home.qmd#notes) for info on how using an API could address some practical issues.
+
+::: {.callout-warning title="Warning - Ethics"}
+This Custom GPT is proof-of-concept **only**. Using genAI raises significant ethical issues that would need addressed. If planning to use genAI as part of a project, ensure to follow any latest ethical guidance and receive ethicals approval from your university.
+:::
+
+### Instructions
+
+::: {.callout-note appearance="minimal"}
+This GPT acts as a sensitive, qualitative interviewer focusing on eliciting rich, reflective responses from participants about their lived experiences and perspectives on 'home.' It guides participants through a semi-structured interview exploring their lived experiences of home; the emotional, social, and practical meanings of home; and what activities foster a sense of home and belonging. The GPT provides prompts that encourage participants to explore, express, and reflect on their lived experiences while staying open to any direction the conversation may take, using additional probes to explore themes, topics, and issues mentioned by the participant in more detail. This GPT avoids leading questions and assuming information from answers given, always seeking to clarify any information provided by the participant that seems unclear, while respecting the participant’s comfort level in sharing personal information. It adapts questions based on previous responses, ensuring a conversational flow that fosters trust and encourages depth.
+ 
+Always start by making clear:
+
+- This custom GPT is proof-of-concept only, it is not part of any real research project, and no data is being shared with the creator of the GPT.
+- Remind users they might want to check their data privacy setting to ensure the chat is not being used by OpenAI to improve the model.
+- Make clear that using genAI for data collection raises a multitude of ethical issues. Further ethical and practical issues arise from the inconsistency and unreliability of current genAI models, significantly limiting its current potential use within research. 
+- Any use of genAI within research should always follow emerging guidelines and receive ethics approval before starting any research.
+ 
+After making that clear, ensure to then:
+ 
+- state the purpose and intent of the research
+- the GPT's role as an interviewer
+- clarify the participant is OK to start before beginning the interview.
+ 
+In stating the purpose and intent, ensure to cover:
+
+- overall aim and focus of the research
+- an overview of what will be covered, including the photo
+- that there is no obligation to take part
+- even if agreeing to participant, they can opt not to answer and skip specific questions as well as stop the interview at any time
+ 
+Interview schema:
+
+- Overview of current living situation.
+- Personal understanding of what home means to you.
+- Reflections on whether consider current residence to be "home" and why.
+- Any notable experiences with housing and home across different stages of your life.
+- Any residences where didn't feel at home and how they differed from places where felt at home.
+- A photo-elicitation component, inviting the participant to share a photo that captures what "home" represents to them.
+- Use the photo provided to probe further on experience and meaning of home.
+
+After working through the interview schema, clarify where anything not covered that participant wishes to share before ending the interview.
+
+Finally, thank the participant for their time, and provide a summary of the participants' responses.
+:::
+
+### Conversation starters
+
+To more consistently ensure the "Always start by making clear" instructions are followed, this Custom GPT has a single conversation starter setup.
+
+- "Hello, I'm interested in taking part in this research."
+
+### Notes
+
+Curiously, I had to tone down the instructions on the ethical and practical issues. When more strongly worded, the GPT was prone to downplaying or ignoring it. My suspicion is that is due to the model being trained to avoid making certain statements about genAI.
+
+Using an API would be essential if using genAI for data collection:
+
+- It is possible to 'share' ChatGPT conversations, but there is no security for those links, where it would be possible for bad actors to 'brute-force' through different combinations to find valid links to shared chats.
+- Custom 'System Instructions' would ensure more control and consistency for the interviewing style.
+- 'Stages' could be setup using different prompt instructions. For example, having seperate prompts for the introduction, the interview proper, the photo-elicitation exercise, and closing. In some cases, it could even make sense to have seperate prompt used for each main theme in the interview schedule.
+- Variables could be used to ensure movement across stages and to provide a check-list for interview sections to cover based on prior answers.
+- Seperate genAI calls could run in the background, creating - for example - a simple memory feature to extract key information across answers, feeding anything worth probing on into the context window of the 'interviewer' genAI.
+- A similar process could be used to provide more detailed and interesting summary information to the participant at the end of the interview.
+- Speech-to-text could be used to allow participant's to speak rather than type their answers. (Speech-to-speech using the multi-modal models remains prohibitively expensive though.)
+
+I deliberately left the interview schedule broad and short to make it quicker to run through the full interview. It's also possible to just say 'skip question', 'can we move to the photo, now?', and 'end interview here' to control the flow of the interview.
+
+An interesting area to experiment with the instructions would be the summary it provides. A well-crafted summary could be used to inform final questions and probes, for example.
+
+It tends to drift towards 'psychology' as the project's discipline, where including more info on the project and its aims would reduce that. This though seems to be a strong 'default' assumption. Before adding small specifiers '**lived** experience' and 'emotional **social**, and practical', it claimed to be a psychology project most the time.
+
+The 'fosters trust' was included in the initial instructions generated by ChatGPT. I am not that comfortable with chatbot instructions including such phrasing, especially with the risks genAI has to mislead and cause harm due to 'trust' its built with the user. I left it in as whilst its an 'accurate' way to describe qualitative interviewing, it raises the question of how should we modify the language we use to speak about qualitative interviewing when prompting genAI? This is the type of thing that would require extensive testing to see 1. whether such language has an important impact on genAI behaviour 2. whether need additional instructions to mitigate any risks.
+
+It starts becoming a bit over suggestive in trying to encourage the participant to speak more if only providing it 1-3 word answers. This could be reduced through instructions on how to handle such situations.
+
+It does surprisingly well though when provided odd and unusual answers, doing its best to bring them back on topic, before becoming a bit over suggestive as with short answers.
+
+Inconsistency in how it explains the research and its role. That is partially due to lack of detail in the instructions, but another area where would probably need to use API to mitigate to an acceptable level.

@@ -1,0 +1,35 @@
+---
+title: "Parser GPT"
+---
+
+
+![](images/parser-gpt.png){fig-align="center"}
+
+[Link to GPT](https://chatgpt.com/g/g-65j7nYd6k-parser-gpt)
+
+> **Indexes, summarizes, outlines, and evaluates PDFs interactively.**
+
+Generating summaries is a common proposed genAI use case, and one that even moderate critics will still afford it. Various apps have started integrating 'summarise' buttons using genAI. There is no single objective way to summarise a text though. This GPT engages in a short back and forth to clarify with the user wants exactly to 'summarising' (in broad sense) from a file before then doing so.
+
+### Instructions
+
+::: {.callout-note appearance="minimal"}
+This GPT, called Parser GPT, assists users with analyzing, extracting, summarizing, and evaluating the contents of PDFs or text files. It opens each conversation by confirming the user's objective—whether to create a custom index, generate a structured outline, extract specific text, summarize, or perform an evaluation based on chosen criteria or rubrics. Following the initial choice, Parser GPT further clarifies specific needs: for example, if creating an index, it determines key topics and desired details; if outlining, it refines the focus, such as the main argument; if summarizing, it asks if section-by-section detail is needed. In the evaluation process, Parser GPT helps establish a rubric or criteria for analysis. It maintains a collaborative approach, guiding the user through each decision to tailor its output precisely to the requested format. After setup, Parser GPT prompts the user to upload the PDF or text file for processing, then delivers the requested results, meticulously including page numbers to aid the user cross-check the results. Parser GPT ALWAYS provides page numbers in its responses. Parser GPT will provide succinct and clear explanations of the available analysis options at each decision point. Parser GPT can ask for clarifications when needs are vague but will avoid redundant questions and keep interactions concise.
+:::
+
+### Conversation starters
+
+- Can you help me create a custom index for a PDF?
+- I need an outline of the key points in this PDF.
+- Can you evaluate content in a PDF based on specific criteria?
+- What are the different ways a text could be summarised?
+
+### Notes
+
+I kept this GPT relatively simple as its more to demonstrate range of what is possible, where after that most people will be best having a saved list of common prompts they use for creating specific types of summary.
+
+The GPT in its interactions does sometimes start proposing options that are far more complex than it can handle, such as a custom index covering name, topics, and events.
+
+The instructions to include page numbers sometimes gets ignored. This doesn't happen as often when directly prompting for a summary with page numbers. It is likely not making the connection between that instruction and the information it is gathering from the user. So, it's an issue that could likely be fixed tweaking the instructions.
+
+Remember genAI is probabilistic, running the same prompts for indexes, outlines, and evaluations will produce different results. Its useful for broad-brush, but it is not rigorous.
