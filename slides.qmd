@@ -3,4 +3,4 @@ title: "Slides"
 embed-resources: true
 ---
 
-[Download slides PDF](files/genAI.pdf)
+[Link for the slides](https://gla-my.sharepoint.com/my?id=%2Fpersonal%2Falasdair%5Fstewart%5Fglasgow%5Fac%5Fuk%2FDocuments%2FSGSSS%2FInductionNovember%2FgenAI%2Epdf&parent=%2Fpersonal%2Falasdair%5Fstewart%5Fglasgow%5Fac%5Fuk%2FDocuments%2FSGSSS%2FInductionNovember&ga=1)
