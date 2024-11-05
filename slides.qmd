@@ -1,0 +1,10 @@
+---
+title: "Slides"
+embed-resources: true
+---
+
+[Download slides PDF](files/genAI.pdf)
+
+:::{.column-screen}
+{{< pdf files/genAI.pdf width=100% height=900 >}}
+:::

@@ -21,6 +21,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - slides.qmd
 
   sidebar:
     style: "floating"
