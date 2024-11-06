@@ -3,4 +3,4 @@ title: "Slides"
 embed-resources: true
 ---
 
-[Link for the slides](https://gla-my.sharepoint.com/my?id=%2Fpersonal%2Falasdair%5Fstewart%5Fglasgow%5Fac%5Fuk%2FDocuments%2FSGSSS%2FInductionNovember%2FgenAI%2Epdf&parent=%2Fpersonal%2Falasdair%5Fstewart%5Fglasgow%5Fac%5Fuk%2FDocuments%2FSGSSS%2FInductionNovember&ga=1)
+[Link for the slides](https://gla-my.sharepoint.com/:b:/g/personal/alasdair_stewart_glasgow_ac_uk/ETyf4acwpFJBuUXC23mYVGsBSZ3DQN3Ks-OidQ54tKVcRA?e=ynrdnU)

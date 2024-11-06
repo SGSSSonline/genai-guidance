@@ -3,3 +3,29 @@ title: "GenAI Guidance"
 ---
 
 Work in Progress - these additional online materials will continue to be updated following the session.
+
+**Sounding Boards**
+
+- [Writing Aid](gpts/writing-aid.qmd)
+- [Word and Phrasing Finder](gpts/word-phrasing-finder.qmd)
+- [Academic Exercises in Style](gpts/academic-exercises.qmd)
+
+**Learning Aids**
+
+- [Accessible Python](gpts/accessible-python.qmd)
+- [RStudio Cloud Helper](gpts/rstudio-helper.qmd)
+- [Polish Companion](gpts/polish-companion.qmd)
+- [Theory Navigator](gpts/theory-navigator.qmd)
+
+**Files, Web, Data**
+
+- [UK Bull Dung Checker](gpts/uk-bull-dung.qmd)
+- [Kapital Question](gpts/kapital-question.qmd)
+- [UK SDG Insights](gpts/uk-sdg-insights.qmd)
+- [Parser GPT](gpts/parser-gpt.qmd)
+
+**Additional**
+
+- [Spook School Slides](gpts/spook-school.qmd)
+- [Simple Short Email Aid](gpts/simple-short-email.qmd)
+- [Exploring Home](gpts/exploring-home.qmd)
