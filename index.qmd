@@ -29,3 +29,5 @@ Work in Progress - these additional online materials will continue to be updated
 - [Spook School Slides](gpts/spook-school.qmd)
 - [Simple Short Email Aid](gpts/simple-short-email.qmd)
 - [Exploring Home](gpts/exploring-home.qmd)
+
+[Slides](slides.qmd)
