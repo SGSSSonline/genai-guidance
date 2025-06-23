@@ -131,7 +131,7 @@ System instructions are used for mix of alignment, style, and so on, as well as 
 
 When given a prompt in a new chat, the system instructions and the prompt are passed to the LLM - alongside any data such as file uploads, 'memories', etc.
 
-The model predicts one word (or more precisely 'token') at a time. After predicting a word, it adds it to the 'context window' - a moving span of text, usually being the system instructions and recent chat history - then predicts the next word from it, and so on.
+The model predicts one word (or more precisely 'token') at a time. After predicting a word, it adds it to the 'context window' then predicts the next word from it, and so on.
 
 :::
 
@@ -145,6 +145,7 @@ flowchart TD
 
  CW --> M[LLM]
  M --> R[Model Response]
+ R --> CW
 ```
 :::
 
