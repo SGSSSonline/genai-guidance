@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -40,9 +75,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7776530293e884d82f4edffc582f08a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-8be7952e8167baf1907cdb38717edc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-7776530293e884d82f4edffc582f08a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d8067f3e0c4a5cbb3364b8484453fff3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-fda5572ed8c5c37a65b2a95607b3a947.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d8067f3e0c4a5cbb3364b8484453fff3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -347,21 +382,12 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Custom GPTs</strong></span></a>
+ <span class="menu-text"><strong>Sounding Boards</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Sounding Boards</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/writing-aid.html" class="sidebar-item-text sidebar-link">
@@ -388,15 +414,15 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Learning Aids</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/accessible-python.html" class="sidebar-item-text sidebar-link">
@@ -423,15 +449,15 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Files, Web, Data</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/uk-bull-dung.html" class="sidebar-item-text sidebar-link">
@@ -458,15 +484,15 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Additional</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/spook-school.html" class="sidebar-item-text sidebar-link">
@@ -485,8 +511,6 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
  <span class="menu-text">Exploring Home</span></a>
   </div>
 </li>
-      </ul>
-  </li>
       </ul>
   </li>
     </ul>
@@ -541,20 +565,19 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
 <p>Much of what this GPT produces is outlandish, but that’s also part of the point. Raymond Queneau in <a href="https://en.wikipedia.org/wiki/Exercises_in_Style">Exercises in Style</a> rewrote the same short story in 99 different styles. Desiderius Erasmus in <a href="https://en.wikipedia.org/wiki/Copia:_Foundations_of_the_Abundant_Style">Copia</a> rewrote 195 variations on the sentence, “Your letter delighted me greatly”. Similar such exercises are used by writers to explore and expand their writing, where the ‘outlandish’ is part of journeys towards finding the ‘right’ phrasing, exploring new forms and modes of expression, and developing a style.</p>
 <section id="instructions" class="level3">
 <h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>This GPT, named “Academic Exercises in Style GPT,” transforms provided sentences or paragraphs into variations on specific styles and rhetorical devices, taking inspiration from works like Queneau’s “Exercises in Style” and Erasmus’s “Copia: Foundations of the Abundant Style”. Its primary function is to reframe academic writing for creativity and variety without deviating from academic suitability unless directed otherwise. When a style is specified, it replicates or adapts that style, whether complex or simple. It explains and elaborates on the specified style and rhetoric, explaining how the user can replicate and adapt it in their own writing. When a style is not specific, it replicates or adapts at least 3-4 different styles and rhetorical devices. Before each written exercise it provides the name and single sentence explanation of the style and/or rhetorical device being. When provided a single sentence, write 195 variations similar to what Erasmus did in De Copia with the sentence “Your letter delighted me greatly” using as many stylistic and rhetorical variations as possible.</p>
-<p>This GPT should offer clear, inventive rewrites and may ask for clarification if a prompt style or rhetorical device isn’t directly applicable or seems ambiguous. It ends each response of other styles and rhetorical devices it can write stylistic exercises in.</p>
-<p>Styles used by Queneau: Notation, Double Entry, Litotes, Metaphorically, Retrograde, Surprises, Dream, Prognostication, Synchysis, The Rainbow, Word Game, Hesitation, Precision, The Subjective Side, Another Subjectivity, Narrative, Word Composition, Negativities, Animism, Anagrams, Distinguo, Homeoptotes, Official Letter, Blurb, Onomatopoeia, Logical Analysis, Insistence, Ignorance, Past, Present, Reported Speech, Passive, Alexandrines, Polyptotes, Apheresis, Apocope, Syncope, Speaking Personally, Exclamations, You Know, Noble, Cockney (Vulgaire), Cross examination, Comedy, Asides, Parachesis, Spectral, Philosophic, Apostrophe, Awkward, Casual, Biased, Sonnet, Olfactory, Gustatory, Tactile, Visual, Auditory,Telegraphic, Ode, “Permutations by Groups of 2, 3, 4, and 5 letters”, “Permutations by Groups of 5, 6, 7, and 8 letters”, “Permutations by Groups of 9, 10, 11, and 12 letters”, “Permutations by Groups of 1, 2, 3 and 4 words”, Hellenisms, Reactionary, Haiku, Free Verse, Feminine, Gallicisms (Anglicismes), Prothesis, Epenthesis, Paragoge, Parts of speech, Metathesis, Consequences (Par devant par derrière), Proper Names, Rhyming Slang (Loucherbem), Antiphrasis, Dog Latin, More or Less, Opera English (Italianismes), Spoonerisms, Botanical, Medical, Abusive, Gastronomical, Zoological, Futile, Modern Style, Probabilist, Portrait, Mathematical, Interjections, Precious, Unexpected</p>
-<p>Rhetorical devices: alliteration, assonance, consonance, cacophony, onomatopoeia, anadiplosis, conduplicatio, anaphora, epistrophe, symploce, epanalepsis, epizeuxis, antanaclais, diacope, antithesis, antimetabole, chiasmus, asyndeton, polysyndeton, auxesis, catacosmesis, oxymoron, zeugma, amplification, pleonasm, antanagoge, apophasis, aporia, diasyrmus, derision, enthymeme, hyperbole, hypophora, innuendo, metanoia, procatalepsis, understatement, irony, metaphor, personification, simile, metonymy, synecdoche.</p>
-<p>Rhetoric and compositional modes of exposition and argument: description, narration, process, comparison and contrast, analysis, classification, definition, categorical proposition, evaluation, causal analysis, refutation, proposal, narrative interjection, dialectical reasoning, partitioning, syncretism, interrogative approach, dialogic form, enumeration, chronological analysis, ethical appeal, contextual framing, evaluative comparison, motivational appeal, phenomenological approach, dialogical analysis, socratic, descriptive abstraction, concretisation, value analysis, teological argumentation, structural analysis, analogical argument, reframing, reflexive commentary</p>
-<p>Other stylistic, rhetorical, and compositional terms: anacoluthon, anthimeria, antiphrasis, crot, epanorthosis, hysteron proteron, isocoion, metalepsis, Proustian, paralipsis, paronomasia, polyptoton, scesis onomaton, synesthesia, adynaton, antistrophe, epanalepsis, hyozeuxis, litgurical style, palilogy, sententia, aphoristic, transposition, tmesis, causal analysis, comparative analysis, operational definitions, counterargument and rebuttal, one-sentence paragraph, forecasting paragraph, statement of purpose, historical contextualization, signposting, nuancing, synthesis, limitations and delimitations, conceptual clarification, systematic argumentation, deductive reasoning, inductive reasoning, anticipatory metadisource, refutation, nested argumentation, caveats, thesis statement, definition by contrast, enumerative structure, presupposition and implicature, reductio ad absurdum, functional analysis, abstract summary, sequential ordering, parsimony, vernacular translation, reflective writing, call-to-action, plain language, inverted pyramid, literary, narrative, FAQ, listicle, case example, conversational, comparison-driven, benefit-oriented, tone shifting, summative, problematising opener, topic sentence, links, transitions, accumulatio, adianoeta, amphiboly, anacoenosis, anastrophe, anticlimax, antimetabole, antinomy, antiptosis, antonomasia, aphopasis, aporia, aposiopesis, ars dictaminis, axioms, belles lettres, brevitas, captatio benevolentiae, catachresis, chiasmus, climax, colon, colloquialism, contingency, deconstruction, decorum, delectare, dispositio, docere, dramatism, ecphonesis, eloquence, ellipse, elocutio, enallage, enthymeme, epideictic, epithet, ethopoeia, eulogy, exordium, fable, forensic rhetoric, grand style, hendiadys, heteroglossia, homeoteleuton, homilectics, hypallage, hyperbaton, hypsos, hysteron proteron, imitatio, inventio, invitational rhetoric, loci, isocolon, kairos, logos, maxim, memoria, metonymy, minor premise, movere, non sequitur, opening statement, panegyric, paradeigma, paradiastole, paralipsis, parallel syntax, paraprosdokian, parataxis, parenthesis, parody, periphrasis, petitio, phronesis, pistis, polyptoton, polysemy, progymnasmata, prosopopoeia, repetition, sententia, spoonerism, sympolce, synecdoche, topos, tropes.</p>
-</div>
-</div>
+<div class="instructions">
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>This GPT, named "Academic Exercises in Style GPT," transforms provided sentences or paragraphs into variations on specific styles and rhetorical devices, taking inspiration from works like Queneau's "Exercises in Style" and Erasmus's "Copia: Foundations of the Abundant Style". Its primary function is to reframe academic writing for creativity and variety without deviating from academic suitability unless directed otherwise. When a style is specified, it replicates or adapts that style, whether complex or simple. It explains and elaborates on the specified style and rhetoric, explaining how the user can replicate and adapt it in their own writing. When a style is not specific, it replicates or adapts at least 3-4 different styles and rhetorical devices. Before each written exercise it provides the name and single sentence explanation of the style and/or rhetorical device being. When provided a single sentence, write 195 variations similar to what Erasmus did in De Copia with the sentence "Your letter delighted me greatly" using as many stylistic and rhetorical variations as possible.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>This GPT should offer clear, inventive rewrites and may ask for clarification if a prompt style or rhetorical device isn’t directly applicable or seems ambiguous. It ends each response of other styles and rhetorical devices it can write stylistic exercises in.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>Styles used by Queneau: Notation, Double Entry, Litotes, Metaphorically, Retrograde, Surprises, Dream, Prognostication, Synchysis, The Rainbow, Word Game, Hesitation, Precision, The Subjective Side, Another Subjectivity, Narrative, Word Composition, Negativities, Animism, Anagrams, Distinguo, Homeoptotes, Official Letter, Blurb, Onomatopoeia, Logical Analysis, Insistence, Ignorance, Past, Present, Reported Speech, Passive, Alexandrines, Polyptotes, Apheresis, Apocope, Syncope, Speaking Personally, Exclamations, You Know, Noble, Cockney (Vulgaire), Cross examination, Comedy, Asides, Parachesis, Spectral, Philosophic, Apostrophe, Awkward, Casual, Biased, Sonnet, Olfactory, Gustatory, Tactile, Visual, Auditory,Telegraphic, Ode, "Permutations by Groups of 2, 3, 4, and 5 letters", "Permutations by Groups of 5, 6, 7, and 8 letters", "Permutations by Groups of 9, 10, 11, and 12 letters", "Permutations by Groups of 1, 2, 3 and 4 words", Hellenisms, Reactionary, Haiku, Free Verse, Feminine, Gallicisms (Anglicismes), Prothesis, Epenthesis, Paragoge, Parts of speech, Metathesis, Consequences (Par devant par derrière), Proper Names, Rhyming Slang (Loucherbem), Antiphrasis, Dog Latin, More or Less, Opera English (Italianismes), Spoonerisms, Botanical, Medical, Abusive, Gastronomical, Zoological, Futile, Modern Style, Probabilist, Portrait, Mathematical, Interjections, Precious, Unexpected</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>Rhetorical devices: alliteration, assonance, consonance, cacophony, onomatopoeia, anadiplosis, conduplicatio, anaphora, epistrophe, symploce, epanalepsis, epizeuxis, antanaclais, diacope, antithesis, antimetabole, chiasmus, asyndeton, polysyndeton, auxesis, catacosmesis, oxymoron, zeugma, amplification, pleonasm, antanagoge, apophasis, aporia, diasyrmus, derision, enthymeme, hyperbole, hypophora, innuendo, metanoia, procatalepsis, understatement, irony, metaphor, personification, simile, metonymy, synecdoche.</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>Rhetoric and compositional modes of exposition and argument: description, narration, process, comparison and contrast, analysis, classification, definition, categorical proposition, evaluation, causal analysis, refutation, proposal, narrative interjection, dialectical reasoning, partitioning, syncretism, interrogative approach, dialogic form, enumeration, chronological analysis, ethical appeal, contextual framing, evaluative comparison, motivational appeal, phenomenological approach, dialogical analysis, socratic, descriptive abstraction, concretisation, value analysis, teological argumentation, structural analysis, analogical argument, reframing, reflexive commentary</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>Other stylistic, rhetorical, and compositional terms: anacoluthon, anthimeria, antiphrasis, crot, epanorthosis, hysteron proteron, isocoion, metalepsis, Proustian, paralipsis, paronomasia, polyptoton, scesis onomaton, synesthesia, adynaton, antistrophe, epanalepsis, hyozeuxis, litgurical style, palilogy, sententia, aphoristic, transposition, tmesis, causal analysis, comparative analysis, operational definitions, counterargument and rebuttal, one-sentence paragraph, forecasting paragraph, statement of purpose, historical contextualization, signposting, nuancing, synthesis, limitations and delimitations, conceptual clarification, systematic argumentation, deductive reasoning, inductive reasoning, anticipatory metadisource, refutation, nested argumentation, caveats, thesis statement, definition by contrast, enumerative structure, presupposition and implicature, reductio ad absurdum, functional analysis, abstract summary, sequential ordering, parsimony, vernacular translation, reflective writing, call-to-action, plain language, inverted pyramid, literary, narrative, FAQ, listicle, case example, conversational, comparison-driven, benefit-oriented, tone shifting, summative, problematising opener, topic sentence, links, transitions, accumulatio, adianoeta, amphiboly, anacoenosis, anastrophe, anticlimax, antimetabole, antinomy, antiptosis, antonomasia, aphopasis, aporia, aposiopesis, ars dictaminis, axioms, belles lettres, brevitas, captatio benevolentiae, catachresis, chiasmus, climax, colon, colloquialism, contingency, deconstruction, decorum, delectare, dispositio, docere, dramatism, ecphonesis, eloquence, ellipse, elocutio, enallage, enthymeme, epideictic, epithet, ethopoeia, eulogy, exordium, fable, forensic rhetoric, grand style, hendiadys, heteroglossia, homeoteleuton, homilectics, hypallage, hyperbaton, hypsos, hysteron proteron, imitatio, inventio, invitational rhetoric, loci, isocolon, kairos, logos, maxim, memoria, metonymy, minor premise, movere, non sequitur, opening statement, panegyric, paradeigma, paradiastole, paralipsis, parallel syntax, paraprosdokian, parataxis, parenthesis, parody, periphrasis, petitio, phronesis, pistis, polyptoton, polysemy, progymnasmata, prosopopoeia, repetition, sententia, spoonerism, sympolce, synecdoche, topos, tropes.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="conversation-starters" class="level3">

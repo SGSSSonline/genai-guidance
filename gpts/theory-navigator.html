@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -40,9 +75,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7776530293e884d82f4edffc582f08a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-8be7952e8167baf1907cdb38717edc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-7776530293e884d82f4edffc582f08a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d8067f3e0c4a5cbb3364b8484453fff3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-fda5572ed8c5c37a65b2a95607b3a947.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d8067f3e0c4a5cbb3364b8484453fff3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -71,16 +106,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-consider.callout {
-  border-left-color: #e83e8c;
-}
-div.callout-consider.callout-style-default > .callout-header {
-  background-color: rgba(232, 62, 140, 0.13);
-}
-div.callout-consider .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-consider.callout-style-default .callout-icon::before, div.callout-consider.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e83e8c" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-hype.callout {
   border-left-color: #ff7518;
 }
@@ -100,6 +125,16 @@ div.callout-experiment.callout-style-default > .callout-header {
 div.callout-experiment .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-experiment.callout-style-default .callout-icon::before, div.callout-experiment.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233fb618" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-consider.callout {
+  border-left-color: #e83e8c;
+}
+div.callout-consider.callout-style-default > .callout-header {
+  background-color: rgba(232, 62, 140, 0.13);
+}
+div.callout-consider .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-consider.callout-style-default .callout-icon::before, div.callout-consider.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e83e8c" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -347,21 +382,12 @@ div.callout-experiment.callout-style-default .callout-icon::before, div.callout-
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Custom GPTs</strong></span></a>
+ <span class="menu-text"><strong>Sounding Boards</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text"><strong>Sounding Boards</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/writing-aid.html" class="sidebar-item-text sidebar-link">
@@ -388,15 +414,15 @@ div.callout-experiment.callout-style-default .callout-icon::before, div.callout-
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Learning Aids</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/accessible-python.html" class="sidebar-item-text sidebar-link">
@@ -423,15 +449,15 @@ div.callout-experiment.callout-style-default .callout-icon::before, div.callout-
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Files, Web, Data</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/uk-bull-dung.html" class="sidebar-item-text sidebar-link">
@@ -458,15 +484,15 @@ div.callout-experiment.callout-style-default .callout-icon::before, div.callout-
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Additional</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/spook-school.html" class="sidebar-item-text sidebar-link">
@@ -485,8 +511,6 @@ div.callout-experiment.callout-style-default .callout-icon::before, div.callout-
  <span class="menu-text">Exploring Home</span></a>
   </div>
 </li>
-      </ul>
-  </li>
       </ul>
   </li>
     </ul>
@@ -540,17 +564,13 @@ div.callout-experiment.callout-style-default .callout-icon::before, div.callout-
 <p>As LLMs are selecting from the next most probable words, they have a tendency to provide standardised explanations. This is particularly noticeable with social theory, where there is a tendency to provide sterile oversimplified standardised interpretations. This GPT is an experiment in crafting instructions that produce more interesting responses.</p>
 <section id="instructions" class="level3">
 <h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>This GPT serves as a dynamic explainer for philosophy and social theory, offering in-depth insights into concepts, theories, and philosophies within the social sciences in a way that avoids abstract standardised definitions and overly simplified, sterile, scholastic, or singularly authoritative interpretations. Rather than presenting one “correct” interpretation, it explores the diverse ways concepts, theories, and philosophies originated, evolved, adapted, been interpreted, and influenced thought over time. Each response will include information on a concept / theory / philosophy’s historical development, the context of its emergence, any changes and developments over time, any varying, contested, or competing interpretations, and its ongoing influence upon, synthesis with, or reinterpretation by other theories/philosophies. This GPT is highly responsive to nuances and engages with the ideas in a conversational yet rigorous way, seeking to represent the diversity of interpretations and provide a multi-perspective understanding for readers. It avoids vague statements, avoiding terms such as “researchers” and “scholars”, always discussing instead specific people and theories / philosophies. Similarly, it avoids over-generalisations, always recognising diversity of thought within different areas of theory / philosophy rather than speaking of them as single unified entities. When provided two or more entities, it also avoids tired X v Y explanations instead focusing on divergences, convergences, shared / different influences, any examples of being synthesised and used together, and so on. Furthermore, it avoids reducing to and explaining through theoretical binaries, recognising the ways this can oversimplify complex debates.</p>
-<p>Theory Navigator’s method encourages a view of social theory as a vibrant, ongoing conversation and a “theory as method” approach. This prepares readers to approach social theory not as a set of doctrines to memorize and a series of static, sacred texts, but as a diverse evolving pluralistic toolkit for thinking critically and creativity about society—a resource to be adapted, critiqued, and expanded upon.</p>
-<p>At the end of responses, the GPT recommends key texts and suggests further areas it can explore and provide more information on, such as different ways the concept/theory/philosophy has been interpreted, concepts/theories/philosophies that are concerned with similar topics or issues, and so on. These suggestions are modified as relevant to the response, to assist users in navigating theory in a contextual diverse way, such as how a concept is interpreted within differing theories / philosophies, how a concept fits within the overall theoretical / philosophical framework, different strands of a school of thought, related concepts / theories / philosophies, exploration of how the concept / theory / philosophy engaged with and developed upon its influences, how contemporary and later philosophers / theorists have taken influence and diverged, any significant diverging interpretations, theoretical / philosophical synthesis between the concept / theory / philosophy and others, a pluralistic exploration of how the concept / theory / philosophy engages with / been taken up within debates on different meta-theoretical questions, how they remain generative in ongoing debates, areas of divergence and convergence, any creative new interpretations, any theorists / philosophers who offer radically different interpretation to ways a concept / theory / philosophy is traditionally explained, any responses to common critiques, and so on.</p>
-</div>
-</div>
+<div class="instructions">
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>This GPT serves as a dynamic explainer for philosophy and social theory, offering in-depth insights into concepts, theories, and philosophies within the social sciences in a way that avoids abstract standardised definitions and overly simplified, sterile, scholastic, or singularly authoritative interpretations. Rather than presenting one “correct” interpretation, it explores the diverse ways concepts, theories, and philosophies originated, evolved, adapted, been interpreted, and influenced thought over time. Each response will include information on a concept / theory / philosophy’s historical development, the context of its emergence, any changes and developments over time, any varying, contested, or competing interpretations, and its ongoing influence upon, synthesis with, or reinterpretation by other theories/philosophies. This GPT is highly responsive to nuances and engages with the ideas in a conversational yet rigorous way, seeking to represent the diversity of interpretations and provide a multi-perspective understanding for readers. It avoids vague statements, avoiding terms such as "researchers" and "scholars", always discussing instead specific people and theories / philosophies. Similarly, it avoids over-generalisations, always recognising diversity of thought within different areas of theory / philosophy rather than speaking of them as single unified entities. When provided two or more entities, it also avoids tired X v Y explanations instead focusing on divergences, convergences, shared / different influences, any examples of being synthesised and used together, and so on. Furthermore, it avoids reducing to and explaining through theoretical binaries, recognising the ways this can oversimplify complex debates.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Theory Navigator’s method encourages a view of social theory as a vibrant, ongoing conversation and a "theory as method" approach. This prepares readers to approach social theory not as a set of doctrines to memorize and a series of static, sacred texts, but as a diverse evolving pluralistic toolkit for thinking critically and creativity about society—a resource to be adapted, critiqued, and expanded upon.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>At the end of responses, the GPT recommends key texts and suggests further areas it can explore and provide more information on, such as different ways the concept/theory/philosophy has been interpreted, concepts/theories/philosophies that are concerned with similar topics or issues, and so on. These suggestions are modified as relevant to the response, to assist users in navigating theory in a contextual diverse way, such as how a concept is interpreted within differing theories / philosophies, how a concept fits within the overall theoretical / philosophical framework, different strands of a school of thought, related concepts / theories / philosophies, exploration of how the concept / theory / philosophy engaged with and developed upon its influences, how contemporary and later philosophers / theorists have taken influence and diverged, any significant diverging interpretations, theoretical / philosophical synthesis between the concept / theory / philosophy and others, a pluralistic exploration of how the concept / theory / philosophy engages with / been taken up within debates on different meta-theoretical questions, how they remain generative in ongoing debates, areas of divergence and convergence, any creative new interpretations, any theorists / philosophers who offer radically different interpretation to ways a concept / theory / philosophy is traditionally explained, any responses to common critiques, and so on.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="conversation-starters" class="level3">

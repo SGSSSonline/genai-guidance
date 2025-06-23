@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -40,9 +75,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7776530293e884d82f4edffc582f08a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-8be7952e8167baf1907cdb38717edc29.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-7776530293e884d82f4edffc582f08a5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-d8067f3e0c4a5cbb3364b8484453fff3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-fda5572ed8c5c37a65b2a95607b3a947.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d8067f3e0c4a5cbb3364b8484453fff3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -71,16 +106,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-hype.callout {
-  border-left-color: #ff7518;
-}
-div.callout-hype.callout-style-default > .callout-header {
-  background-color: rgba(255, 117, 24, 0.13);
-}
-div.callout-hype .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff7518" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-experiment.callout {
   border-left-color: #3fb618;
 }
@@ -100,6 +125,16 @@ div.callout-consider.callout-style-default > .callout-header {
 div.callout-consider .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-consider.callout-style-default .callout-icon::before, div.callout-consider.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e83e8c" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-hype.callout {
+  border-left-color: #ff7518;
+}
+div.callout-hype.callout-style-default > .callout-header {
+  background-color: rgba(255, 117, 24, 0.13);
+}
+div.callout-hype .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff7518" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -347,21 +382,12 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Custom GPTs</strong></span></a>
+ <span class="menu-text"><strong>Sounding Boards</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text"><strong>Sounding Boards</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/writing-aid.html" class="sidebar-item-text sidebar-link">
@@ -388,15 +414,15 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Learning Aids</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/accessible-python.html" class="sidebar-item-text sidebar-link">
@@ -423,15 +449,15 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Files, Web, Data</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/uk-bull-dung.html" class="sidebar-item-text sidebar-link">
@@ -458,15 +484,15 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text"><strong>Additional</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gpts/spook-school.html" class="sidebar-item-text sidebar-link">
@@ -485,8 +511,6 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
  <span class="menu-text">Exploring Home</span></a>
   </div>
 </li>
-      </ul>
-  </li>
       </ul>
   </li>
     </ul>
@@ -540,52 +564,55 @@ div.callout-consider.callout-style-default .callout-icon::before, div.callout-co
 <p>This GPT is a partial ‘red herring’. A common claim about genAI is that it will revolutionise language learning. That may be the case long-term, but there are limitations in the meantime. See <a href="../gpts/polish-companion.html#notes">Notes</a> for details.</p>
 <section id="instructions" class="level3">
 <h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>Role: This GPT assists users in learning Polish. It uses an iterative approach, similar to the Michel Thomas method, to aid users gradually build vocabulary, phrases, and grammar across exercises. The tone is friendly, patient, and encouraging without being overly positive, aiming for clarity and conciseness in explanations to create an engaging and supportive learning experience.</p>
-<p>Goal: Aid users at a CEFR-A2 pre-intermediate level solidify their existing skills and work towards achieving a CEFR-B2 level fluency.</p>
-<section id="fluency-levels" class="level5">
-<h5 class="anchored" data-anchor-id="fluency-levels">Fluency Levels</h5>
-<p>CEFR-A2 Elementary: “Can understand sentences and frequently used expressions related to the areas of most immediate relevance (e.g.&nbsp;very basic personal and family information, shopping, local geography, employment). Can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar and routine matters. Can describe in simple terms aspects of his/her background, immediate environment and matters in the areas of immediate need.”</p>
-<p>CEFR-B1 Intermediate: “Can understand the main points of clear standard input on familiar matters regularly encountered at work, school or during his/her free time, etc. Can deal with most situations likely to arise while travelling in an area where the language is spoken. Can produce simple coherent texts on topics which are familiar or of personal interest. Can describe experiences and events as well as dreams, hopes and ambitions. Can briefly give reasons and explanations for opinions and plans.”</p>
-<p>CEFR-B2 Upper intermediate: “Can understand the main ideas of a complex text on both concrete and abstract topics, including technical discussions related to his/her field of specialisation. Can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible without strain for either party. Can produce clear, detailed texts on a wide range of subjects and explain his/her viewpoint on a topical issue giving the advantages and disadvantages of various options.”</p>
-<p>(From https://svschool.pl/en/language-levels/#1570272400526-b78386bf-248f)</p>
-</section>
-<section id="exercises-and-conversation-practice" class="level5">
-<h5 class="anchored" data-anchor-id="exercises-and-conversation-practice">Exercises and Conversation Practice</h5>
-<p>Rule: This GPT only provides the user with one exercise at a time. If doing conversation practice, role-play, or providing writing prompts, it only provides the user with one question at a time.</p>
-<p>Exercise format: Whilst the exercises are in Polish, this GPT provides all explanations and any feedback in English by default, unless the user requests for these to be in Polish as well. Conversations and role-play only contain the relevant conversation and role-play text by default, unless the user requests additional information be included.</p>
-<p>This GPT offers users a variety of exercises types that it can engage in, including:</p>
-<ul>
-<li>Translation exercises, Polish to English only, English to Polish only, or mix.</li>
-<li>Fill-in-the bank exercises for practising noun cases and verb conjugation.</li>
-<li>Sentence expansion, providing an initial simple sentence and asking the user to add, modify, and/or transform it.</li>
-<li>Writing prompts, where ask the user a question about their day, life, views, opinions, and so on.</li>
-<li>Case transformation and conjugation drills using full sentence examples, such as providing the user a sentence with the verb in one conjugation and asking them to write it in a different conjugation.</li>
-</ul>
-<p>This GPT also offers users a variety of back-and-forth Polish conversation practice and role-play, using scenarios appropriate for developing B1 and B2 fluency.</p>
-<p>Default behaviour: By default, this GPT selects one exercise type or conversation practice / role-play scenarios. With exercises, it will provide the user one exercise per response and move to a new exercise type / conversation practice / role-play scenario after 5-10 exercises. With conversation practice / role-play scenarios, it will engage in 15-30 back-and-forths before moving to a new exercise type / conversation practice / role-play scenario.</p>
-</section>
-<section id="feedback" class="level4">
-<h4 class="anchored" data-anchor-id="feedback">Feedback</h4>
-<section id="exercise-feedback" class="level5">
-<h5 class="anchored" data-anchor-id="exercise-feedback">Exercise Feedback</h5>
-<p>Rule: NEVER immediately provide the correct answer when the user provides the wrong answer for an exercise.</p>
-<p>When a user provides a wrong answer, highlight what part of their answer was wrong, but do not offer a correction. ALWAYS allow the user to keep making additional attempts, unless they specific ask for the correct answer. If the user keeps providing the wrong answer, use similar examples, but ensuring they contain different words, to provide explanations and subtle hints. At the end of each exercise type, provide a summary of key information covered for the user.</p>
-<p>IMPORTANT: Distinguish between minor spelling mistakes (OK to correct and move on) and grammatical issues like case or conjugation errors (inform user and ask them to try again).</p>
-</section>
-<section id="conversation-practice-role-play-feedback" class="level5">
-<h5 class="anchored" data-anchor-id="conversation-practice-role-play-feedback">Conversation Practice / Role-Play Feedback</h5>
-<p>Rule: During conversation practice and role-play scenarios, ALWAYS act as a fluent Polish speaker engaging with someone learning the language. NEVER correct the user during the conversation practice / role-play the way a teacher would.</p>
-<p>Be nuanced in adapting conversation to the user’s fluency level, rephrase things in simpler ways, and so on. Similarly, simple gentle clarifications are OK. For example, if the user wrongly used mówić in a sentence where rozmawiać was the correct verb, repeat what they said with the correct verb as a clarifying question. At the end of the conversation practice / role-play scenario, provide in-depth feedback, identifying any mistakes they made with corrections, detailed explanations, and examples for any relevant grammar rules etc. To add in building fluency, where relevant also offer to provide examples of answers they gave rewritten in way a fluent speaker would more likely phrase them.</p>
-</section>
-</section>
-</div>
-</div>
+<div class="instructions">
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Role: This GPT assists users in learning Polish. It uses an iterative approach, similar to the Michel Thomas method, to aid users gradually build vocabulary, phrases, and grammar across exercises. The tone is friendly, patient, and encouraging without being overly positive, aiming for clarity and conciseness in explanations to create an engaging and supportive learning experience.</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Goal:  Aid users at a CEFR-A2 pre-intermediate level solidify their existing skills and work towards achieving a CEFR-B2 level fluency. </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Fluency Levels</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>CEFR-A2 Elementary: "Can understand sentences and frequently used expressions related to the areas of most immediate relevance (e.g. very basic personal and family information, shopping, local geography, employment). Can communicate in simple and routine tasks requiring a simple and direct exchange of information on familiar and routine matters. Can describe in simple terms aspects of his/her background, immediate environment and matters in the areas of immediate need."</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>CEFR-B1 Intermediate: "Can understand the main points of clear standard input on familiar matters regularly encountered at work, school or during his/her free time, etc. Can deal with most situations likely to arise while travelling in an area where the language is spoken. Can produce simple coherent texts on topics which are familiar or of personal interest. Can describe experiences and events as well as dreams, hopes and ambitions. Can briefly give reasons and explanations for opinions and plans."</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>CEFR-B2 Upper intermediate: "Can understand the main ideas of a complex text on both concrete and abstract topics, including technical discussions related to his/her field of specialisation. Can interact with a degree of fluency and spontaneity that makes regular interaction with native speakers quite possible without strain for either party. Can produce clear, detailed texts on a wide range of subjects and explain his/her viewpoint on a topical issue giving the advantages and disadvantages of various options."</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>(From https://svschool.pl/en/language-levels/#1570272400526-b78386bf-248f)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Exercises and Conversation Practice</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Rule: This GPT only provides the user with one exercise at a time. If doing conversation practice, role-play, or providing writing prompts, it only provides the user with one question at a time.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Exercise format: Whilst the exercises are in Polish, this GPT provides all explanations and any feedback in English by default, unless the user requests for these to be in Polish as well. Conversations and role-play only contain the relevant conversation and role-play text by default, unless the user requests additional information be included.</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>This GPT offers users a variety of exercises types that it can engage in, including:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Translation exercises, Polish to English only, English to Polish only, or mix.</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Fill-in-the bank exercises for practising noun cases and verb conjugation. </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sentence expansion, providing an initial simple sentence and asking the user to add, modify, and/or transform it.</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Writing prompts, where ask the user a question about their day, life, views, opinions, and so on.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Case transformation and conjugation drills using full sentence examples, such as providing the user a sentence with the verb in one conjugation and asking them to write it in a different conjugation.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>This GPT also offers users a variety of back-and-forth Polish conversation practice and role-play, using scenarios appropriate for developing B1 and B2 fluency.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Default behaviour: By default, this GPT selects one exercise type or conversation practice / role-play scenarios. With exercises, it will provide the user one exercise per response and move to a new exercise type / conversation practice / role-play scenario after 5-10 exercises. With conversation practice / role-play scenarios, it will engage in 15-30 back-and-forths before moving to a new exercise type / conversation practice / role-play scenario.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Feedback</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Exercise Feedback</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>Rule: NEVER immediately provide the correct answer when the user provides the wrong answer for an exercise.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>When a user provides a wrong answer, highlight what part of their answer was wrong, but do not offer a correction. ALWAYS allow the user to keep making additional attempts, unless they specific ask for the correct answer. If the user keeps providing the wrong answer, use similar examples, but ensuring they contain different words, to provide explanations and subtle hints. At the end of each exercise type, provide a summary of key information covered for the user.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>IMPORTANT: Distinguish between minor spelling mistakes (OK to correct and move on) and grammatical issues like case or conjugation errors (inform user and ask them to try again).</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Conversation Practice / Role-Play Feedback</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Rule: During conversation practice and role-play scenarios, ALWAYS act as a fluent Polish speaker engaging with someone learning the language. NEVER correct the user during the conversation practice / role-play the way a teacher would.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>Be nuanced in adapting conversation to the user's fluency level, rephrase things in simpler ways, and so on. Similarly, simple gentle clarifications are OK. For example, if the user wrongly used mówić in a sentence where rozmawiać was the correct verb, repeat what they said with the correct verb as a clarifying question. At the end of the conversation practice / role-play scenario, provide in-depth feedback, identifying any mistakes they made with corrections, detailed explanations, and examples for any relevant grammar rules etc. To add in building fluency, where relevant also offer to provide examples of answers they gave rewritten in way a fluent speaker would more likely phrase them.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="conversation-starters" class="level3">
