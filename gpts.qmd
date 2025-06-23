@@ -2,8 +2,10 @@
 title: "GPTs"
 ---
 
+### Introduction
+
 ::: {.callout-note title="Section Overview"}
-This section contains custom GPTs I have setup to demonstrate different genAI use-cases. These GPTs are a mix of ones I have created for students in specific contexts, ones I use myself, and ones to demonstrate a point. You may find some useful, others - such as [Academic Exercises in Style](gpts/academic-exercises.qmd) - that are more to demonstrate a point will be less directly useful, but still illustrate what is possible.
+This section contains custom GPTs I have setup to demonstrate different genAI use-cases. These GPTs are a mix of ones I have created for students in specific contexts, ones I use myself, and ones to demonstrate what is possible more than what is most useful.
 
 In other words, these GPTs are not setup as exemplars for how you *must* nor *should* use genAI in all cases and contexts. Even where you find any useful, over time you will find that experimenting with your own prompts to customise responses to your specific use-cases is the best option. These GPTs are designed to help build a sense of what is possible and share examples of more complex prompts.
 
@@ -24,6 +26,7 @@ Indeed, nor is using ChatGPT to set these up in any way an endorsement of ChatGP
 - [Writing Aid](gpts/writing-aid.qmd)
 - [Word and Phrasing Finder](gpts/word-phrasing-finder.qmd)
 - [Academic Exercises in Style](gpts/academic-exercises.qmd)
+- [Lateral Storms](gpts/lateral-storms.qmd)
 
 **Learning Aids**
 
@@ -44,6 +47,8 @@ Indeed, nor is using ChatGPT to set these up in any way an endorsement of ChatGP
 - [Spook School Slides](gpts/spook-school.qmd)
 - [Simple Short Email Aid](gpts/simple-short-email.qmd)
 - [Exploring Home](gpts/exploring-home.qmd)
+
+### Explore Own Use-Cases
 
 ::: experiment
 The full instructions for each GPT is shared to show how it was setup, alongside some 'conversation starters' and general notes on design decisions and limitations. Experiment with tweaking the instructions to tailor them to your use-cases and preferences.
