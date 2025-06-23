@@ -17,12 +17,6 @@ At heart a custom GPT is merely a saved reuseable prompt with optional access to
 Indeed, nor is using ChatGPT to set these up in any way an endorsement of ChatGPT itself. The custom GPT feature was merely the easiest way to setup and share such examples. Again, the instructions can be copy and pasted into a new chat - and any custom GPT equivalent - within other genAI tools.
 :::
 
-::: experiment
-The full instructions for each GPT is shared to show how it was setup, alongside some 'conversation starters' and general notes on design decisions and limitations. Experiment with tweaking the instructions to tailor them to your use-cases and preferences.
-
-Have a use-case not covered? Skim through the instructions and see if there is anything can adapt and modify to craft prompts for it.
-:::
-
 ### Overview of GPTs
 
 **Sounding Boards**
@@ -50,4 +44,10 @@ Have a use-case not covered? Skim through the instructions and see if there is a
 - [Spook School Slides](gpts/spook-school.qmd)
 - [Simple Short Email Aid](gpts/simple-short-email.qmd)
 - [Exploring Home](gpts/exploring-home.qmd)
+
+::: experiment
+The full instructions for each GPT is shared to show how it was setup, alongside some 'conversation starters' and general notes on design decisions and limitations. Experiment with tweaking the instructions to tailor them to your use-cases and preferences.
+
+Have a use-case not covered? Skim through the instructions and see if there is anything can adapt and modify to craft prompts for it.
+:::
 

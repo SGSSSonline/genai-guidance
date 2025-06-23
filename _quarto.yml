@@ -60,31 +60,29 @@ website:
       background: "#1B9D8E"
       contents:
         - gpts.qmd
-        - section: "**Custom GPTs**"
+        - section: "**Sounding Boards**"
           contents:
-            - section: "**Sounding Boards**"
-              contents:
-                - gpts/writing-aid.qmd
-                - gpts/word-phrasing-finder.qmd
-                - gpts/academic-exercises.qmd
-                - gpts/lateral-storms.qmd
-            - section: "**Learning Aids**"
-              contents:
-                - gpts/accessible-python.qmd
-                - gpts/rstudio-helper.qmd
-                - gpts/polish-companion.qmd
-                - gpts/theory-navigator.qmd
-            - section: "**Files, Web, Data**"
-              contents:
-                - gpts/uk-bull-dung.qmd
-                - gpts/kapital-question.qmd
-                - gpts/uk-sdg-insights.qmd
-                - gpts/parser-gpt.qmd
-            - section: "**Additional**"
-              contents:
-                - gpts/spook-school.qmd
-                - gpts/simple-short-email.qmd
-                - gpts/exploring-home.qmd
+            - gpts/writing-aid.qmd
+            - gpts/word-phrasing-finder.qmd
+            - gpts/academic-exercises.qmd
+            - gpts/lateral-storms.qmd
+        - section: "**Learning Aids**"
+          contents:
+            - gpts/accessible-python.qmd
+            - gpts/rstudio-helper.qmd
+            - gpts/polish-companion.qmd
+            - gpts/theory-navigator.qmd
+        - section: "**Files, Web, Data**"
+          contents:
+            - gpts/uk-bull-dung.qmd
+            - gpts/kapital-question.qmd
+            - gpts/uk-sdg-insights.qmd
+            - gpts/parser-gpt.qmd
+        - section: "**Additional**"
+          contents:
+            - gpts/spook-school.qmd
+            - gpts/simple-short-email.qmd
+            - gpts/exploring-home.qmd
 
   page-footer:
     center:
@@ -104,6 +102,8 @@ format:
       dark: [darkly, brand, styles/custom.scss]
     css: styles.css
     toc: true
+    code-overflow: wrap
+    code-copy: true
 
 custom-callout:
   experiment:

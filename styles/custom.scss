@@ -9,10 +9,14 @@
 .instructions {
   border-width: 0px;
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
   background-color: softbox-bg(#2a2a7f, 0.09);
+}
+
+.instructions .sourceCode {
+  margin: 0;
 }
 
 .instructions > :last-child {
