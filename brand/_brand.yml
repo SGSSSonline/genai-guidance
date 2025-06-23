@@ -1,0 +1,7 @@
+color:
+  palette: 
+    blue: "#073B59"
+    pink: "#BD62AB"
+  primary: pink
+  secondary: blue
+

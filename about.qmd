@@ -2,4 +2,20 @@
 title: "About"
 ---
 
-WIP
+These online Critical GenAI Literacies pages are produced by [Alasdair B R Stewart](https://www.gla.ac.uk/schools/socialpolitical/staff/alasdairstewart/), University of Glasgow and SGSSS Training Network member, for the Scottish Graduate School of Social Science.
+
+As set out in the [Position Statement](position-statement.qmd), these pages do not make any claims to 'balance' nor 'neutrality'. As such all views are very much the author's own and not those of SGSSS.
+
+::: {.callout-important title="Living Documents"}
+
+These pages are 'living documents', they will continually and iteratively be updated over time.
+
+I cannot promise additional content will be added within any specific period of time, but I will be taking note of frequently asked questions, different use cases, and any issues encountered. These will be used to update and add to the existing content.
+
+Note - I take absolutely no offense if your question is due to any of the materials being unclear! In all my time teaching, the most useful feedback I have received has been from students pointing out something that was unclear to them or raised further questions.
+
+:::
+
+This work is supported by the UKRI Economic and Social Research Council (ESRC).
+
+![](images/ESRC logo.png)

@@ -1,0 +1,66 @@
+/*-- scss:functions --*/
+
+@function softbox-bg($colour, $alpha: 0.08) {
+  @return rgba(red($colour), green($colour), blue($colour), $alpha);
+}
+
+/*-- scss:rules --*/
+
+.instructions {
+  border-width: 0px;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  background-color: softbox-bg(#2a2a7f, 0.09);
+}
+
+.instructions > :last-child {
+  margin-bottom: 0;
+}
+
+.callout.callout-style-simple {
+  border-width: 2px;
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  --callout-header-bg: transparent;
+}
+
+.callout.callout-style-simple .callout-header,
+.callout.callout-style-simple .callout-title,
+.callout.callout-style-simple .callout-icon-collapse {
+  color: var(--bs-body-color);
+}
+
+.callout-note.callout-style-simple {
+  background-color: softbox-bg($callout-color-note);
+  border-color: $callout-color-note;
+}
+.callout-tip.callout-style-simple {
+  background-color: softbox-bg($callout-color-tip);
+  border-color: $callout-color-tip;
+}
+.callout-caution.callout-style-simple {
+  background-color: softbox-bg($callout-color-caution);
+  border-color: $callout-color-caution;
+}
+.callout-warning.callout-style-simple {
+  background-color: softbox-bg($callout-color-warning);
+  border-color: $callout-color-warning;
+}
+.callout-important.callout-style-simple {
+  background-color: softbox-bg($callout-color-important);
+  border-color: $callout-color-important;
+}
+.callout-experiment.callout-style-simple {
+  background-color: softbox-bg($green);
+  border-color: #3fb618;
+}
+.callout-hype.callout-style-simple {
+  background-color: softbox-bg($yellow);
+  border-color: $yellow;
+}
+.callout-consider.callout-style-simple {
+  background-color: softbox-bg($pink);
+  border-color: $pink;
+}

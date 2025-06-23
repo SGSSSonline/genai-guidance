@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Kapital Question – genAI</title>
+<title>Kapital Question – Critical GenAI Literacies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -39,8 +38,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6561bbde787c299e21493071c8edc6ff.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c8209e8c994b736c62992251aa44e8b1.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5d5c4d5207c847efe1ddb59d220e5334.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,20 +67,55 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+div.callout-experiment.callout {
+  border-left-color: #3fb618;
+}
+div.callout-experiment.callout-style-default > .callout-header {
+  background-color: rgba(63, 182, 24, 0.13);
+}
+div.callout-experiment .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-experiment.callout-style-default .callout-icon::before, div.callout-experiment.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233fb618" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-consider.callout {
+  border-left-color: #e83e8c;
+}
+div.callout-consider.callout-style-default > .callout-header {
+  background-color: rgba(232, 62, 140, 0.13);
+}
+div.callout-consider .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-consider.callout-style-default .callout-icon::before, div.callout-consider.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e83e8c" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-hype.callout {
+  border-left-color: #ff7518;
+}
+div.callout-hype.callout-style-default > .callout-header {
+  background-color: rgba(255, 117, 24, 0.13);
+}
+div.callout-hype .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff7518" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+</style>
 
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../brand/whitelogo.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">genAI</span>
+    <span class="navbar-title">Critical GenAI Literacies</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -91,15 +126,25 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">GenAI</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../prompting.html"> 
+<span class="menu-text">Prompting</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../gpts.html" aria-current="page"> 
+<span class="menu-text">GPTs</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../slides.html"> 
+<span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../slides.html"> 
-<span class="menu-text">Slides</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -118,16 +163,22 @@ ul.task-list li input[type="checkbox"] {
         </a>     
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="c73e91caa6ec2653885e99101673729e" class="alert alert-info hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p><strong>Work in Progress</strong> - these additional online materials are work in progress and will continue to be updated following the session.</p>
+  <div id="quarto-announcement" data-announcement-id="4205dbe79c7372c5e274d0ef6f05d38d" class="alert alert-info hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>Work in Progress</strong> - these online materials are work in progress and will continue to be updated over the coming months.</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../gpts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">GPTs</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -926,6 +977,41 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://www.sgsss.ac.uk/">
+<p>SGSSS</p>
+</a>
+  </li>  
+    <li class="nav-item">
+  | 
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://social.sgsss.ac.uk/">
+<p>Social</p>
+</a>
+  </li>  
+    <li class="nav-item">
+  | 
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://bsky.app/profile/sgsss.bsky.social">
+<p><iconify-icon role="img" inline="" icon="fa6-brands:bluesky" style="font-size: 1.1em;" aria-label="Icon bluesky from fa6-brands Iconify.design set." title="Bluesky"></iconify-icon> Bluesky</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

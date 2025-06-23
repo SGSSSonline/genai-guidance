@@ -1,0 +1,39 @@
+---
+title: "Position Statement"
+---
+
+### Avoiding Hype and Cynicism
+
+In writing this guidance I have sought to challenge genAI overhype *and* cynical dismissal. GenAI companies and online grifters regularly proclaim it as far more capable than it actually is and many cynics seem to have entered 2-3 quick prompts into ChatGPT shortly after it was first released, were unimpressed, and dismissed it entirely since. However, and more importantly, the implications of generative AI cannot be reduced to a mere list of pros and cons. To do so ignores the social, political, and economic struggles at play. Being 'critical' is not the same as being 'cynical'. GenAI is useful, and has huge potential, but we cannot treat it as a neutral tool.
+
+Central to the way genAI is marketed and hyped is by presenting a particular vision of genAI as inevitable and creating a sense of an unceasing acceleration of genAI capabilities into the near future. This vision is incorporated into the way genAI is developed and deployed, that encourages and assumes particular use-cases over others. This vision then in promoting a very particular and specific vision of genAI and its possibilities obscures alternative ways genAI can be developed, deployed, and used.
+
+And yet it is also a vision that relies upon the assumed capabilities of future models more than those existing now, as well as solving existing issues - such as so-called 'hallucinations' - that based on original claims made should have been solved already. The future promoted by genAI companies is neither inevitable one nor the only potential one.
+
+### Filling in the Gaps
+
+Universities themselves have largely bought into the inevitability narratives and the need to prepare students to enter the genAI augmented workplaces of the future. However, they have done so with a significant 'but' - students must use it in a way that maintains academic integrity. Most institutions now have at least a list of broad dos and don'ts, alongside the need to be aware that genAI can repeat biases and provide inaccurate information. In effect, even where unintentional, they present genAI as a neutral tool that students need to learn to use responsibly.
+
+The very way genAI actually operates though makes it tricky to translate these broad prescriptions and proscriptions into practice. Indeed, a gulf exists between the list of legitimate use cases and the default behaviours of genAI models. A common permitted use case is for 'brain storming', but ask genAI to help brain storm for an essay and it'll gladly tell you what to write about rather than help you develop your own ideas, if not also end its response by eagerly offering to go ahead and write an initial draft for you as well. Another permitted use case is to help with revising your writing. The heavy default behaviour of genAI models though is to revise for you rather than aid you in making your own revisions.
+
+This guidance in refusing to present genAI as a neutral tool seeks to help bridge this gulf with advice and examples for how to prompt genAI that avoids, or at least reduces, the default behaviours it gravitates towards. Even when some of these defaults are considered legitimate within any institutional guidance - or future workplace - this does not mean you should be uncritical of them. GenAI companies use the language of 'collaborating with genAI' for use-cases that would more accurately be called 'delegation' rather than 'collaboration', with risk of promoting dependence and undermining learning.
+
+### The Politics of GenAI
+
+Those behind the development and deployment of generative AI are not neutral actors, they have specific interests and intentions. GenAI companies having trained their models on copyright materials without permission now lobby for legislative changes to make continuing to do so permissible. They openly admit that models as capable are unfeasible without training on these materials, yet present this as a reason for why legislation needs to change rather than the original creators remunerated.
+
+The genAI companies and others developing software using their models are also active in the struggle to define and clarify what are 'legitimate' uses of genAI. This includes attempts to redefine our understanding of knowledge, learning, and academic integrity - with misleading comparisons of genAI to calculators and claims that we must restructure the entire educational system for the 'genAI era'. Other claims are dressed up in existing productivity narratives with warnings about not being left behind - stoking anxiety that if you are not using genAI you are doing something wrong.
+
+GenAI narratives are also infused with 'tech solutionism', the belief that societal problems can be solved by technology. When tech is seen as our best or only possible saviour, it adds to the pressure to accelerate. GenAI may require vast amounts of energy, but apparently once capable enough it will techno-magically give us all the solutions we need to tackle the climate crisis. Within this belief system, rather than take action on climate change now, we must instead race to develop genAI which will provide salvation before climate collapse happens. Listening to some of the most ardent foundamentalist genAI proponents, you'd think they were creating a god and not a pattern matching machine that predicts the next word in a text.
+
+### The Problem With 'Balance'
+
+With the clear political struggles and stakes involved, this guidance makes no pretence at being 'balanced' and 'neutral'. Such stated ideals risk masking rather than exposing issues of power and in purporting to 'cover *both* sides' can end up misrepresenting the nature of an issue - like when the BBC to ensure 'impartiality' pits a climate scientist against a climate skeptic. That only creates a false sense of balance, where the scientific consensus and evidence of human made climate change are treated as just another viewpoint among others of equal weight.
+
+'Both sides-ism' further risks playing into the narratives of inevitablility. Take the way debates on the future of AI are framed as utopia or dystopia that largely assume certain capabilities and use-cases are inevitable - disagreeing instead on whether super-capable AI will save or destroy humanity. Indeed, AI companies relish discussion of doomsday scenerios as it makes investing in development of AI a necessity to ensure we develop it in a way that avoids such scenerios and the need to ensure 'we' achieve super-capable AI before 'they' do, turning AI development into a new space race.
+
+### Articulating GenAI Use-Cases
+
+Conversely, the more cynical dismissal of genAI whilst it may doubt the feasibility of the promised future can maintain its own inevitability in assuming the only way genAI is used is in line with ways it is currently promoted. If you say you use AI to aid in writing, they immediately assume this means you are prompting it to write something that you then copy and paste with little or no editing. They get one aspect right, that genAI is heavily trained and promoted for such use cases, but fail to consider what alternative use-cases are possible.
+
+One of the key ways this guidance aims to challenge such cynicism and knee-jerk suspicions is through demonstrating the diverse ways even currently existing genAI can be used. As the pages are fleshed out advice will be added on how to articulate these use-cases within declaration of genAI use, moving from vague statements of "GenAI used to aid in proof-reading" to ones such as "GenAI prompted to identify potential issues and areas for improvement. All edits are my own, with no text generated by genAI. A link to the guiding prompts used can be found here.".

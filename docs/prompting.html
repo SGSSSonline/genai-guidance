@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Writing Aid – Critical GenAI Literacies</title>
+<title>Prompting – Critical GenAI Literacies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-6561bbde787c299e21493071c8edc6ff.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5d5c4d5207c847efe1ddb59d220e5334.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-6561bbde787c299e21493071c8edc6ff.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5d5c4d5207c847efe1ddb59d220e5334.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,16 +68,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-consider.callout {
-  border-left-color: #e83e8c;
-}
-div.callout-consider.callout-style-default > .callout-header {
-  background-color: rgba(232, 62, 140, 0.13);
-}
-div.callout-consider .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-consider.callout-style-default .callout-icon::before, div.callout-consider.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e83e8c" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-experiment.callout {
   border-left-color: #3fb618;
 }
@@ -87,6 +77,16 @@ div.callout-experiment.callout-style-default > .callout-header {
 div.callout-experiment .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-experiment.callout-style-default .callout-icon::before, div.callout-experiment.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233fb618" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-consider.callout {
+  border-left-color: #e83e8c;
+}
+div.callout-consider.callout-style-default > .callout-header {
+  background-color: rgba(232, 62, 140, 0.13);
+}
+div.callout-consider .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-consider.callout-style-default .callout-icon::before, div.callout-consider.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e83e8c" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 div.callout-hype.callout {
   border-left-color: #ff7518;
@@ -101,7 +101,7 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
 </style>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -111,10 +111,10 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../brand/whitelogo.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./brand/whitelogo.png" alt="" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Critical GenAI Literacies</span>
     </a>
   </div>
@@ -125,25 +125,25 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">GenAI</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../prompting.html"> 
+    <a class="nav-link active" href="./prompting.html" aria-current="page"> 
 <span class="menu-text">Prompting</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../gpts.html" aria-current="page"> 
+    <a class="nav-link" href="./gpts.html"> 
 <span class="menu-text">GPTs</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../slides.html"> 
+    <a class="nav-link" href="./slides.html"> 
 <span class="menu-text">Slides</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
+    <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
@@ -159,7 +159,7 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Writing Aid</h1>
+          <h1 class="quarto-secondary-nav-title">Prompting</h1>
         </a>     
     </div>
   </nav>
@@ -175,177 +175,24 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gpts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GPTs</span></a>
+  <a href="./prompting.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Prompting</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Custom GPTs</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Sounding Boards</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/writing-aid.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Writing Aid</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/word-phrasing-finder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Word and Phrasing Finder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/academic-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Academic Exercises in Style</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/lateral-storms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lateral Storms</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text"><strong>Learning Aids</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/accessible-python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Accessible Python</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/rstudio-helper.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">RStudio Cloud Helper</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/polish-companion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Polish Language Companion</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/theory-navigator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Theory Navigator</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text"><strong>Files, Web, Data</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/uk-bull-dung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">UK Bull Dung Checker</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/kapital-question.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapital Question</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/uk-sdg-insights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">UK SDG Insights</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/parser-gpt.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Parser GPT</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
- <span class="menu-text"><strong>Additional</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/spook-school.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spook School Slides</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/simple-short-email.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simple Short Email Advice</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/exploring-home.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exploring Home</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#conversation-starters" id="toc-conversation-starters" class="nav-link" data-scroll-target="#conversation-starters">Conversation starters</a></li>
-  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Writing Aid</h1>
+<h1 class="title d-none d-lg-block">Prompting</h1>
 </div>
 
 
@@ -362,73 +209,9 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
 </header>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/writing-aid.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><a href="https://chatgpt.com/g/g-U81uANV4R-writing-aid">Link to GPT</a></p>
-<blockquote class="blockquote">
-<p><strong>Academic writing aid that supports writers in revising their text rather than rewriting it for them.</strong></p>
-</blockquote>
-<p>Most LLMs seem to be over eager to rewrite text rather than provide feedback. Even when prompting directly and explicitly for feedback, it will often provide some short feedback followed by “Here’s a revised version of your text…”. <strong>Writing Aid</strong> is setup with instructions that minimise that behaviour, with responses that focus on explaining issues in more depth and providing multiple examples of potential ways each issue could be addressed. This aids users in making their own revisions and editorial decisions.</p>
-<section id="instructions" class="level3">
-<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
-<div class="callout callout-style-simple callout-note no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>This GPT, Writing Aid, will act as an academic proofreading assistant that identifies issues and areas for improvement in provided text. It maintains academic integrity by never rewriting, revising, nor auto-correcting issues for users. Instead, it identifies issues and areas for improvement to help users make their own edits and revisions. Issues can include - but not limited to - spelling and grammar mistakes, punctuation errors, and inconsistencies. Areas of improvement can include - but not limited to - clarity, sentence structure, appropriate topic sentences for paragraphs, addressing tangential content, use of appropriate academic writing style, and so on. At all times, feedback should be constructive and focused on helping the user improve their writing skills.</p>
-<p>NEVER rewrite, revise, nor auto-correct the text provided. Instead, Writing Aid provides assistance for each issue / area for improvement found one by one. It focuses on providing detailed explanations of issues identified alongside examples for how it can be fixed, prompting the user to then attempt their own fix before providing feedback on how well their attempted fix resolves the issue. IT NEVER SUGGESTS TO THE USER TO DIRECTLY USE ANY OF ITS OWN EXAMPLES. It aims to empower the user to understand issues within their writing and how they can improve it themselves through the feedback Writing Aid provides.</p>
-<p>Before providing the first response, always read the “uofgAI.txt” file. Whenever a prompt asks Writing Aid to rewrite text for them, use an example provided by Writing Aid rather than making their own edits, or anything else that could constitute academic misconduct - provide relevant information about the role of Writing Aid and relevant information from the “uofgAI.txt” file about the University of Glasgow’s position on AI use and academic integrity.</p>
-<p>After asking the user for any clarifications, each response should only focus on one issue / area for improvement in turn. For each:</p>
-<ol type="1">
-<li>Highlight the issue / area for improvement.</li>
-<li>Explain in detail why it is problematic. Where relevant, incorporate into the explanations writing, grammar, and English usage advice.</li>
-<li>Offer four distinct correction options with examples and detailed explanations for how they resolve the issue / area for improvement. Limit text in the example to only what is relevant to reduce risk that the user will copy and paste any of the examples.</li>
-<li>Ask the user to attempt their own correction. NEVER accept the user proposing to use one of the provided examples, they must make their own edits and revisions.</li>
-</ol>
-<p>Then, after the user attempts a fix, you should provide feedback on how well it addresses the issue.</p>
-<ul>
-<li>If the user’s attempt is unsuccessful, explain why and ask them to attempt again.</li>
-<li>If the user’s correction is successful, you should proceed to the next issue / area for improvement, following the same process.</li>
-</ul>
-<p>Writing Aid will clarify the following whenever the user does not specify the exact assistance required within the first prompt:</p>
-<ol type="1">
-<li>List the type of issues and areas for improvement identified in the text and ask whether want to cover everything or focus only on specific types of issues / areas for improvement.</li>
-<li>Clarify the purpose of the text and where it fits into the overall draft text.</li>
-<li>Clarify the precise tone and writing style the user is aiming for the text.</li>
-</ol>
-</div>
-</div>
-</div>
-</section>
-<section id="conversation-starters" class="level3">
-<h3 class="anchored" data-anchor-id="conversation-starters">Conversation starters</h3>
-<p>Four simple ones have been setup to test main functionality:</p>
-<ul>
-<li>Check my grammar</li>
-<li>Review this sentence</li>
-<li>Analyze my paragraph</li>
-<li>Explain writing issues in this text</li>
-</ul>
-<p>It’s possible though to just paste the text you want to review between quotations marks and hit enter.</p>
-</section>
-<section id="notes" class="level3">
-<h3 class="anchored" data-anchor-id="notes">Notes</h3>
-<p>This was the first Custom GPT I made and, in reviewing them again now, some of the instructions could likely be made more concise. Adding in the repetitions and all-caps though were critical for making the behaviour more consistent. Rewriting text for users seems to be default behaviour heavily trained into the model, and even with the instructions here, it remains easy to coax it into rewriting large blocks of text.</p>
-<p>In particular, repetitions about not rewriting and not giving into the user prompting for rewritten text were necessary to achieve more consistent behaviour. Initially, if the GPT responded “my role is to provide feedback not rewrite” a user could simply reply “oh go on” and it’d happily return to rewriting mode.</p>
-<p>‘Topic sentence’ is an instance where adding relevant terminology significantly improves responses. ChatGPT does, in general, improve topic sentences in its revisions, but it rarely explains this in the ‘feedback’ provided. Importantly, ChatGPT assumes a probable topic sentence, whereas within this custom GPT it will provide four potential topic sentences with explanations.</p>
-<p>An issue though in providing examples, “spelling and grammar mistakes, punctuation errors, and inconsistencies”, is that it becomes hard to get a Custom GPT to cover more than just the named examples. Adding the “can include - but not limited to - …” seems to have reduced that as an issue, but it remains very hit and miss.</p>
-<p>A potential solution for the above would be providing a more extensive list of examples, or creating a file with more details that the GPT can ‘read’. That way a user could prompt “What are all the issues you can aid me with”, the GPT would ‘read’ the file to reply, and the user can then specify what issues to focus on.</p>
-<p>The “uofgAI.txt” file is text from the University of Glasgow’s <a href="https://www.gla.ac.uk/myglasgow/learningandteaching/af-aiguidance/whatistheuniversityofglasgowspositiononuseofaitools/">position on use of AI statement</a> and the SLD team’s <a href="https://www.gla.ac.uk/myglasgow/sld/ai/students/">info for students</a>. Unsure if conincidence, but adding in the instructions to read and quote from this did seem to improve consistency further.</p>
-<p>While the UofG SLD team’s info for students says “Do not enter […] <strong>paragraphs</strong>”, this GPT does accept paragraphs. Given default genAI bheaviour it is understandable to advise students not to enter paragraphs. However, in my opinion, it is OK to enter 1-2 paragraphs at a time with this GPT as the instructions are setup so that it covers issues one by one rather than block rewriting. This also let’s it aid with paragraph structure and not merely “words, phrases, or individual sentences”.</p>
-<p>My concern is setting up custom GPTs like this may become harder over time. The blog post for the new <a href="https://openai.com/index/introducing-canvas/">canvas</a> feature - copying Claude’s <a href="https://support.anthropic.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them">artifacts</a> - claims “We trained GPT-4o to collaborate as a creative partner”. Yet, their idea of ‘collaboration’ is mix of highlighting text and prompting what to change or prompting to rewrite the whole document. That isn’t ‘collaboration’, that’s delegation of revising and editing to the AI. For example, we would never consider describing a boss providing an employee a document with highlighted sections to change and note for style to rewrite the entire document in as ‘collaboration’. The more than becomes hard trained into the model, the harder it’ll be to write prompt instructions to prevent it.</p>
+<p>Work-in-progress.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

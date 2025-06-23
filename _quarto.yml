@@ -2,14 +2,19 @@ project:
   type: website
   output-dir: docs
 
+brand: brand/_brand.yml
+
+execute:
+  freeze: auto
+
 callout-appearance: simple
 
 website:
-  title: "genAI"
+  title: "Critical GenAI Literacies"
   announcement:
     icon: info-circle
     dismissable: true
-    content: "**Work in Progress** - these additional online materials are work in progress and will continue to be updated following the session."
+    content: "**Work in Progress** - these online materials are work in progress and will continue to be updated over the coming months."
     type: info
     position: below-navbar
   bread-crumbs: false
@@ -17,49 +22,105 @@ website:
     location: navbar
     type: overlay
   navbar:
+    pinned: true
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: "GenAI"
+      - href: prompting.qmd
+        text: "Prompting"
+      - href: gpts.qmd
+        text: "GPTs"
+
+    right:
       - slides.qmd
+      - about.qmd
+
+    logo: brand/whitelogo.png
+    background: "#073B59"
 
   sidebar:
-    style: "floating"
-    border: false
-    contents:
-      - section: "**Custom GPTs**"
-        contents:
-        - section: "**Sounding Boards**"
+    - title: "GenAI"
+      style: "docked"
+      border: false
+      background: "#1B9D8E"
+      contents:
+        - index.qmd
+        - position-statement.qmd
+
+    - title: "Prompting"
+      style: "docked"
+      border: false
+      background: "#1B9D8E"
+      contents:
+        - prompting.qmd
+
+    - title: "GPTs"
+      style: "docked"
+      border: false
+      background: "#1B9D8E"
+      contents:
+        - gpts.qmd
+        - section: "**Custom GPTs**"
           contents:
-            - gpts/writing-aid.qmd
-            - gpts/word-phrasing-finder.qmd
-            - gpts/academic-exercises.qmd
-            - gpts/lateral-storms.qmd
-        - section: "**Learning Aids**"
-          contents:
-            - gpts/accessible-python.qmd
-            - gpts/rstudio-helper.qmd
-            - gpts/polish-companion.qmd
-            - gpts/theory-navigator.qmd
-        - section: "**Files, Web, Data**"
-          contents:
-            - gpts/uk-bull-dung.qmd
-            - gpts/kapital-question.qmd
-            - gpts/uk-sdg-insights.qmd
-            - gpts/parser-gpt.qmd
-        - section: "**Additional**"
-          contents:
-            - gpts/spook-school.qmd
-            - gpts/simple-short-email.qmd
-            - gpts/exploring-home.qmd
+            - section: "**Sounding Boards**"
+              contents:
+                - gpts/writing-aid.qmd
+                - gpts/word-phrasing-finder.qmd
+                - gpts/academic-exercises.qmd
+                - gpts/lateral-storms.qmd
+            - section: "**Learning Aids**"
+              contents:
+                - gpts/accessible-python.qmd
+                - gpts/rstudio-helper.qmd
+                - gpts/polish-companion.qmd
+                - gpts/theory-navigator.qmd
+            - section: "**Files, Web, Data**"
+              contents:
+                - gpts/uk-bull-dung.qmd
+                - gpts/kapital-question.qmd
+                - gpts/uk-sdg-insights.qmd
+                - gpts/parser-gpt.qmd
+            - section: "**Additional**"
+              contents:
+                - gpts/spook-school.qmd
+                - gpts/simple-short-email.qmd
+                - gpts/exploring-home.qmd
+
+  page-footer:
+    center:
+      - text: "SGSSS"
+        href: "https://www.sgsss.ac.uk/"
+      - text: " | "
+      - text: "Social"
+        href: "https://social.sgsss.ac.uk/"
+      - text: " | "
+      - text: "{{< iconify fa6-brands bluesky size=1.1em title='Bluesky' >}} Bluesky"
+        href: "https://bsky.app/profile/sgsss.bsky.social"
 
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
+      light: [cosmo, brand, styles/custom.scss]
+      dark: [darkly, brand, styles/custom.scss]
     css: styles.css
     toc: true
 
+custom-callout:
+  experiment:
+    title: "🧪 Experiment"
+    icon: false
+    appearance: "minimal"
+    color: "#3fb618"
+  hype:
+    title: "💩 Smells Like Hype"
+    icon: false
+    appearance: "minimal"
+    color: "#ff7518"
+  consider:
+    title: "🤔 Critical Considerations"
+    icon: false
+    appearance: "minimal"
+    color: "#e83e8c"
 
-
+filters:
+  - custom-callout

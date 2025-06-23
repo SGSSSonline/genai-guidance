@@ -1,33 +1,59 @@
 ---
-title: "GenAI Guidance"
+title: "Critical GenAI Literacies"
 ---
 
-Work in Progress - these additional online materials will continue to be updated following the session.
+## Welcome
 
-**Sounding Boards**
+:::{.callout-note title="Guidance Overview"}
 
-- [Writing Aid](gpts/writing-aid.qmd)
-- [Word and Phrasing Finder](gpts/word-phrasing-finder.qmd)
-- [Academic Exercises in Style](gpts/academic-exercises.qmd)
+These online pages introduce 'critical genAI literacies' as a toolkit for understanding and engaging with generative AI. Just as critical literacies in education and media studies draw on criticla social theory to move beyond surface understanding, critical genAI literacies go beyond merely knowing how to prompt models like ChatGPT or Claude. Instead, critical genAI literacies involves understanding generative AI as technicalogies developed and deployed within existing power relations, and which, in turn, actively shape those relations.
 
-**Learning Aids**
+Key questions for critical genAI literacies include:
 
-- [Accessible Python](gpts/accessible-python.qmd)
-- [RStudio Cloud Helper](gpts/rstudio-helper.qmd)
-- [Polish Companion](gpts/polish-companion.qmd)
-- [Theory Navigator](gpts/theory-navigator.qmd)
+- Who makes these genAI models, and for what purposes?
+- How does genAI (re)produce knowledge and inequalities?
+- What are the ethical, epistemic, and practical considerations for using genAI?
+- Whether, when, and how to use genAI - or not?
 
-**Files, Web, Data**
+These online pages foreground such questions in relation to research and learning within academia. This places particular emphasis on:
 
-- [UK Bull Dung Checker](gpts/uk-bull-dung.qmd)
-- [Kapital Question](gpts/kapital-question.qmd)
-- [UK SDG Insights](gpts/uk-sdg-insights.qmd)
-- [Parser GPT](gpts/parser-gpt.qmd)
+- Ethical and practical risks associated with genAI use.
+- Critical and pragmatic considerations for crafting prompts.
+- Upholding academic values when using genAI tools.
+- Using genAI to support, rather than replace, learning.
 
-**Additional**
+Critical genAI literacies then is about developing a critical understanding of how genAI is developed and deployed, and taking a critical reflexive approach to its use.
 
-- [Spook School Slides](gpts/spook-school.qmd)
-- [Simple Short Email Aid](gpts/simple-short-email.qmd)
-- [Exploring Home](gpts/exploring-home.qmd)
+The main pages are divided into three sections:
 
-[Slides](slides.qmd)
+- **GenAI** (section currently viewing) covers general information on genAI and critical genAI literacies.
+- **[Prompting](prompting.qmd)** covers information on how to prompt genAI.
+- **[GPTs](gpts.qmd)** covers example GPTs I have setup to demonstrate different use-cases.
+
+:::
+
+## Important
+
+::: {.callout-important title="Institutional Guidance"}
+It is vital that any use of generative AI complies with the policies and guidance of your academic institution and funder.
+
+In the social sciences, we often distinguish between institutional ethics and the broader domain of research ethics. Institutional ethics are the formal bureaucratic systems and procedures established by univerities and governing bodies to regulate research involving humans. Compliance with these procedures is required to obtain ethics approval for your research. Research ethics more broadly though involves ongoing reflexive considerations that are not limited to the minimum needed to comply with institutional requirements.
+
+These pages should be treated in the same vein; as a source of critical reflexive considerations to supplement, and not replace, any formal institutional guidance.
+:::
+
+## Callouts
+
+As these pages are fleshed out, callouts highlighting key information will be added. This will include -
+
+::: consider
+Highlighting critical considerations need to make when deciding whether and how to use genAI.
+:::
+
+::: hype
+Flagging ways genAI is hyped that gives false impression of how it works and/or its capabilities.
+:::
+
+::: experiment
+Suggesting things to try yourself - the best way to get a sense of how to best prompt genAI for your own use-cases is through experimenting with different prompts.
+:::
