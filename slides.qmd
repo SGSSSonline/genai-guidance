@@ -1,6 +1,155 @@
 ---
-title: "Slides"
-embed-resources: true
+title: "Critical GenAI Literacies"
+subtitle: "**Ethical, Epistemic, and Practical Considerations**"
+author: "Alasdair B R Stewart"
+format:
+  revealjs:
+    embed-resources: true
+    theme: [default, styles/custom.scss]
+    css: styles.css
+    mermaid:
+      theme: default
 ---
 
-[Link for the slides](https://gla-my.sharepoint.com/:b:/g/personal/alasdair_stewart_glasgow_ac_uk/ETyf4acwpFJBuUXC23mYVGsBSZ3DQN3Ks-OidQ54tKVcRA?e=ynrdnU)
+# Introduction
+
+## Note {.smaller}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+I have setup custom GPTs to illustrate concepts and use cases.
+
+[To use them you only need a **free** ChatGPT account.]{.mark}
+
+- All a custom GPT is is a convenient way to save a specific prompt.
+- The instructions for each are available within the online materials.
+- If you prefer to use another genAI tool, just copy&paste the instructions as the opening prompt in a new chat.
+
+:::
+
+::: {.column width="40%"}
+![](slides/theory-nav-overview.png)
+:::
+
+::::
+
+---
+
+:::{.callout-important title="Important"}
+
+**It is vital that any use of generative AI complies with the policies and guidance of your academic institution and funder.**
+
+What we will cover today is not a replacement to any guidance provided by your institution and/or funder. Instead, it aims to supplement and clarify such guidance with critical reflexive considerations to make when using genAI.
+
+:::
+
+:::{.callout-note title="Note"}
+
+You do not need to pay for genAI tools - and your university will never expect you to pay out of your own pocket for anything required in your programme / courses.
+
+Competition between companies also means most models and core features are available for free - subscriptions usually just buy higher usage limits and some non-essential additional features.
+
+:::
+
+## Critical GenAI Literacies {.smaller}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+**Critical genAI literacies are important for understanding genAI development, impacts, and use-cases.**
+
+- Assumptions and intentions behind genAI development and deployment.
+- Social, political, and economic impacts of genAI.
+- Questions of fairness, justice, and equality.
+- Learning to use genAI [critically]{.mark}, ethically, and effectively.
+- Challenging narratives pushed by the AI hype-machine.
+
+
+
+:::
+
+::: {.column width="40%"}
+![](slides/snake-oil.png)
+:::
+
+::::
+
+## An overview of LLM training {.smaller}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+Vast amounts of data is gathered from the open web, including copyright content without permission and illegal content.
+
+A 'base model' is trained on this data, it  can generate text but not necessarily and consistently in a back-and-forth conversation style.
+
+An 'instruction (aka chat) model' is made through fine-tuning the initial base model on example prompts and responses.
+
+An 'aligned model' is made by further fine-tuning the instrution model and using safe-guard mechanisms to reduce offensive and harmful content in responses.
+
+:::
+
+::: {.column width="40%"}
+
+```{mermaid}
+%%{init: {"themeVariables": {"fontSize":"25px"}}}%%
+flowchart TD
+    A["Training Data"] --> B["Base Model"]
+    B --> C["Instruction-Tuned Model"]
+    C --> D["Aligned Model"]
+    linkStyle 0 stroke-width:4px 
+    linkStyle 1 stroke-width:4px
+    linkStyle 2 stroke-width:4px
+```
+
+:::
+
+::::
+
+---
+
+**The training of genaI is not "data + magic algorithm = AI".**
+
+Humans are involved in creating, collecting, labelling, reviewing, and so on.
+
+Humans also heavily involved in design decisions and choices that influence how genAI models respond...
+
+![](slides/elon-grok.png){fig-align="center"}
+
+## An overview of genAI chat loop {.smaller}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+System instructions are pre-setup when using consumer facing chat interfaces such as ChatGPT, Gemini, and Claude.
+
+System instructions are used for mix of alignment, style, and so on, as well as information on tools available to the LLM (e.g. web browsing).
+
+When given a prompt in a new chat, the system instructions and the prompt are passed to the LLM - alongside any data such as file uploads, 'memories', etc.
+
+The model predicts one word (or more precisely 'token') at a time. After predicting a word, it adds it to the 'context window' - a moving span of text, usually being the system instructions and recent chat history - then predicts the next word from it, and so on.
+
+:::
+
+::: {.column width="40%"}
+```{mermaid}
+%%{init: {"themeVariables": {"fontSize":"25px"}}}%%
+flowchart TD
+  subgraph CW["Context Window"]
+    A[System Instructions] --> B[Chat History + Any Data]
+  end
+
+ CW --> M[LLM]
+ M --> R[Model Response]
+```
+:::
+
+::::
+
+## AI Fallacies
+
+

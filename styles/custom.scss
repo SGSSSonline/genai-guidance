@@ -1,3 +1,14 @@
+/*-- scss:defaults --*/
+
+$callout-color-note: #2780e3;
+$callout-color-tip: #3fb618;
+$callout-color-caution: #f0ad4e;
+$callout-color-warning: #ff7518;
+$callout-color-important: #ff0039;
+$yellow: #ff7518;
+$pink: #e83e8c;
+$green: $callout-color-tip;
+
 /*-- scss:functions --*/
 
 @function softbox-bg($colour, $alpha: 0.08) {

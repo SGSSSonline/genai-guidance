@@ -32,7 +32,9 @@ website:
         text: "GPTs"
 
     right:
-      - slides.qmd
+      - href: slides.qmd
+        text: "Slides"
+        target: _blank
       - about.qmd
 
     logo: brand/whitelogo.png
