@@ -11,7 +11,9 @@ In other words, these GPTs are not setup as exemplars for how you *must* nor *sh
 
 :::
 
-::: {.callout-important title="Important"}
+### Important
+
+::: {.callout-important title="No Paid Account Required"}
 Please note, whilst these GPTs have been setup with ChatGPT you **do not** need to have a paid account to use them. A paid account is required to create custom GPTs, but as with pretty much most paid genAI features this is basically 'convenience' and not 'essential' to have.
 
 At heart a custom GPT is merely a saved reuseable prompt with optional access to certain files pre-setup, alongside other settings. Copying and pasting the instructions into the start of a new chat will effectively recreate the same behaviour.
@@ -48,7 +50,7 @@ Indeed, nor is using ChatGPT to set these up in any way an endorsement of ChatGP
 - [Simple Short Email Aid](gpts/simple-short-email.qmd)
 - [Exploring Home](gpts/exploring-home.qmd)
 
-### Explore Own Use-Cases
+### Explore Use-Cases
 
 ::: experiment
 The full instructions for each GPT is shared to show how it was setup, alongside some 'conversation starters' and general notes on design decisions and limitations. Experiment with tweaking the instructions to tailor them to your use-cases and preferences.
