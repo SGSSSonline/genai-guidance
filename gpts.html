@@ -71,16 +71,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>
-div.callout-experiment.callout {
-  border-left-color: #3fb618;
-}
-div.callout-experiment.callout-style-default > .callout-header {
-  background-color: rgba(63, 182, 24, 0.13);
-}
-div.callout-experiment .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-experiment.callout-style-default .callout-icon::before, div.callout-experiment.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233fb618" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-consider.callout {
   border-left-color: #e83e8c;
 }
@@ -100,6 +90,16 @@ div.callout-hype.callout-style-default > .callout-header {
 div.callout-hype .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
 div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff7518" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
+div.callout-experiment.callout {
+  border-left-color: #3fb618;
+}
+div.callout-experiment.callout-style-default > .callout-header {
+  background-color: rgba(63, 182, 24, 0.13);
+}
+div.callout-experiment .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-experiment.callout-style-default .callout-icon::before, div.callout-experiment.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233fb618" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
 </style>
 
@@ -489,8 +489,9 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#important" id="toc-important" class="nav-link" data-scroll-target="#important">Important</a></li>
   <li><a href="#overview-of-gpts" id="toc-overview-of-gpts" class="nav-link" data-scroll-target="#overview-of-gpts">Overview of GPTs</a></li>
-  <li><a href="#explore-own-use-cases" id="toc-explore-own-use-cases" class="nav-link" data-scroll-target="#explore-own-use-cases">Explore Own Use-Cases</a></li>
+  <li><a href="#explore-use-cases" id="toc-explore-use-cases" class="nav-link" data-scroll-target="#explore-use-cases">Explore Use-Cases</a></li>
   </ul>
 </nav>
     </div>
@@ -533,13 +534,16 @@ Section Overview
 <p>In other words, these GPTs are not setup as exemplars for how you <em>must</em> nor <em>should</em> use genAI in all cases and contexts. Even where you find any useful, over time you will find that experimenting with your own prompts to customise responses to your specific use-cases is the best option. These GPTs are designed to help build a sense of what is possible and share examples of more complex prompts.</p>
 </div>
 </div>
-<div class="callout callout-style-simple callout-important callout-titled" title="Important">
+</section>
+<section id="important" class="level3">
+<h3 class="anchored" data-anchor-id="important">Important</h3>
+<div class="callout callout-style-simple callout-important callout-titled" title="No Paid Account Required">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+No Paid Account Required
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -579,8 +583,8 @@ Important
 <li><a href="./gpts/exploring-home.html">Exploring Home</a></li>
 </ul>
 </section>
-<section id="explore-own-use-cases" class="level3">
-<h3 class="anchored" data-anchor-id="explore-own-use-cases">Explore Own Use-Cases</h3>
+<section id="explore-use-cases" class="level3">
+<h3 class="anchored" data-anchor-id="explore-use-cases">Explore Use-Cases</h3>
 <div class="callout callout-style-simple callout-experiment no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
