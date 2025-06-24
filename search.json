@@ -107,7 +107,7 @@
     "href": "slides.html#critical-genai-literacies",
     "title": "Critical GenAI Literacies",
     "section": "Critical GenAI Literacies",
-    "text": "Critical GenAI Literacies\n\n\nCritical genAI literacies are important for understanding genAI development, impacts, and use-cases.\n\nAssumptions and intentions behind genAI development and deployment.\nSocial, political, and economic impacts of genAI.\nQuestions of fairness, justice, and equality.\nLearning to use genAI critically, ethically, and effectively.\nChallenging narratives pushed by the AI hype-machine."
+    "text": "Critical GenAI Literacies\n\n\nCritical genAI literacies are important for understanding genAI development, impacts, and use-cases.\n\nAssumptions and intentions behind genAI development and deployment.\nSocial, political, and economic impacts of genAI.\nQuestions of fairness, justice, and equality.\nChallenging narratives pushed by the AI hype-machine.\nGoing beyond simple lists of dos and don’ts\nLearning to use genAI critically, ethically, and effectively."
   },
   {
     "objectID": "slides.html#an-overview-of-llm-training",
@@ -121,14 +121,182 @@
     "href": "slides.html#an-overview-of-genai-chat-loop",
     "title": "Critical GenAI Literacies",
     "section": "An overview of genAI chat loop",
-    "text": "An overview of genAI chat loop\n\n\nSystem instructions are pre-setup when using consumer facing chat interfaces such as ChatGPT, Gemini, and Claude.\nSystem instructions are used for mix of alignment, style, and so on, as well as information on tools available to the LLM (e.g. web browsing).\nWhen given a prompt in a new chat, the system instructions and the prompt are passed to the LLM - alongside any data such as file uploads, ‘memories’, etc.\nThe model predicts one word (or more precisely ‘token’) at a time. After predicting a word, it adds it to the ‘context window’ then predicts the next word from it, and so on.\n\n\n\n\n\n\n%%{init: {\"themeVariables\": {\"fontSize\":\"25px\"}}}%%\nflowchart TD\n  subgraph CW[\"Context Window\"]\n    A[System Instructions] --&gt; B[Chat History + Any Data]\n  end\n\n CW --&gt; M[LLM]\n M --&gt; R[Model Response]\n R --&gt; CW"
+    "text": "An overview of genAI chat loop\n\n\nSystem instructions are pre-setup when using consumer facing chat interfaces such as ChatGPT, Gemini, and Claude.\nSystem instructions are used for mix of alignment, style, and so on, as well as information on tools available to the LLM (e.g. web browsing).\nWhen given a prompt in a new chat, the system instructions and the prompt are passed to the LLM - alongside any data such as file uploads, images, etc.\nThe model predicts one word (or more precisely ‘token’) at a time. After predicting each word, it adds it to the ‘context window’ then predicts the next word from it, and so on.\n\n\n\n\n\n\n%%{init: {\"themeVariables\": {\"fontSize\":\"25px\"}}}%%\nflowchart TD\n  subgraph CW[\"Context Window\"]\n    A[System Instructions] --&gt; B[Chat History + Any Data]\n  end\n\n CW --&gt; M[LLM]\n M --&gt; R[Model Response]\n R --&gt; CW"
+  },
+  {
+    "objectID": "slides.html#prompting-101",
+    "href": "slides.html#prompting-101",
+    "title": "Critical GenAI Literacies",
+    "section": "Prompting 101",
+    "text": "Prompting 101\n“Better input, better output”\n“Prompt engineering” is better thought of as “prompt crafting”, there are guidelines can follow, but a lot relies upon experimentation and iteration to gain a sense of how models respond to different prompts.\nThree key aspects to consider -\n\nRole - what role is the genAI taking in the interaction and for what purpose.\nContext - background information, clarifying details, additional explanation, etc.\nOutput - what to include in and how to format responses.\n\nMay need to tweak phrasing and structure of prompts for different genAI models - including models by the same genAI developers. Most genAI companies provide a “prompting guide” for their model."
+  },
+  {
+    "objectID": "slides.html#prompting-201",
+    "href": "slides.html#prompting-201",
+    "title": "Critical GenAI Literacies",
+    "section": "Prompting 201",
+    "text": "Prompting 201\n“Understand both topic and model”\nThere is a stark difference between “generate an image” and “generate a watercolour picture with inked lines”.\nIn contrast to abstract notions of genAI being “intelligent”, it responds to the particular words and phrasing provided in the prompt that influence the calculations of the next most probable token.\nEffective prompting involves learning how to describe and explain what you want - this requires having at least some rudimentary knowledge of the topic.\nGenAI has heavy defaults it tends to gravitate towards, whether as a result of what is most common within its training data, later fine-tuning, and/or current model limitations.\nCrafting prompts then often involves finding phrasing to prevent - or at least limit - undesired behaviours it tends to default towards."
+  },
+  {
+    "objectID": "slides.html#academic-integrity-authorship",
+    "href": "slides.html#academic-integrity-authorship",
+    "title": "Critical GenAI Literacies",
+    "section": "Academic Integrity & ‘Authorship’",
+    "text": "Academic Integrity & ‘Authorship’\n\n\nIn general, emerging genAI guidelines emphasise:\n\nWork must remain your ‘own effort’.\nAcknowledge any genAI use.\nBe aware of limitations and issues.\nCheck outputs.\n\nGrowing issue of genAI embedded into all software, and in way that does not necessarily provide much control nor retain ‘own voice’.\nGenAI models over-eager to rewrite, presented as supercharged equivalent of spelling & grammar checker, when the changes it makes are highly opinionated.\nHow then to maintain own voice, authorship, and editorial control when using genAI?"
+  },
+  {
+    "objectID": "slides.html#example-writing-feedback-prompt-1",
+    "href": "slides.html#example-writing-feedback-prompt-1",
+    "title": "Critical GenAI Literacies",
+    "section": "Example writing feedback prompt 1",
+    "text": "Example writing feedback prompt 1\nI require assistance revising the following:\n\nA major issue with current genAI models is a design focus on doing tasks for you, which they seem to have been ‘over-trained’ on. You can see the same issue in the ways Apple, Google, and Microsoft are implementing AI into writing and messaging apps - where you can prompt it to write ‘draft’ content or ‘refine’ big chunks of what you have written. There is no feedback or back and forth, writing and editorial choices are delegated to the genAI. This results in everything reading in the same generic genAI style and the extent genAI will gladly and over-eagerly revise text can introduce whole range of issues. Even where all the initial work is your own, if you delete proof-reading and copy-editing solely to genAI it can result in a changes meanings and even citations no longer supporting the points they were cited for as the genAI had misinterpreted the original text and decided to elaborate and add in more info that was not in the cited sources."
+  },
+  {
+    "objectID": "slides.html#default-chatgpt-response-1",
+    "href": "slides.html#default-chatgpt-response-1",
+    "title": "Critical GenAI Literacies",
+    "section": "Default ChatGPT response 1",
+    "text": "Default ChatGPT response 1"
+  },
+  {
+    "objectID": "slides.html#example-writing-feedback-prompt-2",
+    "href": "slides.html#example-writing-feedback-prompt-2",
+    "title": "Critical GenAI Literacies",
+    "section": "Example writing feedback prompt 2",
+    "text": "Example writing feedback prompt 2\nAssess the following paragraph. I require assistance on ensuring it has an appropriate topic sentence and removing any tangential information to ensure conciseness:\n\nA major issue with current genAI models is a design focus on doing tasks for you, which they seem to have been ‘over-trained’ on. You can see the same issue in the ways Apple, Google, and Microsoft are implementing AI into writing and messaging apps - where you can prompt it to write ‘draft’ content or ‘refine’ big chunks of what you have written. There is no feedback or back and forth, writing and editorial choices are delegated to the genAI. This results in everything reading in the same generic genAI style and the extent genAI will gladly and over-eagerly revise text can introduce whole range of issues. Even where all the initial work is your own, if you delete proof-reading and copy-editing solely to genAI it can result in a changes meanings and even citations no longer supporting the points they were cited for as the genAI had misinterpreted the original text and decided to elaborate and add in more info that was not in the cited sources."
+  },
+  {
+    "objectID": "slides.html#default-chatgpt-response-2",
+    "href": "slides.html#default-chatgpt-response-2",
+    "title": "Critical GenAI Literacies",
+    "section": "Default ChatGPT response 2",
+    "text": "Default ChatGPT response 2"
+  },
+  {
+    "objectID": "slides.html#writing-aid---custom-gpt",
+    "href": "slides.html#writing-aid---custom-gpt",
+    "title": "Critical GenAI Literacies",
+    "section": "Writing Aid - Custom GPT",
+    "text": "Writing Aid - Custom GPT"
+  },
+  {
+    "objectID": "slides.html#genai-writing",
+    "href": "slides.html#genai-writing",
+    "title": "Critical GenAI Literacies",
+    "section": "GenAI Writing",
+    "text": "GenAI Writing\n\n\nLearning relevant terms - such as “topic sentence” - is vital for receiving more tailored and specific feedback and examples.\nConsider ways to specific the flow of interaction, steps to follow, and level and form of feedback provided.\nRemember genAI is opinionated in its style and tone, there is a multitude of ways to be ‘formal’ in your writing.\nThough caution - even when finding prompts that vary the style and tone more, it retains clear ‘ChatGPT-isms’.\nBeyond spelling and basic grammar, use it for feedback to make your own edits rather than delegating editorial control."
+  },
+  {
+    "objectID": "slides.html#sounding-boards-1",
+    "href": "slides.html#sounding-boards-1",
+    "title": "Critical GenAI Literacies",
+    "section": "Sounding Boards",
+    "text": "Sounding Boards\nPrompt for feedback rather than auto-corrections:\n\nDescribe what it should and should not do - “Provide feedback, rather than …”\nWith longer prompts may have to repeat what not to do multiple times\n\nPrompt for multiple suggestions and explanations:\n\n“For each identified issue provide four examples for how it may be addressed …”\n“Provide explanations that will help me make my own informed revisions”\n\nPrompt with details on the structure, form, and type of feedback:\n\nA little knowledge goes far in improving quality of responses.\nSpecifying the structure and form of output aids in more consistent responses."
+  },
+  {
+    "objectID": "slides.html#genai-and-learning",
+    "href": "slides.html#genai-and-learning",
+    "title": "Critical GenAI Literacies",
+    "section": "GenAI and Learning",
+    "text": "GenAI and Learning\n\n\nGenAI is over-eager to just directly provide answers / solutions, rather than aid users’ learning. (Though there has been some improvement on this.)\nSadly, and concerningly, see this a lot with apps that claim to support learning / ‘homeworker helpers’.\nWhen prompting on topics open to debate / interpretation, it often defaults to sterile standardised interpretations – particularly with social theory.\nGenAI is useful for elaborating, summarising, rephrasing, providing additional examples, etc.\nHowever, it is incapable of ‘critical thinking’ and its explanations can remain relatively shallow on some topics. It’s good for overviews and quick reminders, but is no replacement for academic texts."
+  },
+  {
+    "objectID": "slides.html#default-chatgpt",
+    "href": "slides.html#default-chatgpt",
+    "title": "Critical GenAI Literacies",
+    "section": "Default ChatGPT",
+    "text": "Default ChatGPT"
+  },
+  {
+    "objectID": "slides.html#rstudio-cloud-helper-gpt",
+    "href": "slides.html#rstudio-cloud-helper-gpt",
+    "title": "Critical GenAI Literacies",
+    "section": "RStudio Cloud Helper GPT",
+    "text": "RStudio Cloud Helper GPT"
+  },
+  {
+    "objectID": "slides.html#default-chatgpt-1",
+    "href": "slides.html#default-chatgpt-1",
+    "title": "Critical GenAI Literacies",
+    "section": "Default ChatGPT",
+    "text": "Default ChatGPT"
+  },
+  {
+    "objectID": "slides.html#theory-navigator-gpt",
+    "href": "slides.html#theory-navigator-gpt",
+    "title": "Critical GenAI Literacies",
+    "section": "Theory Navigator GPT",
+    "text": "Theory Navigator GPT"
+  },
+  {
+    "objectID": "slides.html#learning-aids-1",
+    "href": "slides.html#learning-aids-1",
+    "title": "Critical GenAI Literacies",
+    "section": "Learning Aids",
+    "text": "Learning Aids\nPrompt for how it should help:\n\nWhat role is it taking within the interaction?\nWhat precise areas is it providing support with?\n\nInclude context on existing knowledge and other relevant info:\n\nFor example, if learning a programming language specify any specific packages etc being used.\nShould explanations to tailored for an ‘absolute beginner’ or avoid ‘standardised interpretations’?\n\nSpecify level of information, form of support, and structure for responses:\n\nIf using it to test existing knowledge, what level of information should its responses to wrong answers include?\nAny additional info to provide, steps to follow, things to highlight, etc."
+  },
+  {
+    "objectID": "slides.html#key-issues",
+    "href": "slides.html#key-issues",
+    "title": "Critical GenAI Literacies",
+    "section": "Key Issues",
+    "text": "Key Issues\n\n\n\nWhose data is it anyway?\nExploitation of workers involved in training\nGenAI replacing human workers and worsening working conditions\nSupporting or replacing learning?\nContributing to spread of disinformation\nReproducing and amplifying biases and stereotypes\nFalse impression of genAI capabilities\n\n\n\nClimate impacts\nHallucinations/‘bullshitting’\nUnreliable and inconsistent\nSterile standardised explanations\nDescriptive, lacks “critical thinking”, with limited genuine “synthesis”\nGeneral and broad responses\nObsequious and servile\nPrivacy concerns"
   },
   {
     "objectID": "slides.html#ai-fallacies",
     "href": "slides.html#ai-fallacies",
     "title": "Critical GenAI Literacies",
     "section": "AI Fallacies",
-    "text": "AI Fallacies"
+    "text": "AI Fallacies\nGenAI as View From Nowhere - assumption that AI with the right data and training is route towards objective truth and remove of human bias, based on false notion that data+reason=Truth, whereas genAI is a technology situated and embedded within specific power relations.\nInevitable AI Futures - the presentation of very particular visions of the role genAI will play in the future as inevitable, obscuring the diversity of alternative ways genAI could be developed and deployed, as well as relying upon significant assumptions of future capabilities.\nDoomsday Scenarios - focus upon long-term future risks - often playing on scenarios from science fiction - that detracts from the here and now issues being created by genAI.\nTech Solutionism - the view that social problems will techno-magically be solved once we achieve super-capable AI, regularly used to deflect issues such as energy consumption as AI will somehow magically provide salvation to climate disaster, as if the problem of climate change was a mere technical problem rather than a complex socio-political issue."
+  },
+  {
+    "objectID": "slides.html#knowledge-limits",
+    "href": "slides.html#knowledge-limits",
+    "title": "Critical GenAI Literacies",
+    "section": "Knowledge Limits",
+    "text": "Knowledge Limits\n\n\nGenAI does not have access to the data it was trained on, the model consists of ‘weights’ (numerical values) derived through its training.\nResponses can ‘read well’ but be superficial, lacking details and specifics, and be ‘plausible’ but not correct.\nDefaults to ‘rule of three’ (“the good, the bad, and the ugly”) in general but especially when response covers topic that was not as well represented in its training data. This makes responses on first glance read as encompassing whilst only giving surface level information.\nWith some use-cases then, it can be vital to consider files, web-browsing, and/or data."
+  },
+  {
+    "objectID": "slides.html#files",
+    "href": "slides.html#files",
+    "title": "Critical GenAI Literacies",
+    "section": "Files",
+    "text": "Files\nGenAI is trained on vast corpus of texts. It remains though a statistical approximation of these. Providing a copy of the text can significantly improve results.\nGenAI is opinionated in providing summaries, evaluations, and assessments of texts. Consider how to craft prompts that provide it with guidelines to follow.\nKeep criteria relatively broad - lack of critical thinking and randomness make it too inconsistent at using complex and precise evaluation criteria. (Test re-running the same criteria with same file and can often find it provides different evaluations.)\nPrompt for things like page numbers to make it easier to check information and support your own reading.\n\n\n\n\n\n\nRemember genAI is opinionated, even when it provides a ‘balanced’ overview. It is not a replacement for developing your own interpretation and understanding."
+  },
+  {
+    "objectID": "slides.html#web-search",
+    "href": "slides.html#web-search",
+    "title": "Critical GenAI Literacies",
+    "section": "Web Search",
+    "text": "Web Search\nWeb search is another tool that can aid in improving responses - especially for prompts for newer information not within its training data.\nHowever, there are specific response structures ChatGPT gravitates towards when using web search, making it harder to customise the structure of responses.\nWeb search is not always a good option. With social theory given a lot of texts are behind paywalls and general lack of information on some social theorists within the open web, web search can result in worse responses.\nIt is also a tool that varies considerably across different genAI services. Across updates, ChatGPT’s own web browsing tool went from decent but tended towards using the same websites across responses, to absolutely dire - rarely using more than a few responses per prompt, to reasonably good following a recent update - running multiple searches and incorporating lot more sources in responses.\n\n\n\n\n\n\nDespite being promoted as providing more accurate ‘grounded’ responses, genAI still ‘bullshits’ - it can mix up sources, editorialise, add claims not in sources cited, and so on."
+  },
+  {
+    "objectID": "slides.html#data",
+    "href": "slides.html#data",
+    "title": "Critical GenAI Literacies",
+    "section": "Data",
+    "text": "Data\nGenAI data analysis tools are generally decent for quick and dirty analysis for tables/graphs - though as with all responses, check the code it generated to create the figures.\nGenAI has a bad tendency to fabricate data rather than using the data set provided - often this is due to vague unclear prompts, though on rare occassions it will still occur with more detailed and specific prompts.\nIf wanting analysis that you will run more than once, scripts and data dashboards are far better options to provide reusable and reproducible code and analysis.\n\n\n\n\n\n\nGenAI ‘interpretation’ of data is horrendously speculative, broad-brush, and at times outright bad practice - engaging in practices such as p-hacking.\nIt also has a bad tendency to impose generic notions based more on ‘pop science’ than the actual standards used within specific fields - such as claiming statistical results that are generally considered adequate within the social sciences are poor results."
+  },
+  {
+    "objectID": "slides.html#web-files-data-1",
+    "href": "slides.html#web-files-data-1",
+    "title": "Critical GenAI Literacies",
+    "section": "Web, Files, Data",
+    "text": "Web, Files, Data\nConsider whether and which tools to use:\n\nWeb search useful for general news, whereas files better option with academic questions.\nWeb search can result in worse responses due to the amount of slop online.\n\nProvide details for what it should look for:\n\nBe clear in your prompt to ensure search terms match your aims.\nThis remains important with file uploads as well, genAI can be lazy, picking the first relevant bit of content it finds, ignoring the rest.\n\nSpecify how information should be presented:\n\nIf summarising an article are you wanting ‘background, methods, findings, conclusions’ or something else?\nCan prompt to include quotes and page numbers, how to style figures, etc."
+  },
+  {
+    "objectID": "slides.html#chess-engines",
+    "href": "slides.html#chess-engines",
+    "title": "Critical GenAI Literacies",
+    "section": "Chess Engines",
+    "text": "Chess Engines\n\n\nChess engines were early example of potential of AI - including potential to outperform humans.\nDeep Blue famously defeated the world champion, Kasparov, in 1997.\nStrength over human players continues to grow:\n\nStockfish ELO - 3,643\nMagnus Carlsen ELO - 2,831\n\nAnd yet, despite initial debates about the ‘end of chess’…"
+  },
+  {
+    "objectID": "slides.html#chess-engines-as-tool",
+    "href": "slides.html#chess-engines-as-tool",
+    "title": "Critical GenAI Literacies",
+    "section": "Chess Engines as Tool",
+    "text": "Chess Engines as Tool\n\n\nChess engines became an embedded tool within chess, arguably contributing to its increasing popularity.\nChess engines used for:\n\nGame reviews\nAiding commentary\nAnalysis and prep\nCatching cheaters\n\nTrainers also use chess engines as a tool for creating learning materials, aiding players review their games, etc.\nThis involves a shift from asking ‘can AI outperform a human player’ to ‘how can AI aid human players’."
   },
   {
     "objectID": "index.html",
