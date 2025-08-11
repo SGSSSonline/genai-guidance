@@ -48,7 +48,6 @@ website:
       contents:
         - index.qmd
         - position-statement.qmd
-
     - title: "Prompting"
       style: "docked"
       border: false
@@ -62,6 +61,10 @@ website:
       background: "#1B9D8E"
       contents:
         - gpts.qmd
+        - section: "**Meta**"
+          contents:
+            - gpts/prompt-crafter.qmd
+            - gpts/prompt-kit-builder.qmd
         - section: "**Sounding Boards**"
           contents:
             - gpts/writing-aid.qmd
@@ -73,6 +76,7 @@ website:
             - gpts/accessible-python.qmd
             - gpts/rstudio-helper.qmd
             - gpts/polish-companion.qmd
+            - gpts/linguatune.qmd
             - gpts/theory-navigator.qmd
         - section: "**Files, Web, Data**"
           contents:
