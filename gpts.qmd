@@ -23,6 +23,11 @@ Indeed, nor is using ChatGPT to set these up in any way an endorsement of ChatGP
 
 ### Overview of GPTs
 
+**Meta**
+
+- [Prompt Crafter](gpts/prompt-crafter.qmd)
+- [Prompt Kit Builder](gpts/prompt-kit-builder.qmd)
+
 **Sounding Boards**
 
 - [Writing Aid](gpts/writing-aid.qmd)
@@ -35,6 +40,7 @@ Indeed, nor is using ChatGPT to set these up in any way an endorsement of ChatGP
 - [Accessible Python](gpts/accessible-python.qmd)
 - [RStudio Cloud Helper](gpts/rstudio-helper.qmd)
 - [Polish Companion](gpts/polish-companion.qmd)
+- [LinguaTune](gpts/linguatune.qmd)
 - [Theory Navigator](gpts/theory-navigator.qmd)
 
 **Files, Web, Data**
