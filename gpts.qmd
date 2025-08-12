@@ -31,6 +31,7 @@ Indeed, nor is using ChatGPT to set these up in any way an endorsement of ChatGP
 **Sounding Boards**
 
 - [Writing Aid](gpts/writing-aid.qmd)
+- [LinguaTune](gpts/linguatune.qmd)
 - [Word and Phrasing Finder](gpts/word-phrasing-finder.qmd)
 - [Academic Exercises in Style](gpts/academic-exercises.qmd)
 - [Lateral Storms](gpts/lateral-storms.qmd)
@@ -40,7 +41,6 @@ Indeed, nor is using ChatGPT to set these up in any way an endorsement of ChatGP
 - [Accessible Python](gpts/accessible-python.qmd)
 - [RStudio Cloud Helper](gpts/rstudio-helper.qmd)
 - [Polish Companion](gpts/polish-companion.qmd)
-- [LinguaTune](gpts/linguatune.qmd)
 - [Theory Navigator](gpts/theory-navigator.qmd)
 
 **Files, Web, Data**

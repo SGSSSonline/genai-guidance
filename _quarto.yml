@@ -68,6 +68,7 @@ website:
         - section: "**Sounding Boards**"
           contents:
             - gpts/writing-aid.qmd
+            - gpts/linguatune.qmd
             - gpts/word-phrasing-finder.qmd
             - gpts/academic-exercises.qmd
             - gpts/lateral-storms.qmd
@@ -76,7 +77,6 @@ website:
             - gpts/accessible-python.qmd
             - gpts/rstudio-helper.qmd
             - gpts/polish-companion.qmd
-            - gpts/linguatune.qmd
             - gpts/theory-navigator.qmd
         - section: "**Files, Web, Data**"
           contents:
