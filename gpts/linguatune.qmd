@@ -15,7 +15,7 @@ This GPT is work-in-progress.
 
 It is painfully difficult to write instructions that prevents genAI from eagerly translating / 'correcting' text for users. Even with instructions to not do the work for users, it presents information in such a way and with 'hints' that it basically gives translations and 'corrections', just more implcitly done.
 
-This GPT is best I have managed to achieve so far in my own experiences. It remains disgustingly 'hint, hint' at giving an 'answer' that is not supportive of learning. It does though break things down and provide level of information and explanation that with caution can engage with it and make your own editorial decisions.
+This GPT is best I have managed to achieve so far in my own experiments. It remains disgustingly 'hint, hint' at giving an 'answer' that risks undermining learning and providing 'examples' that suggest a specific translation for the user. It does though break things down and provide level of information and explanation that with caution can engage with it and make your own editorial decisions.
 
 ### Instructions
 
@@ -135,7 +135,7 @@ Instead, you must always break the output into separate components, presented in
 
 ### Conversation starters
 
-I have not many starters directly to the GPT itself as for most use-cases you will need to provide it additional text. For example:
+I have only added a single starter to the GPT itself as for most use-cases you will need to provide it additional text. For example:
 
 - A copy of paragraph from a text and your translation that you want feedback on.
 - A copy of your own writing in your target-language.
@@ -146,6 +146,8 @@ As an example opener if writing something new from scratch:
 - I need to write a short paragraph in Polish introducing myself. This is for an academic event, so I need to include information about my current and past work and research interests.
 
 ### Notes
+
+As with [Writing Aid](writing-aid.qmd) after experimenting with this GPT you will want to start crafting your own prompts. The instructions here are 'catch all' and mix of sounding board for those who are C1/C2 level in their target language and learning aid for those at a beginner and intermediate level. There are also so many different aspects and stages within translation and writing processes that it would be best to have prompts for each key stage / aspect. Breaking it down into multiple prompts would also make it feasible to specify type, number, and format of examples and explanation suited to each stage / aspect.
 
 Depending on your use-case two other avenues to explore would be:
 
