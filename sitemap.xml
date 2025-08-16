@@ -2,106 +2,110 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/resouces.html</loc>
-    <lastmod>2025-08-16T12:06:42.009Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.048Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/prompting.html</loc>
-    <lastmod>2025-08-16T12:06:42.009Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.048Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/about.html</loc>
-    <lastmod>2025-08-16T12:06:41.986Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.025Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts/prompt-crafter.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts/academic-exercises.html</loc>
-    <lastmod>2025-08-16T12:06:41.999Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.037Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts/air-supply-not-found.html</loc>
-    <lastmod>2025-08-16T12:06:41.999Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.037Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts/word-phrasing-finder.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/rstudio-helper.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/parser-gpt.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/polish-companion.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/lateral-storms.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/spook-school.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/slides.html</loc>
-    <lastmod>2025-08-16T12:06:42.009Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/position-statement.html</loc>
-    <lastmod>2025-08-16T12:06:42.009Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/uk-bull-dung.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/writing-aid.html</loc>
-    <lastmod>2025-08-16T12:06:42.009Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/accessible-python.html</loc>
-    <lastmod>2025-08-16T12:06:41.999Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/theory-navigator.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
-  </url>
-  <url>
-    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/uk-sdg-insights.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts/prompt-kit-builder.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/uk-sdg-insights.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/theory-navigator.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/accessible-python.html</loc>
+    <lastmod>2025-08-16T16:13:01.037Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/writing-aid.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/uk-bull-dung.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/position-statement.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/slides.html</loc>
+    <lastmod>2025-08-16T16:13:01.048Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/spook-school.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/lateral-storms.html</loc>
+    <lastmod>2025-08-16T16:13:01.046Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/polish-companion.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/parser-gpt.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/rstudio-helper.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://SGSSSonline.github.io/genai-guidance/gpts/textual-trouble.html</loc>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts/kapital-question.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.046Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts/simple-short-email.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts/linguatune.html</loc>
-    <lastmod>2025-08-16T12:06:42.008Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts/exploring-home.html</loc>
-    <lastmod>2025-08-16T12:06:41.999Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.037Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/index.html</loc>
-    <lastmod>2025-08-16T12:06:42.009Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.047Z</lastmod>
   </url>
   <url>
     <loc>https://SGSSSonline.github.io/genai-guidance/gpts.html</loc>
-    <lastmod>2025-08-16T12:06:41.998Z</lastmod>
+    <lastmod>2025-08-16T16:13:01.037Z</lastmod>
   </url>
 </urlset>
