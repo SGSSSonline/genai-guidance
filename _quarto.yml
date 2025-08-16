@@ -87,8 +87,9 @@ website:
         - section: "**Additional**"
           contents:
             - gpts/spook-school.qmd
-            - gpts/simple-short-email.qmd
             - gpts/exploring-home.qmd
+            - gpts/textual-trouble.qmd
+            - gpts/simple-short-email.qmd
             - gpts/air-supply-not-found.qmd
 
   page-footer:

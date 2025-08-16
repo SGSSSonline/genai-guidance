@@ -53,8 +53,9 @@ Indeed, nor is using ChatGPT to set these up in any way an endorsement of ChatGP
 **Additional**
 
 - [Spook School Slides](gpts/spook-school.qmd)
-- [Simple Short Email Aid](gpts/simple-short-email.qmd)
 - [Exploring Home](gpts/exploring-home.qmd)
+- [Textual Trouble](gpts/textual-trouble.qmd)
+- [Simple Short Email Aid](gpts/simple-short-email.qmd)
 - [Air Supply Not Found](gpts/air-supply-not-found.qmd)
 
 ### Explore Use-Cases
