@@ -89,6 +89,7 @@ website:
             - gpts/spook-school.qmd
             - gpts/simple-short-email.qmd
             - gpts/exploring-home.qmd
+            - gpts/air-supply-not-found.qmd
 
   page-footer:
     center:
