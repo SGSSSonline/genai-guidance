@@ -2,8 +2,7 @@
 title: Instruction Examples
 fontsize: 20px
 page-layout: full
-toc: true
-toc-location: right
+toc-location: right-body
 ---
 
 ## Writing Aid

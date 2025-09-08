@@ -29,6 +29,9 @@ website:
       - href: slides.qmd
         text: "Slides"
         target: _blank
+      - text: "Events"
+        menu:
+          - instruction-examples.qmd
       - about.qmd
 
     logo: brand/whitelogo.png
