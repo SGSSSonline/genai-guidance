@@ -11,12 +11,6 @@ callout-appearance: simple
 
 website:
   title: "Critical GenAI Literacies"
-  announcement:
-    icon: info-circle
-    dismissable: true
-    content: "**Work in Progress** - these online materials are work in progress and will continue to be updated over the coming months."
-    type: info
-    position: below-navbar
   bread-crumbs: false
   search:
     location: navbar
