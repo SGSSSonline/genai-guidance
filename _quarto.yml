@@ -32,6 +32,9 @@ website:
       - text: "Events"
         menu:
           - instruction-examples.qmd
+          - href: slides/AISymposium/Prompting.qmd
+            text: "Prompting Against the Grain"
+            target: _blank
       - about.qmd
 
     logo: brand/whitelogo.png

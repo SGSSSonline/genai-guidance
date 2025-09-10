@@ -1,0 +1,13 @@
+.small-text {
+  font-size: 0.8em !important;
+}
+
+h1.title {
+  font-size: 2em;
+  color: #4758ab;
+}
+
+p.subtitle {
+  font-size: 1.4em;
+  color: #4758ab;
+}

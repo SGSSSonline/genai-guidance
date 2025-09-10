@@ -1,0 +1,120 @@
+:root {
+  /* 
+     Use the existing variables Quarto exported from Solarized 
+     (like --quarto-scss-export-blue) to efine callout backgrounds. 
+     Adjust if you prefer different colors for each type. 
+  */
+
+  --callout-note-title-bg:      #dae6fb;
+  --callout-note-title-fg:      #586e75; /* or pick a lighter text color */
+
+  --callout-tip-title-bg:       var(--quarto-scss-export-green);
+  --callout-tip-title-fg:       var(--quarto-scss-export-base3);
+
+  --callout-warning-title-bg:   var(--quarto-scss-export-orange);
+  --callout-warning-title-fg:   var(--quarto-scss-export-base3);
+
+  --callout-caution-title-bg:   var(--quarto-scss-export-red);
+  --callout-caution-title-fg:   var(--quarto-scss-export-base3);
+
+  --callout-important-title-bg: var(--quarto-scss-export-magenta);
+  --callout-important-title-fg: var(--quarto-scss-export-base3);
+
+  --callout-example-title-bg:   var(--quarto-scss-export-cyan);
+  --callout-example-title-fg:   var(--quarto-scss-export-base3);
+}
+
+.callout-content > p {
+  margin-top: 0 !important;
+  margin-bottom: 0.3em !important; /* or 0! for no gap at all */
+}
+
+/* 
+   Because these are RevealJS slides, we use .reveal .slides 
+   for higher specificity, ensuring these rules override default styling.
+*/
+
+/* 
+   For each callout type (note, tip, warning, etc.), 
+   we remove all borders except a thick left edge. 
+   We also set the callout body to the same background 
+   as the default title bar. 
+*/
+
+/* NOTE callout */
+.reveal .slides .callout.callout-note {
+  /* No border except thick left edge in the default note color */
+  border: none !important;
+  border-left: 12px solid #268bd2 !important;
+  margin: 1em 0 !important;
+  /* Do NOT set background here—Quarto's default title bar has it. */
+}
+
+.reveal .slides .callout.callout-note .callout-title {
+  /* Override existing 85% opacity */
+  opacity: 1 !important;
+}
+
+/* Force the body/content to match the title bar’s background */
+.reveal .slides .callout.callout-note .callout-body,
+.reveal .slides .callout.callout-note .callout-title,
+.reveal .slides .callout.callout-note .callout-content {
+  background-color: var(--callout-note-title-bg) !important;
+  color: var(--callout-note-title-fg) !important;
+  /* We leave text color & icon color alone to keep defaults. */
+}
+
+/* TIP callout */
+.reveal .slides .callout.callout-tip {
+  border: none !important;
+  border-left: 6px solid var(--callout-tip-title-bg) !important;
+  margin: 1em 0 !important;
+}
+.reveal .slides .callout.callout-tip .callout-body,
+.reveal .slides .callout.callout-tip .callout-content {
+  background-color: var(--callout-tip-title-bg) !important;
+}
+
+/* WARNING callout */
+.reveal .slides .callout.callout-warning {
+  border: none !important;
+  border-left: 6px solid var(--callout-warning-title-bg) !important;
+  margin: 1em 0 !important;
+}
+.reveal .slides .callout.callout-warning .callout-body,
+.reveal .slides .callout.callout-warning .callout-content {
+  background-color: var(--callout-warning-title-bg) !important;
+}
+
+/* CAUTION callout */
+.reveal .slides .callout.callout-caution {
+  border: none !important;
+  border-left: 6px solid var(--callout-caution-title-bg) !important;
+  margin: 1em 0 !important;
+}
+.reveal .slides .callout.callout-caution .callout-body,
+.reveal .slides .callout.callout-caution .callout-content {
+  background-color: var(--callout-caution-title-bg) !important;
+}
+
+/* IMPORTANT callout */
+.reveal .slides .callout.callout-important {
+  border: none !important;
+  border-left: 6px solid var(--callout-important-title-bg) !important;
+  margin: 1em 0 !important;
+}
+.reveal .slides .callout.callout-important .callout-body,
+.reveal .slides .callout.callout-important .callout-content {
+  background-color: var(--callout-important-title-bg) !important;
+}
+
+/* EXAMPLE callout */
+.reveal .slides .callout.callout-example {
+  border: none !important;
+  border-left: 6px solid var(--callout-example-title-bg) !important;
+  margin: 1em 0 !important;
+}
+.reveal .slides .callout.callout-example .callout-body,
+.reveal .slides .callout.callout-example .callout-content {
+  background-color: var(--callout-example-title-bg) !important;
+}

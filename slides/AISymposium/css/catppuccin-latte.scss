@@ -1,0 +1,72 @@
+/**
+ * ADD CATPPUCCIN INFO HERE
+ */
+
+/*-- scss:defaults --*/
+
+// Include theme-specific fonts
+@import url(./fonts/league-gothic/league-gothic.css);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+
+
+// Include catppuccin css
+@import url('https://unpkg.com/@catppuccin/palette/css/catppuccin.css');
+
+// Catppuccin latte colors
+$latte-rosewater: var(--ctp-latte-rosewater);
+$latte-flamingo: var(--ctp-latte-flamingo);
+$latte-pink: var(--ctp-latte-pink);
+$latte-mauve: var(--ctp-latte-mauve);
+$latte-red: var(--ctp-latte-red);
+$latte-maroon: var(--ctp-latte-maroon);
+$latte-peach: var(--ctp-latte-peach);
+$latte-yellow: var(--cpt-latte-yellow);
+$latte-green: var(--ctp-latte-green);
+$latte-teal: var(--ctp-latte-teal);
+$latte-sky: var(--ctp-latte-sky);
+$latte-sapphire: var(--ctp-latte-sapphire);
+$latte-blue: var(--ctp-latte-blue);
+$latte-lavender: var(--ctp-latte-lavender);
+$latte-text: var(--ctp-latte-text);
+$latte-subtext1: var(--ctp-latte-subtext1);
+$latte-subtext0: var(--ctp-latte-subtext0);
+$latte-overlay2: var(--ctp-latte-overlay2);
+$latte-overlay1: var(--ctp-latte-overlay1);
+$latte-overlay0: var(--ctp-latte-overlay0);
+$latte-surface2: var(--ctp-latte-surface2);
+$latte-surface1: var(--ctp-latte-surface1);
+$latte-surface0: var(--ctp-latte-surface0);
+$latte-base: var(--ctp-latte-base);
+$latte-mantle: var(--ctp-latte-mantle);
+$latte-crust: var(--ctp-latte-crust);
+
+// Add sections for other colours
+
+// Override theme settings
+// Colours
+$body-color: $base00 !default;
+$presentation-heading-color: $base01 !default;
+$presentation-heading-text-transform: uppercase !default; // from settings.scss
+$presentation-heading-text-shadow: none !default;
+$presentation-heading-font-weight: normal !default;
+$body-bg: $base3 !default;
+$link-color: $blue !default;
+$selection-bg: $magenta !default;
+
+// Need to figure out what these are
+$overlayElementBgColor: 0, 0, 0 !default;
+$overlayElementFgColor: 240, 240, 240 !default;
+
+// Typography
+$font-family-sans-serif: Lato, sans-serif !default;
+$presentation-heading-font: "League Gothic", sans-serif !default; // from settings.scss
+
+// code blocks
+$code-block-border-color: $base1  !default;
+
+/*-- scss:rules --*/
+
+html * {
+  color-profile: sRGB;
+  rendering-intent: auto;
+}
