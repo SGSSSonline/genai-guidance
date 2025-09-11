@@ -10,6 +10,12 @@ title: "Writing Aid"
 
 Most LLMs seem to be over eager to rewrite text rather than provide feedback. Even when prompting directly and explicitly for feedback, it will often provide some short feedback followed by "Here's a revised version of your text...". **Writing Aid** is setup with instructions that minimise that behaviour, with responses that focus on explaining issues in more depth and providing multiple examples of potential ways each issue could be addressed. This aids users in making their own revisions and editorial decisions.
 
+::: {.callout-note}
+
+See [Notes](writing-aid.qmd#notes) below for important limitations with this GPT. Given all the nonsense about using AI for writing and proofreading, please ensure to read the important callout at the top of the Notes section.
+
+:::
+
 ### Instructions
 
 ::: instructions
@@ -84,6 +90,24 @@ Four simple ones have been setup to test main functionality:
 It's possible though to just paste the text you want to review between quotations marks and hit enter.
 
 ### Notes
+
+::: {.callout-important}
+
+There are issues with this GPT, but most of these are very much issues when using genAI in general. The main difference is you may not as easily spot these issues when letting genAI rewrite paragraphs of your text at a time. In my experience,  genAI and genAI tools that 'auto-polish' writing often end up making it on the surface look better but actually make the text significantly worse. They tend to sterilise the writing, make assumptions about what you intended to say, modify claims, add inaccuracies, and push bad practices - such as insisting on [false balance](https://en.wikipedia.org/wiki/False_balance).
+
+This GPT retains the overarching genAI writing issue in that what it considers issues and fixes are **highly** opinionated. There is no objectively 'best' form of writing. What is good writing is subjective, and that includes what is good academic writing. Treat what this GPT provides very much as 'advice' - including as advice that can be ignored where you disagree with it. Also, where you disagree, consider what it is that you disagree with. I often disagree with advice from genAI, but that act of thinking "OK I can see why it is flagging this as an issue, but I disagree with the reason it is giving for why it is an issue because ..." helps me find what it is I actually want to change in my revisions.
+
+GenAI writing lacks subtlety and can be overly blunt and clumsy in the examples it provides. For instance, if you prompt it to make a comparison between two books, it can overemphasize differences in way that lacks any nuance and misrepresents the texts. With writing advice it can tend towards advice that is more caricature than good style. However, even caricature can be insightful in identifying elements of a style or technique, as long as you maintain awareness that it is a caricature. Creative writing exercises can involve first writing in caricature of the style you are wanting to emulate before then going back through and toning it down. This translates well to other forms of writing. If you struggle with writing formal emails first try writing an over the top "To whom it may concern ..." draft and then go back through toning it down and making it less ridiculous. Overtime you'll find you will get a sense of the style and become able to write without needing the initial caricature.
+
+GenAI will find issues in writing because it's been asked to look for issues. Remember it's not actually "intelligent", but a pattern matching machine. Prompt it to generate a paragraph on something like "the benefits of walking", then copy the paragraph and start a new chat. In the new chat prompt it "Assess the clarity of the below paragraph and provide a revised version:" and paste the text. Repeat. Newer models will say whether the paragraph is already clear (which, again, remember is subjective), but still tend towards offering endless 'small refinements' and ways to 'sharpen the text even further'.
+
+Related to the above, as it has instructions to make various checks it will sometimes claim there are issues that are not there or by being overly blunt in how it is interpreting the instructions. For example, I have had it claim a sentence was not adequately paraphrased despite it not having access to the original text I was citing. It will at times also claim qualifiers about the strength of evidence should be added to claims that do not need them. GenAI in general also has habit of providing bad advice about 'adding balance' to avoid 'potential bias' that results in 'false balance' not based on evidence and is best ignored.
+
+Consider ways you can avoid becoming dependent upon genAI over time. GenAI tools that 'auto-polish' writing may at first feel like they are improving your writing and saving time, but they are incredibly disempowering. It enforces a specific genAI mediated style upon your writing, and does not help you develop your own sense of style and proofreading skills. Once you learn how to spot genAI writing traits, the style these tools enforce on your writing becomes far less impressive than it first seems. I am dyslexic and use various tools to help me, including genAI, but in way where I maintain control over my writing. (I will eventually cover the other tools in a 'genAI alternatives' section to this guidance.)
+
+Whilst this GPT mostly works, sometimes for no obvious reason it becomes overly restrictive in what it considers an adequate 'fix' for a given issue. Sometimes you will simply need to start a new chat. Other times it will become bad for a day or two then miraculously become decent again. Occassionally the issues persist where I end up needing to tweak and modify the instructions. This is unavoidable given how even small changes to the system instructions or underlying model can significantly impact how it responds to the same set of instructions. Over time, you will find it best to develop your own prompts focusing on different aspects of writing rather than using a 'catch all' prompt like the instructions here. These will also be easier for yourself to modify as needed whenever an underlying change results in genAI no longer following your existing prompts well.
+
+:::
 
 This GPT is one that after experimenting with it you will want to start crafting your own prompts. The 'lump it all together' Coverage section and interaction flow applied to all issues aside from spelling and basic grammar while giving sense of what is possible lacks flexibility. With outlines and paragraph structure it can be more helpful to setup a back-and-forth, clarifying purpose and elaborating on aspects you are unsure about, though still setting up rules around not rewriting and using multiple examples with explanations.
 
