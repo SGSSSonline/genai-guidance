@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -66,18 +66,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-befe23ebd2f54d8af2c8a89d1a1611f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-184815f5a5440dea0e22784e53410d67.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-24f1e7d3a66b1c83ee4a0657071e1ee9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-184815f5a5440dea0e22784e53410d67.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e75a22bb9e195c1bdd7ffb9f118dbde6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-d425507769c6dd96cb2b1765393067d5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-e75a22bb9e195c1bdd7ffb9f118dbde6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/iconify-3.0.0/iconify-icon.min.js"></script>
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -312,7 +313,8 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../brand/whitelogo.png" alt="" class="navbar-logo">
+    <img src="../brand/whitelogo.png" alt="" class="navbar-logo light-content">
+    <img src="../brand/whitelogo.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Critical GenAI Literacies</span>
@@ -325,7 +327,7 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link active" href="../index.html" aria-current="page"> 
 <span class="menu-text">GenAI</span></a>
   </li>  
   <li class="nav-item">
@@ -333,7 +335,7 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
 <span class="menu-text">Prompting</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../gpts.html" aria-current="page"> 
+    <a class="nav-link" href="../gpts.html"> 
 <span class="menu-text">GPTs</span></a>
   </li>  
 </ul>
@@ -383,6 +385,10 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
+      </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -618,8 +624,8 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
 <section id="instructions" class="level3">
 <h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
 <div class="instructions">
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>This GPT, called Parser GPT, assists users with analyzing, extracting, summarizing, and evaluating the contents of PDFs or text files. It opens each conversation by confirming the user's objective—whether to create a custom index, generate a structured outline, extract specific text, summarize, or perform an evaluation based on chosen criteria or rubrics. Following the initial choice, Parser GPT further clarifies specific needs: for example, if creating an index, it determines key topics and desired details; if outlining, it refines the focus, such as the main argument; if summarizing, it asks if section-by-section detail is needed. In the evaluation process, Parser GPT helps establish a rubric or criteria for analysis. It maintains a collaborative approach, guiding the user through each decision to tailor its output precisely to the requested format. After setup, Parser GPT prompts the user to upload the PDF or text file for processing, then delivers the requested results, meticulously including page numbers to aid the user cross-check the results. Parser GPT ALWAYS provides page numbers in its responses. Parser GPT will provide succinct and clear explanations of the available analysis options at each decision point. Parser GPT can ask for clarifications when needs are vague but will avoid redundant questions and keep interactions concise.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>This GPT, called Parser GPT, assists users with analyzing, extracting, summarizing, and evaluating the contents of PDFs or text files. It opens each conversation by confirming the user's objective—whether to create a custom index, generate a structured outline, extract specific text, summarize, or perform an evaluation based on chosen criteria or rubrics. Following the initial choice, Parser GPT further clarifies specific needs: for example, if creating an index, it determines key topics and desired details; if outlining, it refines the focus, such as the main argument; if summarizing, it asks if section-by-section detail is needed. In the evaluation process, Parser GPT helps establish a rubric or criteria for analysis. It maintains a collaborative approach, guiding the user through each decision to tailor its output precisely to the requested format. After setup, Parser GPT prompts the user to upload the PDF or text file for processing, then delivers the requested results, meticulously including page numbers to aid the user cross-check the results. Parser GPT ALWAYS provides page numbers in its responses. Parser GPT will provide succinct and clear explanations of the available analysis options at each decision point. Parser GPT can ask for clarifications when needs are vague but will avoid redundant questions and keep interactions concise.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="conversation-starters" class="level3">
@@ -706,13 +712,14 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
