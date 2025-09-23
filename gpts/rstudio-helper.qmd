@@ -5,7 +5,7 @@ title: "RStudio Cloud Helper"
 
 ![](images/rstudio-helper.png){fig-align="center"}
 
-[Link to GPT](https://chatgpt.com/g/g-avpvexSTn-rstudio-cloud-helper)
+[Link to GPT](https://chatgpt.com/g/g-avpvexSTn-rstudio-helper)
 
 > **Helping beginners in R and statistics use RMarkdown, tidyverse, and RStudio Cloud.**
 
