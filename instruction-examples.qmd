@@ -1,5 +1,6 @@
 ---
-title: Instruction Examples
+title: "UofG GenAI Symposium: CoSS Breakout"
+subtitle: "Instruction Examples"
 fontsize: 20px
 page-layout: full
 toc-location: right-body

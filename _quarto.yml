@@ -26,15 +26,19 @@ website:
         text: "GPTs"
 
     right:
-      - href: slides.qmd
-        text: "Slides"
-        target: _blank
-      - text: "Events"
+      - text: "Slides"
         menu:
-          - instruction-examples.qmd
+          - href: slides/sgsss-core.qmd
+            text: "SGSSS Core 08/10/25"
           - href: slides/AISymposium/Prompting.qmd
             text: "Prompting Against the Grain"
             target: _blank
+          - href: slides.qmd
+            text: "SGSSS Summer School 2025"
+            target: _blank
+      - text: "Events"
+        menu:
+          - instruction-examples.qmd
       - about.qmd
 
     logo: brand/whitelogo.png
