@@ -20,14 +20,14 @@ website:
     left:
       - href: index.qmd
         text: "GenAI"
-      - href: prompting.qmd
-        text: "Prompting"
       - href: gpts.qmd
         text: "GPTs"
 
     right:
       - text: "Slides"
         menu:
+          - href: slides/age-of-ai.qmd
+            text: "Social Science in the Age of AI"
           - href: slides/sgsss-core.qmd
             text: "SGSSS Core 08/10/25"
           - href: slides/AISymposium/Prompting.qmd
@@ -51,13 +51,6 @@ website:
       background: "#1B9D8E"
       contents:
         - index.qmd
-        - position-statement.qmd
-    - title: "Prompting"
-      style: "docked"
-      border: false
-      background: "#1B9D8E"
-      contents:
-        - prompting.qmd
 
     - title: "GPTs"
       style: "docked"

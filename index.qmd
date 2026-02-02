@@ -24,10 +24,8 @@ These online pages foreground such questions in relation to research and learnin
 
 Critical genAI literacies then is about developing a critical understanding of how genAI is developed and deployed, and taking a critical reflexive approach to its use.
 
-The main pages are divided into three sections:
+These pages are living documents will be expanded over time. At present the first main section is available:
 
-- **GenAI** (section currently viewing) covers general information on genAI and critical genAI literacies.
-- **[Prompting](prompting.qmd)** covers information on how to prompt genAI.
 - **[GPTs](gpts.qmd)** covers example GPTs I have setup to demonstrate different use-cases.
 
 :::

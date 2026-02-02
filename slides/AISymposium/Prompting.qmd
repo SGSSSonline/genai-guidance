@@ -308,3 +308,4 @@ This is doomed to fail:
 - GenAI nowhere near as capable as AI boosters claim.
 - A universal mediary is impossible and fails to understand genAI as situated technology.
 
+---
