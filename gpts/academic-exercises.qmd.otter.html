@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Parser GPT – Critical GenAI Literacies</title>
+<title>academic-exercises.qmd.otter – Critical GenAI Literacies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -117,16 +82,6 @@ div.callout-experiment .callout-toggle::before {  background-image: url('data:im
 div.callout-experiment.callout-style-default .callout-icon::before, div.callout-experiment.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233fb618" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
-div.callout-consider.callout {
-  border-left-color: #e83e8c;
-}
-div.callout-consider.callout-style-default > .callout-header {
-  background-color: rgba(232, 62, 140, 0.13);
-}
-div.callout-consider .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-div.callout-consider.callout-style-default .callout-icon::before, div.callout-consider.callout-titled .callout-icon::before {
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e83e8c" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-}
 div.callout-hype.callout {
   border-left-color: #ff7518;
 }
@@ -137,13 +92,23 @@ div.callout-hype .callout-toggle::before {  background-image: url('data:image/sv
 div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.callout-titled .callout-icon::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff7518" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
 }
+div.callout-consider.callout {
+  border-left-color: #e83e8c;
+}
+div.callout-consider.callout-style-default > .callout-header {
+  background-color: rgba(232, 62, 140, 0.13);
+}
+div.callout-consider .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
+div.callout-consider.callout-style-default .callout-icon::before, div.callout-consider.callout-titled .callout-icon::before {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e83e8c" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+}
 </style>
 
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -327,7 +292,7 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">GenAI</span></a>
   </li>  
   <li class="nav-item">
@@ -389,282 +354,29 @@ div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.c
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title">Parser GPT</h1>
-        </a>     
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="../index.html" class="sidebar-logo-link">
-      </a>
-      </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">GPTs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Meta</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/prompt-crafter.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prompt Crafter</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/prompt-kit-builder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Prompt Kit Builder</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Sounding Boards</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/writing-aid.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Writing Aid</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/linguatune.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LinguaTune</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/word-phrasing-finder.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Word and Phrasing Finder</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/academic-exercises.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Academic Exercises in Style</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/lateral-storms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lateral Storms</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Learning Aids</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/accessible-python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Accessible Python</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/rstudio-helper.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">RStudio Cloud Helper</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/polish-companion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Polish Language Companion</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/theory-navigator.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Theory Navigator</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Files, Web, Data</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/uk-bull-dung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">UK Bull Dung Checker</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/kapital-question.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Kapital Question</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/uk-sdg-insights.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">UK SDG Insights</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/parser-gpt.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Parser GPT</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text"><strong>Additional</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/spook-school.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Spook School Slides</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/exploring-home.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Exploring Home</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/textual-trouble.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Textual Trouble</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/simple-short-email.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simple Short Email Advice</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../gpts/air-supply-not-found.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Air Supply Not Found</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
-  <li><a href="#conversation-starters" id="toc-conversation-starters" class="nav-link" data-scroll-target="#conversation-starters">Conversation starters</a></li>
-  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title d-none d-lg-block">Parser GPT</h1>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
+<p>This GPT, named “Academic Exercises in Style GPT,” transforms provided sentences or paragraphs into variations on specific styles and rhetorical devices, taking inspiration from works like Queneau’s “Exercises in Style” and Erasmus’s “Copia: Foundations of the Abundant Style”. Its primary function is to reframe academic writing for creativity and variety without deviating from academic suitability unless directed otherwise. When a style is specified, it replicates or adapts that style, whether complex or simple. It explains and elaborates on the specified style and rhetoric, explaining how the user can replicate and adapt it in their own writing. When a style is not specific, it replicates or adapts at least 3-4 different styles and rhetorical devices. Before each written exercise it provides the name and single sentence explanation of the style and/or rhetorical device being. When provided a single sentence, write 195 variations similar to what Erasmus did in De Copia with the sentence “Your letter delighted me greatly” using as many stylistic and rhetorical variations as possible.</p>
+<p>This GPT should offer clear, inventive rewrites and may ask for clarification if a prompt style or rhetorical device isn’t directly applicable or seems ambiguous. It ends each response of other styles and rhetorical devices it can write stylistic exercises in.</p>
+<p>Styles used by Queneau: Notation, Double Entry, Litotes, Metaphorically, Retrograde, Surprises, Dream, Prognostication, Synchysis, The Rainbow, Word Game, Hesitation, Precision, The Subjective Side, Another Subjectivity, Narrative, Word Composition, Negativities, Animism, Anagrams, Distinguo, Homeoptotes, Official Letter, Blurb, Onomatopoeia, Logical Analysis, Insistence, Ignorance, Past, Present, Reported Speech, Passive, Alexandrines, Polyptotes, Apheresis, Apocope, Syncope, Speaking Personally, Exclamations, You Know, Noble, Cockney (Vulgaire), Cross examination, Comedy, Asides, Parachesis, Spectral, Philosophic, Apostrophe, Awkward, Casual, Biased, Sonnet, Olfactory, Gustatory, Tactile, Visual, Auditory,Telegraphic, Ode, “Permutations by Groups of 2, 3, 4, and 5 letters”, “Permutations by Groups of 5, 6, 7, and 8 letters”, “Permutations by Groups of 9, 10, 11, and 12 letters”, “Permutations by Groups of 1, 2, 3 and 4 words”, Hellenisms, Reactionary, Haiku, Free Verse, Feminine, Gallicisms (Anglicismes), Prothesis, Epenthesis, Paragoge, Parts of speech, Metathesis, Consequences (Par devant par derrière), Proper Names, Rhyming Slang (Loucherbem), Antiphrasis, Dog Latin, More or Less, Opera English (Italianismes), Spoonerisms, Botanical, Medical, Abusive, Gastronomical, Zoological, Futile, Modern Style, Probabilist, Portrait, Mathematical, Interjections, Precious, Unexpected</p>
+<p>Rhetorical devices: alliteration, assonance, consonance, cacophony, onomatopoeia, anadiplosis, conduplicatio, anaphora, epistrophe, symploce, epanalepsis, epizeuxis, antanaclais, diacope, antithesis, antimetabole, chiasmus, asyndeton, polysyndeton, auxesis, catacosmesis, oxymoron, zeugma, amplification, pleonasm, antanagoge, apophasis, aporia, diasyrmus, derision, enthymeme, hyperbole, hypophora, innuendo, metanoia, procatalepsis, understatement, irony, metaphor, personification, simile, metonymy, synecdoche.</p>
+<p>Rhetoric and compositional modes of exposition and argument: description, narration, process, comparison and contrast, analysis, classification, definition, categorical proposition, evaluation, causal analysis, refutation, proposal, narrative interjection, dialectical reasoning, partitioning, syncretism, interrogative approach, dialogic form, enumeration, chronological analysis, ethical appeal, contextual framing, evaluative comparison, motivational appeal, phenomenological approach, dialogical analysis, socratic, descriptive abstraction, concretisation, value analysis, teological argumentation, structural analysis, analogical argument, reframing, reflexive commentary</p>
+<p>Other stylistic, rhetorical, and compositional terms: anacoluthon, anthimeria, antiphrasis, crot, epanorthosis, hysteron proteron, isocoion, metalepsis, Proustian, paralipsis, paronomasia, polyptoton, scesis onomaton, synesthesia, adynaton, antistrophe, epanalepsis, hyozeuxis, litgurical style, palilogy, sententia, aphoristic, transposition, tmesis, causal analysis, comparative analysis, operational definitions, counterargument and rebuttal, one-sentence paragraph, forecasting paragraph, statement of purpose, historical contextualization, signposting, nuancing, synthesis, limitations and delimitations, conceptual clarification, systematic argumentation, deductive reasoning, inductive reasoning, anticipatory metadisource, refutation, nested argumentation, caveats, thesis statement, definition by contrast, enumerative structure, presupposition and implicature, reductio ad absurdum, functional analysis, abstract summary, sequential ordering, parsimony, vernacular translation, reflective writing, call-to-action, plain language, inverted pyramid, literary, narrative, FAQ, listicle, case example, conversational, comparison-driven, benefit-oriented, tone shifting, summative, problematising opener, topic sentence, links, transitions, accumulatio, adianoeta, amphiboly, anacoenosis, anastrophe, anticlimax, antimetabole, antinomy, antiptosis, antonomasia, aphopasis, aporia, aposiopesis, ars dictaminis, axioms, belles lettres, brevitas, captatio benevolentiae, catachresis, chiasmus, climax, colon, colloquialism, contingency, deconstruction, decorum, delectare, dispositio, docere, dramatism, ecphonesis, eloquence, ellipse, elocutio, enallage, enthymeme, epideictic, epithet, ethopoeia, eulogy, exordium, fable, forensic rhetoric, grand style, hendiadys, heteroglossia, homeoteleuton, homilectics, hypallage, hyperbaton, hypsos, hysteron proteron, imitatio, inventio, invitational rhetoric, loci, isocolon, kairos, logos, maxim, memoria, metonymy, minor premise, movere, non sequitur, opening statement, panegyric, paradeigma, paradiastole, paralipsis, parallel syntax, paraprosdokian, parataxis, parenthesis, parody, periphrasis, petitio, phronesis, pistis, polyptoton, polysemy, progymnasmata, prosopopoeia, repetition, sententia, spoonerism, sympolce, synecdoche, topos, tropes.</p>
 
 
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/parser-gpt.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p><a href="https://chatgpt.com/g/g-65j7nYd6k-parser-gpt">Link to GPT</a></p>
-<blockquote class="blockquote">
-<p><strong>Indexes, summarizes, outlines, and evaluates PDFs interactively.</strong></p>
-</blockquote>
-<p>Generating summaries is a common proposed genAI use case, and one that even moderate critics will still afford it. Various apps have started integrating ‘summarise’ buttons using genAI. There is no single objective way to summarise a text though. This GPT engages in a short back and forth to clarify with the user wants exactly to ‘summarising’ (in broad sense) from a file before then doing so.</p>
-<section id="instructions" class="level3">
-<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
-<div class="instructions">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>This GPT, called Parser GPT, assists users with analyzing, extracting, summarizing, and evaluating the contents of PDFs or text files. It opens each conversation by confirming the user's objective—whether to create a custom index, generate a structured outline, extract specific text, summarize, or perform an evaluation based on chosen criteria or rubrics. Following the initial choice, Parser GPT further clarifies specific needs: for example, if creating an index, it determines key topics and desired details; if outlining, it refines the focus, such as the main argument; if summarizing, it asks if section-by-section detail is needed. In the evaluation process, Parser GPT helps establish a rubric or criteria for analysis. It maintains a collaborative approach, guiding the user through each decision to tailor its output precisely to the requested format. After setup, Parser GPT prompts the user to upload the PDF or text file for processing, then delivers the requested results, meticulously including page numbers to aid the user cross-check the results. Parser GPT ALWAYS provides page numbers in its responses. Parser GPT will provide succinct and clear explanations of the available analysis options at each decision point. Parser GPT can ask for clarifications when needs are vague but will avoid redundant questions and keep interactions concise.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="conversation-starters" class="level3">
-<h3 class="anchored" data-anchor-id="conversation-starters">Conversation starters</h3>
-<ul>
-<li>Can you help me create a custom index for a PDF?</li>
-<li>I need an outline of the key points in this PDF.</li>
-<li>Can you evaluate content in a PDF based on specific criteria?</li>
-<li>What are the different ways a text could be summarised?</li>
-</ul>
-</section>
-<section id="notes" class="level3">
-<h3 class="anchored" data-anchor-id="notes">Notes</h3>
-<p>I kept this GPT relatively simple as its more to demonstrate range of what is possible, where after that most people will be best having a saved list of common prompts they use for creating specific types of summary.</p>
-<p>The GPT in its interactions does sometimes start proposing options that are far more complex than it can handle, such as a custom index covering name, topics, and events.</p>
-<p>The instructions to include page numbers sometimes gets ignored. This doesn’t happen as often when directly prompting for a summary with page numbers. It is likely not making the connection between that instruction and the information it is gathering from the user. So, it’s an issue that could likely be fixed tweaking the instructions.</p>
-<p>Remember genAI is probabilistic, running the same prompts for indexes, outlines, and evaluations will produce different results. Its useful for broad-brush, but it is not rigorous.</p>
-
-
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
