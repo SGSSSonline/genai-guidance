@@ -1,12 +1,16 @@
 ---
-title: "Writing Aid"
+title: Writing Aid
+sidebar: gpts
 ---
 
-![](images/writing-aid.png){fig-align="center"}
+
+![](images/writing-aid.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-U81uANV4R-writing-aid)
 
-> **Academic writing aid that supports writers in revising their text rather than rewriting it for them.**
+::: {.gpt-summary}
+**Academic writing aid that supports writers in revising their text rather than rewriting it for them.**
+:::
 
 Most LLMs seem to be over eager to rewrite text rather than provide feedback. Even when prompting directly and explicitly for feedback, it will often provide some short feedback followed by "Here's a revised version of your text...". **Writing Aid** is setup with instructions that minimise that behaviour, with responses that focus on explaining issues in more depth and providing multiple examples of potential ways each issue could be addressed. This aids users in making their own revisions and editorial decisions.
 
@@ -18,7 +22,7 @@ See [Notes](writing-aid.qmd#notes) below for important limitations with this GPT
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 ## Role & Purpose
 

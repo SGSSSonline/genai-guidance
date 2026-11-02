@@ -1,0 +1,145 @@
+/* Site content adjustments; Constellate remains an unchanged dependency. */
+#quarto-header .navbar { --guidance-title-size: clamp(1rem, 3.4vw, 2rem); }
+#quarto-header .navbar-title { font-size: var(--guidance-title-size); }
+#quarto-header .navbar-logo {
+  height: var(--guidance-title-size);
+  max-height: var(--guidance-title-size);
+  width: auto;
+}
+#quarto-header .navbar-brand-logo { display: flex; align-items: center; }
+
+/* Descriptive text, with the restrained inset of a traditional blockquote. */
+.gpt-summary {
+  border-inline-start: .2rem solid var(--bs-primary);
+  padding: .5rem 1rem;
+  margin-block: 1.25rem;
+  color: var(--bs-body-color);
+}
+.gpt-summary > p { margin: 0; }
+
+/* Restore Quarto's fluid navbar container; retain Constellate's other styling. */
+@media (min-width: 992px) {
+  #quarto-header .navbar-container {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin-inline: 0;
+  }
+}
+
+/* Flat navbar-led pages; Constellate currently assumes cards without a sidebar. */
+html:not(:has(meta[name="constellate-layout-article-card"][content="true"])) body:not(:has(#quarto-sidebar.docked)) {
+  --constellate-page-background: var(--surface-base);
+}
+html:not(:has(meta[name="constellate-layout-article-card"][content="true"])) body:not(:has(#quarto-sidebar.docked)) #title-block-header.quarto-title-block:has(.quarto-title-banner) {
+  padding-bottom: 1rem;
+}
+html:not(:has(meta[name="constellate-layout-article-card"][content="true"])) body:not(:has(#quarto-sidebar.docked)) #quarto-content > main#quarto-document-content.quarto-banner-title-block {
+  margin-top: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+/* Literal prompt panels: one background and compact padding, with native copy. */
+div.surface-instructions:has(> .code-copy-outer-scaffold) {
+  padding: .5rem;
+}
+div.surface-instructions > .code-copy-outer-scaffold,
+div.surface-instructions .sourceCode {
+  margin: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+div.surface-instructions pre.sourceCode {
+  padding: .4em;
+  font-size: .95em;
+  white-space: pre-wrap;
+}
+div.surface-instructions pre.sourceCode > code {
+  padding: 0;
+  overflow-wrap: anywhere;
+}
+div.surface-instructions pre.sourceCode > code,
+div.surface-instructions pre.sourceCode > code span {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+
+/* Capture document roles before the navbar's local Bootstrap colour overrides. */
+body {
+  --guidance-menu-ink: var(--bs-body-color);
+  --guidance-menu-active-bg: var(--bs-primary);
+  --guidance-menu-active-ink: var(--bs-body-bg);
+  --guidance-menu-focus: var(--bs-link-hover-color);
+  --guidance-menu-border: var(--bs-border-color);
+}
+/* Navbar menus use the same current-mode palette as Constellate's surfaces. */
+#quarto-header .dropdown-menu {
+  --bs-dropdown-bg: var(--surface-mantle);
+  --bs-dropdown-color: var(--guidance-menu-ink);
+  --bs-dropdown-border-color: var(--guidance-menu-border);
+  --bs-dropdown-link-color: var(--guidance-menu-ink);
+  --bs-dropdown-link-hover-color: var(--guidance-menu-ink);
+  --bs-dropdown-link-hover-bg: var(--surface-surface0);
+  --bs-dropdown-link-active-bg: var(--guidance-menu-active-bg);
+  --bs-dropdown-link-active-color: var(--guidance-menu-active-ink);
+  --bs-dropdown-header-color: var(--guidance-menu-ink);
+  --bs-dropdown-divider-bg: var(--guidance-menu-border);
+  min-width: min(17rem, calc(100vw - 2rem));
+  max-width: min(26rem, calc(100vw - 2rem));
+  padding: .3rem;
+  border-radius: var(--bs-border-radius, .25rem);
+  box-shadow: 0 .3rem .8rem color-mix(in srgb, var(--surface-crust) 70%, transparent);
+}
+#quarto-header .dropdown-menu .dropdown-item {
+  white-space: normal;
+  overflow-wrap: break-word;
+  padding: .45rem .8rem;
+  line-height: 1.35;
+  border-radius: .2rem;
+}
+#quarto-header .dropdown-menu .dropdown-item:focus-visible {
+  outline: 2px solid var(--guidance-menu-focus);
+  outline-offset: -.2rem;
+}
+#quarto-header .dropdown-menu .dropdown-item.active { font-weight: 600; }
+
+/* Original site's right-hand navigation used lighter emphasis than the left. */
+#quarto-header .navbar-nav.ms-auto > .nav-item > .nav-link,
+#quarto-header .navbar-nav.ms-auto > .nav-item > .nav-link .menu-text {
+  font-weight: 400;
+}
+
+/* Use the full existing margin column for navbar-led pages' TOC.
+   Constellate's 80% inset is unnecessarily narrow without a docked sidebar. */
+@media (min-width: 768px) {
+  body:not(:has(#quarto-sidebar)):has(#TOC) #quarto-margin-sidebar nav[role="doc-toc"] {
+    width: 100%;
+    margin-inline: 0;
+  }
+}
+
+/* Quarto moves docked-sidebar page titles into a secondary nav below lg.
+   Keep that title on the group hero colour and remove the empty hero band. */
+@media (max-width: 991.98px) {
+  body:has(#quarto-sidebar.docked):has(#title-block-header .quarto-title-banner) .quarto-secondary-nav {
+    background-color: var(--constellate-hero-background, var(--surface-surface0));
+    color: var(--bs-body-color);
+    border: 0;
+    box-shadow: none;
+  }
+  body:has(#quarto-sidebar.docked):has(#title-block-header .quarto-title-banner) .quarto-secondary-nav > .container-fluid {
+    align-items: center;
+    padding-block: 1rem;
+  }
+  body:has(#quarto-sidebar.docked):has(#title-block-header .quarto-title-banner) .quarto-secondary-nav-title {
+    color: var(--bs-body-color);
+    margin-block: 0;
+  }
+  body:has(#quarto-sidebar.docked):has(.quarto-secondary-nav-title) #title-block-header:has(.title.d-none.d-lg-block):not(:has(.subtitle, .description, .quarto-title-meta-contents, .quarto-categories)) {
+    padding-block: 0;
+  }
+  body:has(#quarto-sidebar.docked):has(.quarto-secondary-nav-title) #title-block-header:not(:has(.subtitle, .description, .quarto-title-meta-contents, .quarto-categories)) .quarto-title-banner {
+    padding-block: 0;
+  }
+}

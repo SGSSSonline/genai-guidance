@@ -1,131 +1,138 @@
 project:
   type: website
   output-dir: docs
-
-brand: brand/_brand.yml
-
+  render:
+  - '*.qmd'
+  - gpts/*.qmd
+  - assorted/*.qmd
+  - slides/**/*.qmd
+  post-render:
+  - python3 _extensions/abers/constellate/scripts/render-slides.py --post-render
 execute:
   freeze: auto
-
 callout-appearance: simple
-
 website:
-  title: "Critical GenAI Literacies"
+  title: Critical GenAI Literacies
   bread-crumbs: false
   search:
     location: navbar
     type: overlay
   navbar:
-    pinned: true
+    pinned: false
     left:
-      - href: index.qmd
-        text: "GenAI"
-      - href: gpts.qmd
-        text: "GPTs"
-
+    - href: index.qmd
+      text: GenAI
+    - href: gpts.qmd
+      text: GPTs
     right:
-      - text: "Slides"
-        menu:
-          - href: slides/age-of-ai.qmd
-            text: "Social Science in the Age of AI"
-          - href: slides/sgsss-core.qmd
-            text: "SGSSS Core 08/10/25"
-          - href: slides/AISymposium/Prompting.qmd
-            text: "Prompting Against the Grain"
-            target: _blank
-          - href: slides.qmd
-            text: "SGSSS Summer School 2025"
-            target: _blank
-      - text: "Events"
-        menu:
-          - instruction-examples.qmd
-      - about.qmd
-
-    logo: brand/whitelogo.png
-    background: "#073B59"
-
+    - text: Slides
+      menu:
+      - href: slides/crit-student-supervisors.qmd
+        text: AI supervisor-student training session
+        target: _blank
+      - href: slides/age-of-ai.qmd
+        text: Social Science in the Age of AI
+        target: _blank
+      - href: slides/sgsss-core.qmd
+        text: SGSSS Core 08/10/25
+        target: _blank
+      - href: slides/AISymposium/Prompting.qmd
+        text: Prompting Against the Grain
+        target: _blank
+      - href: slides.qmd
+        text: SGSSS Summer School 2025
+        target: _blank
+    - text: Events
+      menu:
+      - writing.qmd
+      - instruction-examples.qmd
+    - about.qmd
+    logo:
+      light: assets/solologo.png
+      dark: assets/whitelogo.png
+    logo-alt: SGSSS thistle
   sidebar:
-    - title: "GenAI"
-      style: "docked"
-      border: false
-      background: "#1B9D8E"
+  - title: GPTs
+    style: docked
+    border: false
+    contents:
+    - gpts.qmd
+    - section: '[Meta]{.constell-group-mauve}'
       contents:
-        - index.qmd
-
-    - title: "GPTs"
-      style: "docked"
-      border: false
-      background: "#1B9D8E"
+      - gpts/prompt-crafter.qmd
+      - gpts/prompt-kit-builder.qmd
+    - section: '[Sounding Boards]{.constell-group-pink}'
       contents:
-        - gpts.qmd
-        - section: "**Meta**"
-          contents:
-            - gpts/prompt-crafter.qmd
-            - gpts/prompt-kit-builder.qmd
-        - section: "**Sounding Boards**"
-          contents:
-            - gpts/writing-aid.qmd
-            - gpts/linguatune.qmd
-            - gpts/word-phrasing-finder.qmd
-            - gpts/academic-exercises.qmd
-            - gpts/lateral-storms.qmd
-        - section: "**Learning Aids**"
-          contents:
-            - gpts/accessible-python.qmd
-            - gpts/rstudio-helper.qmd
-            - gpts/polish-companion.qmd
-            - gpts/theory-navigator.qmd
-        - section: "**Files, Web, Data**"
-          contents:
-            - gpts/uk-bull-dung.qmd
-            - gpts/kapital-question.qmd
-            - gpts/uk-sdg-insights.qmd
-            - gpts/parser-gpt.qmd
-        - section: "**Additional**"
-          contents:
-            - gpts/spook-school.qmd
-            - gpts/exploring-home.qmd
-            - gpts/textual-trouble.qmd
-            - gpts/simple-short-email.qmd
-            - gpts/air-supply-not-found.qmd
-
+      - gpts/writing-aid.qmd
+      - gpts/linguatune.qmd
+      - gpts/word-phrasing-finder.qmd
+      - gpts/academic-exercises.qmd
+      - gpts/lateral-storms.qmd
+    - section: '[Learning Aids]{.constell-group-green}'
+      contents:
+      - gpts/accessible-python.qmd
+      - gpts/rstudio-helper.qmd
+      - gpts/polish-companion.qmd
+      - gpts/theory-navigator.qmd
+    - section: '[Files, Web, Data]{.constell-group-sky}'
+      contents:
+      - gpts/uk-bull-dung.qmd
+      - gpts/kapital-question.qmd
+      - gpts/uk-sdg-insights.qmd
+      - gpts/parser-gpt.qmd
+    - section: '[Additional]{.constell-group-peach}'
+      contents:
+      - gpts/spook-school.qmd
+      - gpts/exploring-home.qmd
+      - gpts/textual-trouble.qmd
+      - gpts/simple-short-email.qmd
+      - gpts/air-supply-not-found.qmd
+    collapse-level: 2
+    id: gpts
   page-footer:
     center:
-      - text: "SGSSS"
-        href: "https://www.sgsss.ac.uk/"
-      - text: " | "
-      - text: "Social"
-        href: "https://social.sgsss.ac.uk/"
-      - text: " | "
-      - text: "{{< iconify fa6-brands bluesky size=1.1em title='Bluesky' >}} Bluesky"
-        href: "https://bsky.app/profile/sgsss.bsky.social"
-
+    - text: SGSSS
+      href: https://www.sgsss.ac.uk/
+    - text: ' | '
+    - text: Social
+      href: https://social.sgsss.ac.uk/
+    - text: ' | '
+    - text: '{{< iconify fa6-brands bluesky size=1.1em title=''Bluesky'' >}} Bluesky'
+      href: https://bsky.app/profile/sgsss.bsky.social
 format:
-  html:
-    theme:
-      light: [cosmo, brand, styles/custom.scss]
-      dark: [darkly, brand, styles/custom.scss]
-    css: styles.css
+  constellate-html:
     toc: true
-    code-overflow: wrap
-    code-copy: true
-
-custom-callout:
+    css: styles/site.css
+slides-follow-theme: true
+constellate:
+  layout:
+    article-card: false
+    hero-overlap: sidebar
+    toc-background: surround
+    light-surround: true
+  sidebar:
+    grouped: true
+    hero-colour: true
+    active-group-colour: false
+    collapsed-colour: true
+surfaces:
+  instructions:
+    colour: surface0
+    blend: 50
+  overview:
+    colour: blue
+  guidance:
+    colour: red
+    title: Institutional Guidance
+  access:
+    colour: teal
+    title: No Paid Account Required
   experiment:
-    title: "🧪 Experiment"
-    icon: false
-    appearance: "minimal"
-    color: "#3fb618"
+    colour: green
+    title: 🧪 Experiment
   hype:
-    title: "💩 Smells Like Hype"
-    icon: false
-    appearance: "minimal"
-    color: "#ff7518"
+    colour: peach
+    title: 💩 Smells Like Hype
   consider:
-    title: "🤔 Critical Considerations"
-    icon: false
-    appearance: "minimal"
-    color: "#e83e8c"
-
-filters:
-  - custom-callout
+    colour: red
+    title: 🤔 Critical Considerations

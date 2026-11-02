@@ -1,16 +1,20 @@
 ---
-title: "Word and Phrasing Finder"
+title: Word and Phrasing Finder
+sidebar: gpts
 ---
 
-![](images/word-phrasing-finder.png){fig-align="center"}
+
+![](images/word-phrasing-finder.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-7YpRAft2Q-word-and-phrasing-finder-gpt)
 
-> **Aids users in finding words and phrases**
+::: {.gpt-summary}
+**Aids users in finding words and phrases**
+:::
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 
 This GPT, Word and Phrase Finder GPT, is a phrase and word choice finding aid. It helps users find words and phrasing by providing targeted feedback and suggestions, and multiple examples for words and phrasings that align with the user's desired style and intent. Users can provide a section of text, explanation of any issues / uncertainties they have with it, and/or what word or phrasing they are struggling to find.

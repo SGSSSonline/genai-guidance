@@ -1,0 +1,390 @@
+---
+title: Writing Prompts
+sub-title: AI supervisor-student training session
+sidebar: false
+---
+
+
+
+Below are various medium-sized writing prompts, each structured so can paste the prompt and then paste your own writing at the end. These are designed to give illustration of variations of how genAI can potentially be used beyond the usual short list of 'use-cases'. If you hover over any prompt, you'll see in the top-right a clipboard button can click to copy the prompt in full to your clipboard.
+
+Warning: Due to lack of time, many of these have been written by Claude based on my examples and notes. I have tweaked these to remove some of the most egregious issues, but some of the phrasing remains wanting in places.
+
+However - and as good practice when testing prompts - **experiment with modifying them** to suit the type of writing advice you would find beneficial in your own writing practices.
+
+There are also 'custom GPTs' setup with longer 'catch-all' prompts can experiment with:
+
+**Sounding Boards**
+
+- [Writing Aid](gpts/writing-aid.qmd)
+- [Word and Phrasing Finder](gpts/word-phrasing-finder.qmd)
+- [Academic Exercises in Style](gpts/academic-exercises.qmd)
+- [Lateral Storms](gpts/lateral-storms.qmd)
+
+And non-writing ones as well:
+
+**Learning Aids**
+
+- [Accessible Python](gpts/accessible-python.qmd)
+- [RStudio Cloud Helper](gpts/rstudio-helper.qmd)
+- [Polish Companion](gpts/polish-companion.qmd)
+- [Theory Navigator](gpts/theory-navigator.qmd)
+
+## Brainstorming
+
+### Oblique Strategies
+
+::: {.surface-instructions}
+```markdown
+I'm sharing some free-writing. Act in the spirit of Brian Eno and Peter Schmidt's *Oblique Strategies* deck. Offer me 6-8 gnomic, indirect, slightly mysterious provocations that might shift my angle on this material and 6-8 that are bit more substantial but remain more indirect and creative than a direct prompt. They can be aphorisms, instructions, or evocative phrases - the more substantive can play upon examples and phrasing from my free-writing. They must NOT summarise what I've written, propose theses or arguments for me, or tell me what to write about. Each should create oblique pressure on my thinking by reframing, inverting, displacing, or estranging some aspect of it. After the list, ask which (if any) opened something up, and offer another round
+in a different register if the first didn't land.
+
+Free-writing follows:
+
+[PASTE FREE-WRITING HERE]
+```
+:::
+
+### Socratic
+
+::: {.surface-instructions}
+```markdown
+Read this free-writing as a sympathetic but probing interlocutor. Do three things in order:
+
+1. Identify 4-5 *implicit* claims, assumptions, or moves my writing
+   commits to without stating outright. Name each precisely (e.g.,
+   "implicit naturalism about X", "an unargued contrast between Y and
+   Z", "an undefended value-claim about W").
+2. For each, ask one Socratic question that probes whether the move
+   holds - what would have to be true; what's the strongest contrary
+   position; what's doing the load-bearing work; whose voice is missing.
+3. Stop. Do not answer the questions. Do not tell me what to conclude.
+
+Then invite me to pick one or two questions that feel productive and offer
+to think them through with me in dialogue, with you probing further rather
+than resolving on my behalf.
+
+Free-writing follows:
+
+[PASTE FREE-WRITING HERE]
+```
+:::
+
+### Conceptual topology
+
+::: {.surface-instructions}
+```markdown
+Without proposing ideas or arguments for me, map the implicit conceptual terrain this free-writing inhabits:
+
+Identify the central concept(s) or problem(s) the writing circles. Consider relevant concepts and themes from philosophy, humanities, and social sciences. This should span those directly, indirectly, - or even - tangentially related. (Organise them in that order.)
+
+For each, give a short explanation of why you've placed it there. Do not
+fill the terrain in for me — just map it. After mapping, ask which areas
+feel worth exploring further and offer to deepen the map of those areas
+without populating them within your initial reply.
+
+Free-writing follows:
+
+[PASTE FREE-WRITING HERE]
+```
+:::
+
+### Sympathetic Reader
+
+::: {.surface-instructions}
+```markdown
+Read this as a sympathetic, attentive reader. It's free-writing, so it's unstructured, exploratory, finding its way. Don't treat its lack of polish as something to fix. Don't audit it for cohesion or signposting or argumentative structure — that would be a category mistake. It isn't trying to be a draft.
+
+What I want is the kind of reading a smart, generous colleague would give if I handed them my notebook and asked them to tell me what's in there worth keeping. Tell me what's working. Where does the writing land on a phrase that's pertinent, surprising, doing more than the surrounding prose realises? Quote it and say what you think it's doing. Where does an example or particular or anecdote have portable structure — something that could be lifted out and reused in a quite different context? Flag it. Where do two threads or formulations seem like they could combine into something bigger than either alone, and what might
+the combination open up?
+
+Be appreciative but be substantive. Vague positivity is no use. If a phrase is doing real work, name what work. If two ideas could combine, gesture at what shape the combination might take. If something is reaching for an effect and not quite getting there, you can flag it once, briefly — but the centre of gravity is what's alive in the material, not what's near-missing.
+
+After your reading, ask which of the things you've flagged feels most alive to me, and offer to think through how it could be developed or combined further — without writing the development.
+
+[PASTE FREE-WRITING]
+```
+:::
+
+
+## Writing Construction
+
+### Blog Outline
+
+::: {.surface-instructions}
+```markdown
+Treat my free-writing as starting material for a blog post — not the post, not the outline of the post, but raw material that points toward what a post might do. Similarly, not all the content may end up in a single post so do not force it.
+
+The post should follow this shape: cold opening on a single concrete particular — an anecdote, a specific moment, a vivid case, a piece of sensory detail — held long enough that the reader is *in* it before any framing arrives. Then a turn, sometimes a paragraph, sometimes a single hinge sentence, that opens out from the particular onto the wider issue. Then the broader exploration, which the cold opening has earned.
+
+I want an outline. But the outline must do more than redistribute what the free-writing already contains. Specifically: Identify candidate cold openings from particulars present in the free-writing. If the free-writing is too abstract to supply one, say so
+— and suggest what kind of particular the post would need (without
+inventing one for me).
+
+For the broader exploration, draw on what's in the free-writing but also flag what the post might need that isn't there yet. Be specific. Don't say "needs more examples" — Be concrete about what the absence is and where the filling might come from. Also always make clear various options rather than assuming what the post 'must' do.
+
+Then suggest 2-3 alternative routes the post could take from the same cold opening — different argumentative shapes the same particular could support. For each, name the shape (e.g. "narrowing critique", "ascent to manifesto", "comparative parable", "case-and-counter-case"), and note what I have in the free-writing that could work / be developed along that outline. Do not force content into the outline though.
+
+The free-writing is seed, not script nor the only content that may go into the blog post. The outline should make visible what additional thinking, reading, or example-finding the post would require — that's part of the work outlining does before drafting.
+
+My free-writing:
+
+[PASTE FREE-WRITING]
+```
+:::
+
+### Uneven-U
+
+::: {.surface-instructions}
+```markdown
+Construct 3-4 example paragraphs in uneven-U structure, drawing content from my free-writing. The uneven-U opens with a broad framing claim at the top, descends through narrowing moves into specific concrete particulars at the trough, and ascends back through implications, qualifications, and extensions toward a closing position that is *not* a return to the opening but a transformed version of it. The transformation is the unevenness — the bottom of the U should change what the top of
+the U can mean by the time you climb back up.
+
+Each example paragraph should use a different thread of content from the free-writing, so the form is visible across distinct material.
+
+Underneath each paragraph, sentence by sentence, mark: which level of the U the sentence is operating at (top / descent / trough / ascent / new top), what compositional move it's making (broadening, narrowing, particularising, qualifying, transforming, generalising-from-particular), and how it transitions from the previous sentence's level. Where you have departed from a strict uneven-U — taken liberties with the descent, used multiple sentences at the trough, made the ascent asymmetric — name it and say why.
+
+These are demonstrations of the form, not text I will use. After the set, I'll attempt my own uneven-U from a fresh thread in the free-writing, and you can comment on whether the form holds or where it's drifted.
+
+My free-writing:
+
+[PASTE FREE-WRITING]
+```
+:::
+
+### Halliday Theme/Rheme
+
+::: {.surface-instructions}
+```markdown
+Drawing on Halliday's systemic functional grammar — and Martin's
+extension to text level — construct 3+ example paragraphs from my
+free-writing content, each demonstrating a different **theme progression pattern**. Theme is what the clause is "about" — typically the first constituent, the point of departure for the message. Rheme is what's said about it. Theme progression describes how Themes relate to one another across the clauses of a paragraph.
+
+Example of type of patterns to demonstrate (Daneš, adopted in SFL):
+
+Constant Theme progression — the same Theme persists across successive clauses; the paragraph circles a single point of departure and accretes Rhemes around it. Good for sustained predication on a stable subject.
+
+Linear (zig-zag) Theme progression — the Rheme of one clause becomes the Theme of the next; the paragraph chains forward through derivation, each new clause taking up what the previous one ended on. Good for unfolding consequences, building causal sequences, tracking development.
+
+Derived (split / hyper-Themed) Theme progression — a hyper-Theme
+establishes a category or claim, and successive clause-Themes are
+derived sub-cases or sub-aspects of it (Martin 1992). Good for
+unfolding a typology, an enumeration, or a structured analysis.
+
+Use my free-writing as the source of content, but don't shoehorn the content into a progression that doesn't fit it — if a thread in my free-writing is naturally suited to linear progression, demonstrate it there, and pick different content for constant or derived. The fit between content and pattern is part of what's being shown.
+
+Do not just limit yourself to these, prioritise patterns that work with content already within the free-writing. Be clear in constructing example paragraphs what text is my own and place any content added to demonstrate the paragraph not from my own writing within curly brackets.
+
+For each example paragraph, state which progression pattern you are
+demonstrating, identify the hyper-Theme if present, then set out the paragraph and below it mark Theme | Rheme for each clause (using ‖ to separate them). Beneath that, write a short comment on what the progression does *argumentatively* — what kind of claim it supports, what reader expectations it sets up, what it cannot easily accommodate.
+
+
+[PASTE FREE-WRITING]
+```
+:::
+
+### Eramus Copia
+
+::: {.surface-instructions}
+```markdown
+This is the De Copia exercise. Erasmus generated nearly two hundred
+variations on "Tuae litterae me magnopere delectarunt" / "Your letter delighted me greatly" — not as paraphrases but as an exercise of abundant style across the available dimensions of variation:
+
+— synonymy and lexical register (high / middle / low / Latinate /
+   Anglo-Saxon / vernacular / archaising)
+— tropes (metaphor, metonymy, synecdoche, periphrasis, antonomasia)
+— rhetorical figures (chiasmus, antimetabole, isocolon, anaphora,
+   epistrophe, polyptoton, hyperbaton, correctio, hendiadys,
+   paradiastole)
+— mood (declarative, interrogative, exclamatory, conditional, optative,
+   subjunctive)
+— voice (active / passive / middle), person, tense, aspect
+— hyperbole, litotes, ironic understatement
+— allusion (classical, biblical, mythological, literary, vernacular)
+— speech act (statement, question, exclamation, address, oath,
+   confession, accusation)
+— syntactic shape (periodic, loose, telegraphic, paratactic, hypotactic)
+
+Take the sentence I provide and produce as many genuinely distinct
+variations as you can sustain — aim for 100+, push toward Erasmus's bar. The standard is that each variation must change something structural, rhetorical, or modal about the utterance, not merely substitute words. A weak variation swaps lexis. A strong variation alters what kind of saying the sentence is.
+
+Name and briefly explain the rhetoric and similar used in each variation. Keep this terse and brief, I will ask if want further explanation of the terms.
+
+These are demonstrations of stylistic copia, not sentences I will lift into my writing. After the set, ask which dimension I want to attempt in my own version, and which devices I haven't tried before.
+
+Note: If I page a larger chunk of text below rather than a single sentence, select a particularly pertinent and expressive sentence from it to use as your example.
+
+[PASTE SENTENCE / FRAGMENT FROM FREE-WRITING]
+```
+:::
+
+## Words & Phrasings
+
+### Existing pertinent phrases
+
+::: {.surface-instructions}
+```markdown
+Read my free-writing as a fossicker. Find the phrases that are already doing real work — phrases I might walk past on a re-read because they're embedded in surrounding sentences not yet pulling their weight.
+
+For each (8-12):
+
+Quote it. Just the phrase, minimum length to stand on its own.
+
+Say what it's *doing*. Not "this is good" — what specific work? Naming a tension that's hard to name. Catching a tone of voice. Compressing an argument. Turning a familiar formulation against itself. Be specific.
+
+Note where else in my free-writing the phrase might travel, or — if I've told you about my wider project — where else in that project it could go. Pertinent phrases are rarely tied to where they first appeared.
+
+Don't generate alternatives. The phrase is already working. Make it
+visible.
+
+My free-writing:
+
+[PASTE FREE-WRITING]
+```
+:::
+
+### Concrete examples
+
+::: {.surface-instructions}
+```markdown
+Read my free-writing for its example economy, then push past it.
+
+What concrete examples are already present? Quote each briefly, name what it's an example *of*, and say whether it's functioning as
+illustration, evidence, foil, paradigm case, or hard case. Some
+examples do more than one job.
+
+What examples are latent — places I'm clearly thinking of something
+specific but haven't named it? Quote the gesture, don't supply the
+example, ask me what I had in mind.
+
+What kinds of example aren't in the free-writing that would serve the thinking? Not specific examples (you can't generate those reliably), but kinds: "an historical case at scale would set the dynamic in relief", "a counter-case where the pattern doesn't hold would set its limits", "a contemporary instance from an unrelated domain would defamiliarise the analysis". Specify what each kind of example would need to do and where I might look for it.
+
+My free-writing:
+
+[PASTE FREE-WRITING]
+```
+:::
+
+### More precise word / phrasing
+
+::: {.surface-instructions}
+```markdown
+I have flagged a word or phrase from my free-writing that isn't quite right. I'll tell you what it is, what's around it, and what I'm reaching for that I haven't caught.
+
+Offer 10-12 candidate alternatives. For each: a one-line gloss of
+sense, register, and connotation, and what it commits me to that
+the others don't.
+
+If a single word won't carry the work and I need a phrase, or vice
+versa, say so and offer the alternatives in the form that fits.
+
+(If I have left the word / phrase  and description blank, treat it as a example run of the prompt and pick these for me.)
+
+The word or phrase: [TYPE/PASTE]
+
+What I'm reaching for: [DESCRIBE]
+
+My free-writing: [PASTE]
+```
+:::
+
+
+## Note Processing
+
+### Atomic notes
+
+::: {.surface-instructions}
+```markdown
+I'll share some free-writing. I'm working within a note-making practice based on atomic notes (one idea per note, durable, linkable) plus tags. Treat this as a review-and-suggest pass, not an exhaustive processing.
+
+Three things, in one response:
+
+Atomic note candidates. Identify places where the free-writing
+contains an idea, formulation, or claim that could become an atomic
+note — discrete enough to stand on its own, durable enough to be useful in contexts beyond this piece. For each: quote minimally, suggest a provisional title Don't write the notes.
+
+Tags. Suggest tags that would index this material in a wider note
+system. Tags can be conceptual as well as based on specific abstract and concrete entities.
+
+Onward moves. Briefly flag any candidates that look like they want
+*further work before* becoming atomic notes — formulations that are
+nearly there but still half-cooked, ideas that need a follow-up free-writing pass to crystallise, claims that need a worked example to ground them. Name what kind of work each needs.
+
+If something doesn't fit my note types or my tag scheme, you don't know my full taxonomy — flag where you're guessing and ask me.
+
+[PASTE FREE-WRITING]
+
+```
+:::
+
+### Luhmann-style zettelkasten
+
+::: {.surface-instructions}
+```markdown
+I work with a zettelkasten in something close to Luhmann's style.
+You'll be drafting an example *Folgezettel* sequence — numbered 1, 2, 3, 4 — that demonstrates how my free-writing could open into a chain of atomic notes. Linear sequence only. No branches (1a, 1a1, 2b), since this is a worked example for a single thread, not a model of the kasten's full structure.
+
+Work in Luhmann's actual style, not the popularised version:
+
+— Each zettel is short. Often a single substantive paragraph, occasionally two. Long enough to make a single move, short enough that the move is the whole content. If you're tempted to write three paragraphs, you're packing two zettels into one.
+— Each zettel makes *one* move — an observation, a distinction, an argument-step, a question, a connection, a counter, a refinement The move is the unit, not the topic.
+— Each zettel is a finished thought in its own register. Not a note
+  *about* an idea — a statement of it. Written in the voice of someone who has thought the thing through, not someone collecting raw material.
+— Sequence is *associative*, not hierarchical. The next zettel doesn't develop the previous as a sub-point. It carries the thinking forward by taking up something the previous zettel raised — a term that needs unpacking, an implication worth pursuing, a tension that has surfaced, a counter that needs facing. The relation between consecutive zettels should feel like a continuation of thinking, not a subordination of points.
+
+Draw content from my free-writing. The sequence should make visible
+how a thread in the writing — pick the most generative one if I haven't specified — could be lifted out of its raw context and developed across notes. Use my formulations where they're already doing the work; refine them where they're not yet zettel-ready and place any refined / rephrased text in curly brackets.
+
+Format each zettel as:
+
+[number] [title]
+
+[the zettel itself]
+
+After the sequence, briefly identify two or three places where the
+chain could plausibly have *branched* — points where another move was available that you didn't take. Name what each unwritten branch would have done. This is to make visible that the linear sequence is one walk through a territory, not the territory itself.
+
+These are demonstrations of zettel form and sequence, not notes I will paste into my kasten. I'll write my own from the same thread once I can see how the form works on my material.
+
+My free-writing:
+
+[PASTE FREE-WRITING]
+```
+:::
+
+## Free-Writing Prompts
+
+### Concepts
+
+::: {.surface-instructions}
+```markdown
+Identify 4-6 concepts in my free-writing that are *being used* but
+haven't been *unpacked* — concepts that would benefit from a dedicated
+free-writing session of their own. For each:
+
+- Name the concept and quote minimally where it appears.
+- Suggest a free-writing prompt that opens it up for exploration rather than simply asking me to define it analytically.
+- Note what the concept seems to be doing in the current writing, so I can later check the unpacked version against the in-context use.
+
+My free-writing:
+
+[PASTE FREE-WRITING]
+```
+:::
+
+### Tension-Exploring
+
+::: {.surface-instructions}
+```markdown
+Take the productive tensions in my free-writing (or identify them if I haven't) and turn each into a free-writing seed. For each (aim for 4-6):
+
+- Name the tension precisely.
+- Suggest a free-writing prompt that *enters* the tension rather than necessarily seeking to resolve it. Examples of openings: "Free-write for ten minutes about a moment when X and Y both felt true." "Free-write in the voice of someone who would treat this tension as a non-issue." "Write about a case that sits awkwardly with both sides, and what that reveals."
+- Note what kind of material the prompt is likely to generate (anecdote, conceptual unpacking, voice-finding, foil construction).
+
+My free-writing:
+
+[PASTE FREE-WRITING]
+```
+:::
+

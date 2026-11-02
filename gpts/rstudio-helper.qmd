@@ -1,13 +1,17 @@
 ---
-title: "RStudio Cloud Helper"
+title: RStudio Cloud Helper
+sidebar: gpts
 ---
 
 
-![](images/rstudio-helper.png){fig-align="center"}
+
+![](images/rstudio-helper.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-avpvexSTn-rstudio-helper)
 
-> **Helping beginners in R and statistics use RMarkdown, tidyverse, and RStudio Cloud.**
+::: {.gpt-summary}
+**Helping beginners in R and statistics use RMarkdown, tidyverse, and RStudio Cloud.**
+:::
 
 This GPT aims to address two issues with genAI when learning coding for quantitative data analysis.
 
@@ -19,7 +23,7 @@ To address these issues, this GPT is given some general context about learners a
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 ## Role and General Interaction
 

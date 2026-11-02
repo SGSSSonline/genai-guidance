@@ -1,0 +1,235 @@
+// Quarto Live
+.card.exercise-editor,
+pre > code.sourceCode {
+  --exercise-editor-hl-ot: var(--quarto-hl-ot-color, var(--quarto-hl-op-color));
+}
+
+.webr-ojs-exercise,
+#exercise-loading-indicator,
+.card.exercise-editor {
+  --exercise-gray: #{$ctp-surface2};
+  --exercise-cap-bg: #{mode($ctp-mantle, $ctp-surface0)};
+}
+
+.webr-ojs-exercise:is(.exercise-hint, .exercise-solution):has(> .callout) {
+  border: 0;
+}
+
+.card.exercise-editor {
+  --exercise-line-bg: #{rgba($ctp-lavender, if($dark-mode, 0.08, 0.05))};
+  --exercise-line-gutter-bg: #{rgba($ctp-lavender, if($dark-mode, 0.12, 0.1))};
+
+  .exercise-editor-header.card-header {
+    border-bottom-color: $ctp-surface2;
+  }
+
+  .cm-scroller,
+  .cm-tooltip-autocomplete > ul {
+    font-family: $font-family-monospace;
+  }
+
+  .cm-tooltip {
+    background-color: $ctp-mantle;
+    border-color: $ctp-surface2;
+  }
+
+  .cm-tooltip-autocomplete > ul > li[aria-selected] {
+    background: rgba($ctp-lavender, 0.2);
+    color: $ctp-text;
+  }
+
+  .cm-tooltip-autocomplete-disabled > ul > li[aria-selected] {
+    background-color: $ctp-surface0;
+  }
+
+  .cm-selectionBackground,
+  .cm-editor.cm-focused .cm-scroller .cm-selectionBackground {
+    background-color: rgba($ctp-overlay2, 0.2);
+  }
+
+  .cm-editor.cm-focused {
+    outline: $focus-ring-width solid $constellate-focus-color;
+    outline-offset: -$focus-ring-width;
+  }
+
+  .cm-panels,
+  .cm-foldPlaceholder {
+    background-color: var(--exercise-cap-bg);
+    color: var(--exercise-main-color);
+    border-color: var(--exercise-gray);
+  }
+
+  .cm-textfield {
+    background-color: var(--exercise-code-block-bg);
+    border-color: var(--exercise-gray);
+  }
+
+  .cm-panel input[type="checkbox"] {
+    accent-color: $ctp-lavender;
+  }
+
+  .cm-button {
+    background-image: none;
+    background-color: $ctp-surface0;
+    border-color: $ctp-overlay0;
+    &:hover,
+    &:active {
+      background-color: $ctp-surface1;
+    }
+  }
+
+  :where(.cm-selectionMatch, .cm-searchMatch) {
+    background-color: rgba($ctp-lavender, 0.12);
+  }
+
+  .cm-editor.cm-focused .cm-matchingBracket {
+    background-color: rgba($ctp-lavender, 0.12);
+  }
+
+  .cm-searchMatch-selected {
+    background-color: rgba($ctp-lavender, 0.24);
+  }
+
+  .cm-editor.cm-focused .cm-nonmatchingBracket {
+    background-color: rgba($ctp-red, 0.15);
+  }
+
+  .cm-specialChar {
+    color: $ctp-red;
+  }
+}
+
+.quarto-dark :is(.card.exercise-editor .card-header, .exercise-tab-pane-header) a.btn.btn-outline-dark {
+  --bs-btn-color: #{$ctp-text};
+  --bs-btn-border-color: #{$ctp-text};
+  --bs-btn-hover-color: #{$ctp-mantle};
+  --bs-btn-hover-bg: #{$ctp-text};
+  --bs-btn-hover-border-color: #{$ctp-text};
+  --bs-btn-active-color: #{$ctp-mantle};
+  --bs-btn-active-bg: #{$ctp-text};
+  --bs-btn-active-border-color: #{$ctp-text};
+}
+
+.alert.exercise-grade {
+  --bs-alert-border: 0;
+  --bs-alert-border-radius: #{$constellate-component-radius};
+}
+
+@each $status, $callout in (info: "note", success: "tip", warning: "warning", danger: "important") {
+  $colours: map.get($constellate-callout-colors, $callout);
+  .exercise-grade.alert-#{$status} {
+    --bs-alert-color: #{map.get($colours, "text")};
+    --bs-alert-bg: #{map.get($colours, "body-bg")};
+    --bs-alert-link-color: #{map.get($colours, "link")};
+
+    @include constellate-prose-roles(map.get($colours, "link"), map.get($colours, "visited"), map.get($colours, "hover"));
+
+    a:not(.btn) {
+      @include constellate-prose-states(map.get($colours, "link"), map.get($colours, "visited"), map.get($colours, "hover"), ':hover, :focus-visible');
+    }
+  }
+}
+
+// exams2forms
+.webex-question,
+.webex-solveme,
+.webex-select,
+.webex-radiogroup,
+.webex-checkboxgroup {
+  --incorrect: #{$ctp-red};
+  --incorrect_alpha: #{if($dark-mode, $red-1050, $red-025)};
+  --correct: #{$ctp-green};
+  --correct_alpha: #{if($dark-mode, $green-1050, $green-025)};
+  --highlight: #{$ctp-subtext1};
+  --highlight_alpha: #{mode($ctp-crust, $ctp-surface0)};
+  --background_question: #{$ctp-mantle};
+  --background_input: #{$ctp-base};
+  --text_input: #{$ctp-text};
+}
+
+:is(.webex-question, .webex-radiogroup, .webex-checkboxgroup) {
+  $quiz-links: map.get($constellate-callout-colors, "tip");
+  $link: mode($constellate-link-on-shade, map.get($quiz-links, "link"));
+  $visited: mode($constellate-visited-on-shade, map.get($quiz-links, "visited"));
+  $interaction: mode($constellate-sapphire-on-shade, map.get($quiz-links, "hover"));
+  @include constellate-prose-roles($link, $visited, $interaction);
+
+  a:where(:not(.anchorjs-link, .btn)) {
+    @include constellate-prose-states($link, $visited, $interaction, ':hover, :focus-visible');
+  }
+}
+
+.webex-question .webex-box {
+  border-radius: $constellate-component-radius;
+  border: 0;
+}
+
+.webex-box button.webex-button {
+  border-radius: $constellate-component-radius;
+  border-width: $btn-border-width;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 0;
+  white-space: normal;
+  max-width: 100%;
+}
+
+ul.webex-button-list {
+  gap: $btn-padding-y;
+}
+
+.webex-solveme,
+.webex-select,
+.webex-question input.tolerance {
+  padding-block: $input-padding-y;
+}
+
+.webex-solveme,
+.webex-select {
+  padding-inline: $input-padding-x;
+}
+
+.webex-question .webex-solution {
+  border: 0;
+  &:has(> .callout) {
+    padding: 0;
+  }
+}
+
+.webex-question .webex-filename {
+  font-family: $font-family-monospace;
+  color: $ctp-subtext1;
+}
+
+.webex-question input.tolerance {
+  background-color: $ctp-crust;
+  color: $ctp-text;
+}
+
+:is(.webex-checkboxgroup, .webex-radiogroup) input {
+  @extend .form-check-input;
+}
+
+div.webex-checkboxgroup label > input[type="checkbox"],
+div.webex-radiogroup label > input[type="radio"] {
+  margin-top: 0;
+  top: 0;
+  vertical-align: middle;
+}
+
+:is(.webex-checkboxgroup, .webex-radiogroup)
+  > label:is(.webex-correct, .webex-incorrect) {
+  border-color: transparent;
+}
+
+:is(.card.exercise-editor .cm-textfield,
+    .card.exercise-editor .cm-button,
+    .card.exercise-editor .cm-search button[name="close"],
+    .card.exercise-editor .cm-panel input[type="checkbox"]):focus-visible,
+:is(.webex-solveme, .webex-select):focus,
+.webex-button:focus-visible {
+  outline: 0;
+  box-shadow: $input-focus-box-shadow;
+}

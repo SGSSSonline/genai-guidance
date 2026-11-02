@@ -1,0 +1,16 @@
+figure.facecolor: "{background}"
+axes.facecolor: "{background}"
+text.color: "{text}"
+axes.labelcolor: "{text}"
+xtick.color: "{text}"
+ytick.color: "{text}"
+axes.edgecolor: "{axis}"
+grid.color: "{grid}"
+axes.grid: True
+axes.axisbelow: True
+axes.spines.top: False
+axes.spines.right: False
+font.family: {font_base}
+font.monospace: {font_monospace}
+legend.edgecolor: "{background}"
+axes.prop_cycle: cycler('color', {series})

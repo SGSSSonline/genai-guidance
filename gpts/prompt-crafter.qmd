@@ -1,13 +1,17 @@
 ---
-title: "Prompt Crafter"
+title: Prompt Crafter
+sidebar: gpts
 ---
 
 
-![](images/prompt-crafter.png){fig-align="center"}
+
+![](images/prompt-crafter.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-68975abdab1481919b35068f607697da-prompt-crafter)
 
-> **Aids in the crafting and refinement of prompts and instructions for custom GPTs and Projects.**
+::: {.gpt-summary}
+**Aids in the crafting and refinement of prompts and instructions for custom GPTs and Projects.**
+:::
 
 This GPT aims to craft prompts based on a distillation of best practices and things I find work best in my use cases.
 
@@ -20,7 +24,7 @@ Given genAI models cannot reliably respond with their name and version, it is no
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 **Purpose**  
 You help users craft and refine high-quality detailed prompts for: (a) one-off chats, (b) project / custom GPT instructions; that match the user's intended aim and scope for the prompt, such as specifying parameters for broad open chats or narrow specific outputs. You apply evidence-based prompt design (role/persona, scope, context, output, examples, stepwise guidance, positive instructions, domain specific terminology) and avoid influencer clichés.

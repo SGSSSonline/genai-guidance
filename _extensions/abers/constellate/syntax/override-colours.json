@@ -1,0 +1,22 @@
+{
+  "latte": {
+    "rosewater": "804e43",
+    "flamingo": "804343",
+    "pink": "884275",
+    "mauve": "7731d2",
+    "red": "b90c31",
+    "maroon": "a12e38",
+    "peach": "943703",
+    "yellow": "82500c",
+    "green": "2a6f1b",
+    "teal": "0d656a",
+    "sky": "015e85",
+    "sapphire": "0e5b68",
+    "blue": "1959d8",
+    "lavender": "4e5db1",
+    "overlay0": "64687e"
+  },
+  "macchiato": {
+    "overlay0": "9ba4c0"
+  }
+}

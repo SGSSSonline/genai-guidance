@@ -1,0 +1,534 @@
+/*-- scss:uses --*/
+@use "sass:color";
+
+/*-- scss:functions --*/
+@import "shared/functions";
+
+/*-- scss:defaults --*/
+$constellate-component-paragraph-spacing-scale: 0.75 !default;
+@import "shared/defaults";
+$presentation-heading-color: $ctp-lavender;
+$presentation-heading-font-weight: 700;
+$presentation-title-slide-text-align: left;
+$code-block-font-size: 0.7em;
+$link-color-hover: $ctp-sky;
+$link-decoration: underline;
+$text-muted: $ctp-subtext0;
+$code-block-border-color: $ctp-overlay0;
+$code-bg: $code-block-bg;
+$code-color: $ctp-text;
+$light-bg-text-color: $brand-ctp-latte-text;
+$dark-bg-text-color: $brand-ctp-macchiato-text;
+$light-bg-link-color: $ctp-latte-blue-700;
+$dark-bg-link-color: $brand-ctp-macchiato-blue;
+$light-bg-code-color: $brand-ctp-latte-text;
+$dark-bg-code-color: $brand-ctp-macchiato-text;
+
+/*-- scss:rules --*/
+@import "shared/prose";
+@import "shared/callout-colors";
+@import "shared/components";
+@import "shared/utilities";
+@import "shared/global";
+@import "shared/surfaces";
+
+.reveal :is(.controls button, .jump-to-slide-input):focus-visible {
+  outline: $focus-ring-width solid $constellate-focus-color;
+  outline-offset: $focus-ring-width;
+}
+
+.reveal .speaker-notes {
+  background: $ctp-mantle;
+  color: $ctp-text;
+  font-family: $font-family-base;
+  &::before {
+    color: $ctp-text;
+    opacity: 1;
+  }
+  code {
+    font-family: $font-family-monospace;
+  }
+}
+
+.reveal.overview {
+  background-color: $ctp-crust;
+}
+.reveal.overview .slide-background:not(.title-slide-custom):not(.title-slide) {
+  background-color: $ctp-base;
+}
+.reveal .panel-tabset [role="tab"][aria-selected="true"] {
+  border-bottom-color: $body-bg;
+}
+.reveal .slides .slide {
+  table caption {
+    padding-bottom: 0.35em;
+  }
+  figcaption.quarto-float-caption-top.quarto-float-tbl {
+    margin-bottom: 0.35em;
+  }
+}
+.reveal
+  .cell
+  > :is(.sourceCode, .code-copy-outer-scaffold, details, .cell-output)
+  + .cell-output:has(> pre) {
+  margin-top: 0.35em;
+}
+.reveal
+  .cell
+  > .cell-output:has(> pre)
+  + :is(.sourceCode, .code-copy-outer-scaffold, details) {
+  margin-top: 0.35em;
+}
+.reveal dl.code-annotation-container-grid {
+  font-size: $code-block-font-size;
+  line-height: $presentation-line-height;
+  margin-top: 0.35em;
+  dt {
+    font-size: 0.7em;
+    margin-top: 0.28em;
+  }
+}
+
+@each $name, $ink in (red: $ctp-red, green: $ctp-green, blue: $ctp-blue) {
+  .reveal .slides .fragment.highlight-#{$name}.visible,
+  .reveal .slides .fragment.highlight-current-#{$name}.current-fragment {
+    color: $ink;
+  }
+}
+
+.reveal .slides section.has-light-background {
+  @include constellate-code-roles(
+    $brand-ctp-latte-mantle,
+    $light-bg-code-color,
+    $light-bg-code-color
+  );
+  :where(.panel-tabset [role="tab"]) {
+    @include constellate-code-roles(
+      $brand-ctp-latte-mantle,
+      $light-bg-code-color,
+      $light-bg-code-color
+    );
+  }
+  :is(h1, h2, h3, h4, h5, h6) {
+    color: $ctp-latte-indigo-900;
+  }
+  #{$constellate-prose-anchor}:any-link {
+    color: var(--constellate-prose-link, #{$light-bg-link-color});
+    &:visited {
+      color: var(--constellate-prose-visited, #{$light-bg-link-color});
+    }
+    &:active {
+      color: var(--constellate-prose-interaction, #{$light-bg-link-color});
+    }
+    &:is(:hover, :focus-visible) {
+      color: var(--constellate-prose-interaction, #{$ctp-latte-sapphire-900});
+    }
+  }
+}
+.reveal .slides section.has-dark-background {
+  @include constellate-code-roles(
+    $brand-ctp-macchiato-crust,
+    $dark-bg-code-color,
+    $dark-bg-code-color
+  );
+  :where(.panel-tabset [role="tab"]) {
+    @include constellate-code-roles(
+      $brand-ctp-macchiato-crust,
+      $dark-bg-code-color,
+      $dark-bg-code-color
+    );
+  }
+  :is(h1, h2, h3, h4, h5, h6) {
+    color: $brand-ctp-macchiato-lavender;
+  }
+  #{$constellate-prose-anchor}:any-link {
+    color: var(--constellate-prose-link, #{$dark-bg-link-color});
+    &:visited {
+      color: var(--constellate-prose-visited, #{$dark-bg-link-color});
+    }
+    &:active {
+      color: var(--constellate-prose-interaction, #{$dark-bg-link-color});
+    }
+    &:is(:hover, :focus-visible) {
+      color: var(
+        --constellate-prose-interaction,
+        #{$brand-ctp-macchiato-sapphire}
+      );
+    }
+  }
+}
+.reveal .slides #{$constellate-contextual-prose-anchor} {
+  @include constellate-prose-states($ctp-blue, $ctp-mauve, $ctp-sapphire);
+}
+
+.reveal .slides .slide {
+  @include constellate-components($presentation-block-margin);
+  @include constellate-utilities;
+  div.callout {
+    > .callout-body > .callout-title {
+      p {
+        color: inherit;
+        margin: 0;
+      }
+      p > strong {
+        font-weight: 600;
+      }
+      > .callout-icon-container {
+        display: flex;
+        align-items: center;
+        padding: 0 0.35em 0 0;
+        .callout-icon {
+          display: flex;
+          align-items: center;
+          line-height: 1;
+        }
+      }
+    }
+    > .callout-body > .callout-title .callout-icon::before,
+    > .callout-body > .callout-icon-container .callout-icon::before {
+      display: block;
+      height: 1em;
+      width: 1em;
+      margin: 0;
+      padding: 0;
+      @include constellate-icon-mask;
+    }
+    &.callout-style-default {
+      > .callout-body > .callout-content {
+        padding: calc(0.5em / 0.9) 0.5em;
+      }
+      > .callout-body > .callout-content > :first-child {
+        margin-top: 0;
+      }
+      > .callout-body > .callout-content > :last-child {
+        margin-bottom: 0;
+      }
+      > .callout-body > .callout-content > :first-child:not(.callout) {
+        padding-top: 0;
+      }
+      > .callout-body > .callout-content > :last-child:not(.callout) {
+        padding-bottom: 0;
+      }
+    }
+    &.callout-style-simple {
+      > .callout-body {
+        margin: 0;
+        width: 100%;
+      }
+      > .callout-body > .callout-title {
+        margin-bottom: 0.2em;
+        padding: 0;
+      }
+      > .callout-body > .callout-content {
+        padding: 0;
+      }
+      > .callout-body > .callout-content > :first-child {
+        margin-top: 0;
+      }
+      > .callout-body > .callout-content > :last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+  figure.constellate-quote {
+    --quote-mark-size: 1.2em;
+    width: auto;
+    text-align: left;
+    > blockquote {
+      font-size: inherit;
+    }
+  }
+  #{$constellate-prose-anchor} {
+    &:visited {
+      color: var(--constellate-prose-visited, #{$ctp-mauve});
+    }
+    &:hover {
+      color: var(--constellate-prose-interaction, #{$ctp-sky});
+    }
+  }
+  &.title-slide {
+    h1 {
+      position: relative;
+      padding-bottom: calc(0.4em + 4px);
+      margin-bottom: 0.2em;
+    }
+    h1::after {
+      content: "";
+      position: absolute;
+      inset-inline-start: 0;
+      bottom: 0;
+      display: block;
+      width: 80px;
+      height: 4px;
+      border-radius: 2px;
+      background: $ctp-pink;
+      margin-top: 0em;
+    }
+    > p {
+      font-size: 1.15em;
+      line-height: 1.4;
+    }
+  }
+}
+
+.reveal .slide-background.title-slide-custom,
+.reveal .slide-background.title-slide {
+  background-color: $ctp-mantle;
+}
+
+#title-slide,
+.reveal .slides section.title-slide-custom {
+  .title-slide-inner {
+    max-width: 92%;
+  }
+  .module {
+    color: $ctp-pink;
+    font-family: $presentation-heading-font;
+    font-size: 0.6em;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin: 0 0 0.9em;
+  }
+  h1.title {
+    color: $ctp-lavender;
+    font-size: 1.9em;
+    line-height: 1.15;
+    margin: 0 0 0.35em;
+  }
+  .subtitle {
+    color: $ctp-text;
+    font-family: $presentation-heading-font;
+    font-weight: 400;
+    font-size: 1.15em;
+    line-height: 1.3;
+    margin: 0;
+  }
+  .title-rule {
+    width: 80px;
+    height: 4px;
+    border-radius: 2px;
+    background: $ctp-pink;
+    margin: 0.9em 0 0.7em;
+  }
+  .author {
+    color: $ctp-text;
+    font-family: $presentation-heading-font;
+    font-weight: 600;
+    font-size: 0.85em;
+    margin: 0;
+  }
+  .title-author + .title-author {
+    margin-top: 0.4em;
+  }
+  .title-author a:not([href^="mailto:"]) {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+  .quarto-title-author-orcid img {
+    margin-bottom: 4px;
+  }
+  .institute,
+  .author-role {
+    color: $ctp-text;
+    font-size: 0.65em;
+    margin: 0.3em 0 0;
+  }
+  .schedule {
+    color: $ctp-subtext1;
+    font-family: $presentation-heading-font;
+    font-weight: 600;
+    font-size: 0.65em;
+    margin: 1em 0 0;
+  }
+  .subtitle + .schedule {
+    margin-top: $presentation-font-size-root;
+  }
+  .schedule + .title-rule {
+    margin-top: $presentation-font-size-root * 0.5;
+  }
+}
+@each $kind, $ink,
+  $muted in (light, $light-bg-text-color, $brand-ctp-latte-subtext1),
+  (dark, $dark-bg-text-color, $brand-ctp-macchiato-subtext1)
+{
+  #title-slide[data-background-color].has-#{$kind}-background {
+    :is(h1.title, .subtitle, .author, .institute, .author-role) {
+      color: $ink;
+    }
+    .schedule {
+      color: $muted;
+    }
+  }
+}
+.reveal .progress {
+  color: $ctp-pink;
+  height: 4px;
+}
+
+.reveal .slide .colophon {
+  --identity-logo-height: 200px;
+  &.r-stretch {
+    align-items: center;
+  }
+}
+
+.reveal .slides .closing-credit {
+  text-align: center;
+  font-size: 0.7em;
+  a:any-link {
+    color: $ctp-lavender;
+    font-family: $headings-font-family;
+    &:hover {
+      color: $ctp-sky;
+    }
+  }
+}
+
+@import "shared/visualisation";
+
+@import "revealjs-menu";
+
+.reveal pre.code-annotation-code > code.sourceCode {
+  background-color: transparent;
+}
+
+.reveal #code-annotation-line-highlight,
+.reveal #code-annotation-line-highlight-gutter {
+  background-color: $code-annotation-higlight-bg;
+  border-top-color: $code-annotation-higlight-color;
+  border-bottom-color: $code-annotation-higlight-color;
+}
+
+$annotation-rail: calc(0.7em * 1.2 + 2px + 2 * 9px);
+$annotation-copy-inline-padding: 6px;
+$annotation-copy-width: calc(1rem + 2 * $annotation-copy-inline-padding);
+
+.reveal {
+  .code-copy-outer-scaffold:has(> div.sourceCode > pre.code-annotated)
+    > .code-copy-button {
+    font-size: $revealjs-code-block-font-size;
+    line-height: 1rem;
+    right: $annotation-rail;
+    padding: 1px $annotation-copy-inline-padding;
+  }
+  pre.code-annotated {
+    display: grid;
+    > code.sourceCode {
+      position: static;
+      box-sizing: border-box;
+      width: calc(100% - #{$annotation-rail});
+    }
+    &:not(.numberSource) > code.sourceCode {
+      padding-left: 9px;
+    }
+    .code-annotation-gutter,
+    .code-annotation-gutter-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: $annotation-rail;
+    }
+    code.sourceCode .code-annotation-anchor {
+      position: absolute;
+      right: 9px;
+      box-sizing: content-box;
+      padding: 0;
+      width: 1.2em;
+      height: 1.2em;
+    }
+  }
+  .code-copy-outer-scaffold
+    > div.sourceCode
+    > pre.code-annotated
+    > code.sourceCode {
+    width: calc(100% - #{$annotation-rail} - #{$annotation-copy-width} - 5px);
+  }
+}
+
+.reveal {
+  --surface-canvas: var(--r-background-color, var(--surface-base));
+}
+
+.reveal div.surface {
+  padding: 0.55em;
+  margin-block: 0.65em;
+}
+.reveal
+  .slides
+  section[data-surface-colour]
+  > :has(> .constellate-surface-title, > .constellate-surface-icon) {
+  display: flex;
+  align-items: start;
+  gap: 0.4em;
+  > .constellate-surface-title {
+    min-inline-size: 0;
+  }
+  > .constellate-surface-icon {
+    block-size: 1lh;
+    line-height: inherit;
+    align-items: center;
+    :is(svg, img) {
+      block-size: 1em;
+    }
+  }
+}
+
+.reveal .slides section[data-surface-colour] {
+  @include surface-base-roles;
+  > :is(h1, h2, h3, h4, h5, h6):has(
+      > .constellate-surface-title,
+      > .constellate-surface-icon
+    ) {
+    color: inherit;
+  }
+  @include constellate-code-roles($code-block-bg, $ctp-text);
+}
+
+@each $name, $paint in $surface-paints {
+  .reveal .slides section[data-surface-colour="#{$name}"] {
+    @include surface-role-exceptions($paint);
+  }
+}
+
+@each $background,
+  $roles
+    in (
+      light: (
+          link: $light-bg-link-color,
+          visited: $brand-ctp-latte-mauve,
+          interaction: $ctp-latte-sapphire-900,
+          focus: $ctp-latte-indigo-900,
+        ),
+      dark: (
+          link: $dark-bg-link-color,
+          visited: $brand-ctp-macchiato-mauve,
+          interaction: $brand-ctp-macchiato-sapphire,
+          focus: $brand-ctp-macchiato-lavender,
+        )
+    )
+{
+  .reveal .slides section.slide.has-#{$background}-background {
+    a.linked-icon:any-link {
+      --constellate-prose-interaction: var(
+        --constellate-linked-icon-interaction,
+        #{map-get($roles, interaction)}
+      );
+      @include constellate-prose-states(
+        map-get($roles, link),
+        map-get($roles, visited),
+        map-get($roles, interaction)
+      );
+    }
+    @media (forced-colors: none) {
+      :is(a.linked-icon, #{$constellate-prose-anchor}):any-link:focus-visible {
+        outline-color: var(
+          --constellate-prose-focus,
+          #{map-get($roles, focus)}
+        );
+      }
+    }
+  }
+}

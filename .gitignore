@@ -4,3 +4,6 @@ _site
 /docs/
 
 **/*.quarto_ipynb
+*.otter.R
+*.otter.html
+*.otter.yml

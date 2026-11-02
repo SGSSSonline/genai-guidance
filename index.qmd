@@ -1,10 +1,17 @@
 ---
-title: "Critical GenAI Literacies"
+title: Critical GenAI Literacies
+sidebar: false
+toc: false
+constellate:
+  layout:
+    article-card: true
 ---
+
+
 
 ## Welcome
 
-:::{.callout-note title="Guidance Overview"}
+:::{.surface-overview title="Guidance Overview"}
 
 These online pages introduce 'critical genAI literacies' as a toolkit for understanding and engaging with generative AI. Just as critical literacies in education and media studies draw on criticla social theory to move beyond surface understanding, critical genAI literacies go beyond merely knowing how to prompt models like ChatGPT or Claude. Instead, critical genAI literacies involves understanding generative AI as technicalogies developed and deployed within existing power relations, and which, in turn, actively shape those relations.
 
@@ -32,7 +39,7 @@ These pages are living documents will be expanded over time. At present the firs
 
 ## Important
 
-::: {.callout-important title="Institutional Guidance"}
+::: {.surface-guidance title="Institutional Guidance"}
 It is vital that any use of generative AI complies with the policies and guidance of your academic institution and funder.
 
 In the social sciences, we often distinguish between institutional ethics and the broader domain of research ethics. Institutional ethics are the formal bureaucratic systems and procedures established by univerities and governing bodies to regulate research involving humans. Compliance with these procedures is required to obtain ethics approval for your research. Research ethics more broadly though involves ongoing reflexive considerations that are not limited to the minimum needed to comply with institutional requirements.
@@ -44,14 +51,14 @@ These pages should be treated in the same vein; as a source of critical reflexiv
 
 As these pages are fleshed out, callouts highlighting key information will be added. This will include -
 
-::: consider
+::: {.callout-important title="🤔 Critical Considerations" icon=false}
 Highlighting critical considerations need to make when deciding whether and how to use genAI.
 :::
 
-::: hype
+::: {.callout-caution title="💩 Smells Like Hype" icon=false}
 Flagging ways genAI is hyped that gives false impression of how it works and/or its capabilities.
 :::
 
-::: experiment
+::: {.callout-tip title="🧪 Experiment" icon=false}
 Suggesting things to try yourself - the best way to get a sense of how to best prompt genAI for your own use-cases is through experimenting with different prompts.
 :::

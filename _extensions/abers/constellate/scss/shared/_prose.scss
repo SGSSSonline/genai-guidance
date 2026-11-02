@@ -1,0 +1,24 @@
+$constellate-prose-anchor: 'a:where(:not(.btn, .linked-icon, .anchorjs-link, .callout-btn-toggle, [role="tab"]))';
+
+@mixin constellate-prose-roles($link, $visited, $interaction, $icon-interaction: $ctp-sapphire) {
+  --constellate-prose-link: #{$link};
+  --constellate-prose-visited: #{$visited};
+  --constellate-prose-interaction: #{$interaction};
+  --constellate-prose-focus: #{$constellate-focus-color};
+  --constellate-linked-icon-interaction: #{$icon-interaction};
+}
+
+@mixin constellate-prose-states($link, $visited, $interaction, $states: ':hover, :active, :focus-visible') {
+  color: var(--constellate-prose-link, #{$link});
+  &:visited { color: var(--constellate-prose-visited, #{$visited}); }
+  &:is(#{$states}) { color: var(--constellate-prose-interaction, #{$interaction}); }
+  &:focus-visible { outline-color: var(--constellate-prose-focus, #{$constellate-focus-color}); }
+}
+
+@mixin constellate-code-roles($background, $ink, $linked-ink: currentColor) {
+  --constellate-code-background: #{$background};
+  --constellate-code-ink: #{$ink};
+  --constellate-linked-code-ink: #{$linked-ink};
+}
+
+$constellate-contextual-prose-anchor: ':is([data-surface-colour], .callout, .constellate-quote) #{$constellate-prose-anchor}:any-link';

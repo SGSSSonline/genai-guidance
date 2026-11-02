@@ -1,0 +1,631 @@
+/*-- scss:functions --*/
+
+@function constellate-sidebar-active-colour($accent) {
+  @return color.to-gamut(
+    color.change($accent,
+      $lightness: color.channel($constellate-sidebar-active-text, "lightness", $space: oklch),
+      $chroma: color.channel($constellate-sidebar-active-text, "chroma", $space: oklch),
+      $space: oklch
+    ),
+    $space: rgb,
+    $method: local-minde
+  );
+}
+
+/*-- scss:mixins --*/
+
+@mixin constellate-title-typography {
+  font-family: $constellate-page-title-font;
+  font-weight: 600;
+}
+
+@mixin constellate-tool-icon($glyph) {
+  background-image: none;
+  font-size: 1rem;
+  content: $glyph / "";
+}
+
+@mixin constellate-sidebar-group-colours($light-tint, $dark-accent) {
+  --constellate-sidebar-group-background: #{mode(
+      $light-tint,
+      color.mix($dark-accent, $ctp-base, 24%)
+    )};
+  --constellate-sidebar-children-background: #{mode(
+      color.mix($light-tint, $ctp-base, 35%),
+      color.mix($dark-accent, $ctp-base, 4%)
+    )};
+  --constellate-sidebar-active-background: #{mode(
+      color.mix($light-tint, $ctp-base, 65%),
+      color.mix($dark-accent, $ctp-base, 10%)
+    )};
+}
+
+/*-- scss:rules --*/
+
+body :is(.aa-Autocomplete, .aa-DetachedFormContainer) .aa-Form:focus-within,
+.aa-DetachedCancelButton:is(:hover, :focus) {
+  box-shadow: $input-focus-box-shadow;
+}
+
+body :is(.aa-DetachedOverlay, #quarto-search-results)
+  li.aa-Item[aria-selected="true"] .search-item mark.search-match {
+  background-color: $component-active-bg;
+}
+
+$constellate-sidebar-active-text: mode($indigo-950, $ctp-lavender);
+
+// Default colours
+body {
+  --constellate-surround: #{$ctp-mantle};
+  --constellate-page-background: var(--constellate-surround);
+  --constellate-sidebar-background: #{$ctp-mantle};
+  --constellate-sidebar-hover: #{$ctp-sapphire};
+  --constellate-toc-active: #{$ctp-lavender};
+  --constellate-toc-hover: #{$ctp-sapphire};
+  --constellate-breadcrumb-hover: #{$constellate-sapphire-on-shade};
+  --constellate-pagination-text: #{$ctp-subtext1};
+  --constellate-pagination-hover: #{mode($ctp-sapphire, $ctp-sky)};
+}
+
+body:where(:has(#quarto-sidebar.docked)) {
+  --constellate-surround: #{mode($ctp-surface0, $ctp-crust)};
+  --constellate-page-background: #{$ctp-base};
+  --constellate-hero-background: #{mode(
+      color.mix($ctp-mantle, $ctp-crust, 50%),
+      $ctp-surface0
+    )};
+  --constellate-breadcrumb-hover: #{$ctp-sapphire};
+  --constellate-toc-hover: #{$constellate-sapphire-on-shade};
+  --constellate-toc-active: #{mode($indigo-950, $ctp-lavender)};
+  --constellate-pagination-hover: #{mode($ctp-sapphire-950, $ctp-sky)};
+}
+html:has(meta[name="constellate-layout-article-card"][content="true"])
+  body:has(#quarto-sidebar.docked) {
+  --constellate-page-background: var(--constellate-surround);
+  --constellate-pagination-text: #{mode($ctp-text, $ctp-subtext1)};
+}
+@if not $dark-mode {
+  html:has(meta[name="constellate-layout-light-surround"][content="true"])
+    body.quarto-light:has(#quarto-sidebar.docked) {
+    --constellate-surround: #{$ctp-crust};
+  }
+}
+
+body {
+  --constellate-toc-background: var(--constellate-surround);
+}
+html:has(meta[name="constellate-layout-toc-background"][content="article"])
+  body {
+  --constellate-toc-background: #{$ctp-base};
+  --constellate-toc-active: #{$ctp-lavender};
+}
+html:has(meta[name="constellate-layout-toc-background"][content="sidebar"])
+  body {
+  --constellate-toc-background: var(--constellate-sidebar-background);
+  --constellate-toc-active: #{$ctp-lavender};
+  --constellate-toc-hover: #{$constellate-sapphire-on-shade};
+}
+
+// Navbar
+#quarto-header.headroom {
+  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+#quarto-header > nav.navbar {
+  transition:
+    padding-top 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    padding-bottom 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+#quarto-header.headroom--not-top > nav.navbar {
+  --#{$prefix}navbar-padding-y: 0.5rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  #quarto-header.headroom,
+  #quarto-header > nav.navbar {
+    transition: none;
+  }
+}
+#quarto-header.headroom--not-top.headroom--pinned > .navbar,
+html:has(meta[name="constellate-navbar-border"][content="true"])
+  #quarto-header
+  > .navbar {
+  box-shadow: inset 0 -1px 0 mode($ctp-overlay0, $ctp-crust);
+}
+@include media-breakpoint-up(lg) {
+  #quarto-header .navbar-container {
+    width: max-content;
+    min-width: calc(100% - 300px);
+    max-width: calc(100% - 2rem);
+    margin-inline: auto;
+  }
+}
+#quarto-header .navbar-collapse {
+  min-width: 0;
+}
+#quarto-header .navbar-nav {
+  flex-wrap: wrap;
+}
+#quarto-header .navbar-nav > .nav-item {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+#quarto-header :is(#quarto-search, .quarto-navbar-tools) {
+  flex-shrink: 0;
+}
+.navbar-title {
+  @include constellate-title-typography;
+  font-size: 2rem;
+}
+.navbar .navbar-nav .menu-text,
+.navbar .navbar-brand .navbar-title {
+  text-decoration-thickness: 3px;
+  text-underline-offset: 16px;
+}
+.navbar .navbar-nav .nav-link.active {
+  color: $navbar-fg;
+  .menu-text {
+    text-decoration-line: underline;
+    text-decoration-color: $ctp-lavender;
+  }
+}
+.navbar .navbar-nav .nav-link:is(:hover, :focus-visible),
+.navbar .navbar-brand:is(:hover, :focus-visible) {
+  color: $ctp-sapphire;
+  .menu-text,
+  .navbar-title {
+    text-decoration-line: underline;
+    text-decoration-color: $ctp-sapphire;
+  }
+}
+
+body.constellate-home
+  .navbar
+  .navbar-brand:not(:hover):not(:focus-visible)
+  .navbar-title {
+  text-decoration-line: underline;
+  text-decoration-color: $ctp-lavender;
+}
+
+:is(#quarto-header, #quarto-sidebar, .quarto-sidebar-toggle)
+  .quarto-navigation-tool:is(:hover, :focus-visible),
+:is(.quarto-navbar-tools, .sidebar-tools-main, .sidebar-tools-collapse)
+  .dropdown-item:is(:hover, :focus-visible),
+.quarto-color-scheme-toggle:is(:hover, :focus-visible),
+.quarto-reader-toggle:is(:hover, :focus-visible),
+:is(#quarto-header, #quarto-sidebar, .quarto-sidebar-toggle)
+  #quarto-search
+  button:is(:hover, :focus-visible)
+  :is(.aa-DetachedSearchButtonIcon, .aa-SubmitIcon) {
+  color: $ctp-sapphire;
+}
+
+body
+  .quarto-color-scheme-toggle:not(.alternate):is(:hover, :focus-visible)
+  .bi::before {
+  @include constellate-tool-icon("\f5d5");
+}
+body
+  .quarto-color-scheme-toggle.alternate:is(:hover, :focus-visible)
+  .bi::before {
+  @include constellate-tool-icon("\f5d6");
+}
+body .quarto-reader-toggle:not(.reader):is(:hover, :focus-visible) .bi::before {
+  @include constellate-tool-icon("\f683");
+}
+:is(#quarto-header, #quarto-sidebar, .quarto-sidebar-toggle)
+  .quarto-reader-toggle.reader:is(:hover, :focus-visible)
+  .quarto-reader-toggle-btn {
+  background-color: $ctp-sapphire;
+}
+
+body:has(#title-block-header .quarto-title-banner)
+  #quarto-sidebar.sidebar-navigation {
+  padding-top: 0.5rem;
+}
+body:has(#title-block-header .quarto-title-banner)
+  #quarto-sidebar.floating {
+  background-color: $navbar-bg;
+}
+#quarto-sidebar {
+  .sidebar-menu-container > ul {
+    margin-top: 0 !important;
+  }
+  .sidebar-menu-container > ul > .sidebar-item:first-child {
+    margin-top: 0;
+  }
+  > .sidebar-menu-container {
+    padding-top: 0;
+  }
+  .sidebar-link.active {
+    font-weight: 600;
+  }
+  .sidebar-item-container:is(:hover, :focus-within) {
+    color: var(--constellate-sidebar-hover);
+  }
+  .sidebar-item-container:hover .sidebar-link.active,
+  .sidebar-link.active:is(:hover, :focus-visible) {
+    color: var(--constellate-sidebar-hover);
+  }
+}
+
+// Docked sidebar
+#quarto-sidebar.docked {
+  --constellate-sidebar-padding-inline: 1rem;
+  --constellate-sidebar-group-outset: 0px;
+  --constellate-sidebar-group-radius: 4px;
+  --constellate-sidebar-group-parent-inset: 0.5em;
+  --constellate-sidebar-group-focus-offset: #{$focus-ring-width};
+  --constellate-sidebar-text: #{$ctp-text};
+  --constellate-sidebar-closed-hover-background: color-mix(
+    in srgb,
+    var(--constellate-sidebar-background),
+    #{mode($ctp-base, $ctp-surface0)} #{mode(45%, 35%)}
+  );
+  @include constellate-sidebar-group-colours($indigo-050, $ctp-lavender);
+  --constellate-sidebar-active-text: #{$constellate-sidebar-active-text};
+  --constellate-sidebar-group-hover-text: #{mode(
+      $ctp-sapphire-950,
+      $ctp-sapphire-400
+    )};
+  background-color: var(--constellate-sidebar-background);
+  padding-inline: var(--constellate-sidebar-padding-inline);
+  > * {
+    padding-inline-end: 0;
+  }
+  &:has(.sidebar-search) > .sidebar-menu-container {
+    padding-top: 1em;
+  }
+  &:has(.sidebar-search)
+    .sidebar-menu-container
+    > ul
+    > .sidebar-item:first-child {
+    margin-top: 0.4rem;
+  }
+
+  scrollbar-color: var(--constellate-scrollbar-thumb)
+    var(--constellate-sidebar-background);
+
+  .sidebar-title > a,
+  .constellate-sidebar-title {
+    @include constellate-title-typography;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.35em;
+  }
+  .constellate-sidebar-title {
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+    color: inherit;
+  }
+  .sidebar-item:has(> .sidebar-item-container .constellate-sidebar-title) {
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-link:has(.constellate-sidebar-title) {
+    display: block;
+    line-height: 1.6rem;
+    color: var(--constellate-sidebar-text);
+    &.active .constellate-sidebar-title {
+      text-decoration-line: underline;
+      text-decoration-color: $ctp-lavender;
+    }
+    &:hover,
+    &:focus-visible {
+      color: var(--constellate-sidebar-hover);
+      .constellate-sidebar-title {
+        text-decoration-line: underline;
+        text-decoration-color: currentColor;
+      }
+    }
+  }
+  .quarto-sidebar-header {
+    padding-top: 0.5rem;
+  }
+  .quarto-sidebar-header p:last-child {
+    margin-bottom: 0.4rem;
+  }
+}
+
+body:not(:has(#quarto-header .navbar))
+  #quarto-sidebar.docked
+  .sidebar-title
+  > a {
+  color: $navbar-brand;
+  &:hover,
+  &:focus-visible {
+    color: var(--constellate-sidebar-hover);
+    text-decoration-line: underline;
+    text-decoration-color: currentColor;
+  }
+}
+body.constellate-home:not(:has(#quarto-header .navbar))
+  #quarto-sidebar.docked
+  .sidebar-title
+  > a:not(:hover):not(:focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-color: $ctp-lavender;
+}
+// Sidebar-only groups fill the sidebar
+body:not(:has(#quarto-header .navbar)) #quarto-sidebar.docked {
+  --constellate-sidebar-closed-hover-background: #{mode(
+      color.mix($ctp-sapphire-500, $ctp-base, 8%),
+      color.mix($ctp-surface0, $ctp-mantle, 35%)
+    )};
+  --constellate-sidebar-group-outset: var(--constellate-sidebar-padding-inline);
+  --constellate-sidebar-group-radius: 0px;
+  --constellate-sidebar-group-parent-inset: var(
+    --constellate-sidebar-padding-inline
+  );
+  --constellate-sidebar-group-focus-offset: #{-$focus-ring-width};
+}
+
+html:has(meta[name="constellate-sidebar-hero-colour"][content="true"])
+  body:has(#quarto-sidebar.docked .sidebar-menu-container > ul > .sidebar-item-section.constellate-sidebar-group .sidebar-link.active) {
+  --constellate-hero-background: #{mode(
+    color.mix($indigo-100, $ctp-base, 35%),
+    color.mix(color.scale($indigo-950, $lightness: -30%), $ctp-base, 55%)
+  )};
+  #title-block-header {
+    $hero-text: mode(color.scale($ctp-text, $lightness: -30%), $ctp-text);
+    $hero-link: mode($blue-950, $blue-400);
+    $hero-visited: mode($purple-950, $ctp-mauve);
+    $hero-hover: mode(color.scale($ctp-sapphire-950, $lightness: -25%), $ctp-sapphire);
+
+    color: $hero-text;
+    .title,
+    .subtitle,
+    .description,
+    .quarto-title-meta,
+    .quarto-title-meta-author {
+      color: $hero-text;
+    }
+    a:any-link:not(.quarto-category a, .quarto-title-breadcrumbs a) {
+      color: $hero-link;
+      &:visited {
+        color: $hero-visited;
+      }
+      &:is(:hover, :focus-visible) {
+        color: $hero-hover;
+      }
+    }
+    nav.quarto-title-breadcrumbs .breadcrumb {
+      &,
+      a,
+      .breadcrumb-item,
+      .breadcrumb-item::before {
+        color: $hero-text;
+      }
+      a:is(:hover, :focus-visible) {
+        color: $hero-hover;
+      }
+    }
+  }
+}
+
+@each $name, $light-tint, $dark-accent, $hero-light, $hero-dark in (
+  ("flamingo", color.mix($ctp-flamingo-050, $ctp-base, 60%), $ctp-flamingo, $ctp-flamingo-100, $ctp-flamingo-950),
+  ("pink", $pink-050, $ctp-pink, $pink-100, $pink-950),
+  ("mauve", color.mix($purple-050, $ctp-base, 80%), $ctp-mauve, $purple-100, $purple-950),
+  ("red", color.mix($red-050, $ctp-base, 80%), $ctp-red, $red-100, $red-950),
+  ("maroon", color.mix($ctp-maroon-050, $ctp-base, 70%), $ctp-maroon, $ctp-maroon-100, $ctp-maroon-950),
+  ("peach", $orange-050, $ctp-peach, $orange-100, $orange-950),
+  ("yellow", $yellow-050, $ctp-yellow, $yellow-100, $yellow-950),
+  ("green", $green-050, $ctp-green, $green-100, $green-950),
+  ("teal", color.mix($teal-050, $ctp-base, 95%), $ctp-teal, $teal-100, $teal-950),
+  ("sky", $cyan-050, $ctp-sky, $cyan-100, $cyan-950)
+) {
+  html:has(meta[name="constellate-sidebar-groups"][content="true"])
+    #quarto-sidebar.docked .sidebar-menu-container > ul > .sidebar-item-section.constell-group-#{$name} {
+    @include constellate-sidebar-group-colours($light-tint, $dark-accent);
+    @if $name == "yellow" and $dark-mode {
+      --constellate-sidebar-group-hover-text: #{$ctp-sapphire-300};
+    }
+  }
+  html:has(meta[name="constellate-sidebar-active-group-colour"][content="true"])
+    #quarto-sidebar.docked .sidebar-menu-container > ul > .sidebar-item-section.constell-group-#{$name} {
+    --constellate-sidebar-active-text: #{constellate-sidebar-active-colour($dark-accent)};
+  }
+  html:has(meta[name="constellate-sidebar-hero-colour"][content="true"])
+    body:has(
+      #quarto-sidebar.docked .sidebar-menu-container > ul
+        > .sidebar-item-section.constell-group-#{$name} .sidebar-link.active
+    ) {
+    --constellate-hero-background: #{mode(
+      color.mix($hero-light, $ctp-base, 35%),
+      color.mix(color.scale($hero-dark, $lightness: -30%), $ctp-base, 55%)
+    )};
+  }
+}
+
+// Group colour options
+html:has(meta[name="constellate-sidebar-collapsed-colour"][content="false"])
+  #quarto-sidebar.docked {
+  --constellate-sidebar-collapsed-background: transparent;
+  --constellate-sidebar-collapsed-hover-text: var(--constellate-sidebar-hover);
+  --constellate-sidebar-collapsed-hover-background: var(--constellate-sidebar-closed-hover-background);
+}
+
+// Sidebar groups
+html:has(meta[name="constellate-sidebar-groups"][content="true"])
+  #quarto-sidebar.docked {
+  .sidebar-menu-container
+    > ul
+    > .sidebar-item-section:has(
+      > .sidebar-item-container
+        > .sidebar-item-text[data-bs-toggle="collapse"]:not([href])
+    ) {
+    margin-block: 0.5rem;
+    margin-inline: calc(-1 * var(--constellate-sidebar-group-outset));
+    > .sidebar-item-container {
+      align-items: stretch;
+      border-radius: var(--constellate-sidebar-group-radius);
+      background: var(--constellate-sidebar-collapsed-background, var(--constellate-sidebar-group-background));
+      > .sidebar-item-text {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.2em var(--constellate-sidebar-group-parent-inset);
+        font: inherit;
+        font-weight: 400;
+        line-height: 1.35;
+        color: var(--constellate-sidebar-text);
+        background: transparent;
+        border: 0;
+        border-radius: inherit;
+        cursor: pointer;
+        &:hover,
+        &:focus-visible {
+          color: var(--constellate-sidebar-collapsed-hover-text, var(--constellate-sidebar-group-hover-text));
+          background: var(--constellate-sidebar-collapsed-hover-background, transparent);
+        }
+        &:focus-visible {
+          outline-offset: var(--constellate-sidebar-group-focus-offset);
+        }
+      }
+      &:has(> [aria-expanded="true"]) {
+        border-radius: var(--constellate-sidebar-group-radius)
+          var(--constellate-sidebar-group-radius) 0 0;
+        background: var(--constellate-sidebar-group-background);
+        > .sidebar-item-text:is(:hover, :focus-visible) {
+          color: var(--constellate-sidebar-group-hover-text);
+          background: transparent;
+        }
+      }
+    }
+    &:has(.sidebar-section .sidebar-link.active)
+      > .sidebar-item-container
+      > .sidebar-item-text {
+      font-weight: 600;
+    }
+    > .sidebar-section {
+      padding: 0.15em 0 0.2em;
+      background: var(--constellate-sidebar-children-background);
+      border-radius: 0 0 var(--constellate-sidebar-group-radius)
+        var(--constellate-sidebar-group-radius);
+      > .sidebar-item {
+        margin: 0;
+      }
+      .sidebar-link {
+        display: block;
+        padding-block: 0.2em;
+        padding-inline: calc(var(--constellate-sidebar-group-outset) + 0.8em)
+          calc(var(--constellate-sidebar-group-outset) + 0.5em);
+        line-height: 1.4;
+        font-weight: 400;
+        white-space: normal;
+        color: var(--constellate-sidebar-text);
+        &.active {
+          background: var(--constellate-sidebar-active-background);
+          color: var(--constellate-sidebar-active-text);
+          font-weight: 600;
+        }
+        &:hover,
+        &:focus-visible {
+          color: var(--constellate-sidebar-hover);
+        }
+        &.active:is(:hover, :focus-visible) {
+          color: $constellate-sapphire-on-shade;
+        }
+      }
+    }
+  }
+  .constellate-disclosure-icon {
+    margin-inline-start: auto;
+    font-size: 0.7rem;
+  }
+  [aria-expanded="true"] .constellate-disclosure-icon::before {
+    transform: rotate(90deg);
+  }
+}
+
+// Table of contents / On this page
+#quarto-margin-sidebar #toc-title {
+  font-weight: 600;
+}
+.sidebar #TOC {
+  a.active {
+    color: var(--constellate-toc-active) !important;
+    font-weight: 600;
+  }
+  a:hover {
+    color: var(--constellate-toc-hover) !important;
+  }
+}
+#quarto-margin-sidebar nav[role="doc-toc"] {
+  width: 80%;
+  margin-inline: auto;
+}
+
+// Pagination
+.page-navigation .nav-page a {
+  color: var(--constellate-pagination-text);
+  &:hover,
+  &:focus-visible {
+    color: var(--constellate-pagination-hover);
+  }
+}
+
+// Breadcrumbs
+body nav.quarto-page-breadcrumbs .breadcrumb {
+  color: $ctp-text;
+  a {
+    color: $ctp-text;
+  }
+  .breadcrumb-item::before,
+  .breadcrumb-item.active,
+  .breadcrumb-item:last-child a {
+    color: $ctp-subtext1;
+  }
+  .breadcrumb-item a:is(:hover, :focus-visible) {
+    color: $ctp-sapphire;
+  }
+}
+body
+  nav.quarto-title-breadcrumbs
+  .breadcrumb
+  .breadcrumb-item
+  a:is(:hover, :focus-visible) {
+  color: var(--constellate-breadcrumb-hover);
+}
+
+body .nav-footer {
+  align-items: center;
+  min-height: 3.8rem;
+  > div {
+    display: flex;
+    align-items: center;
+  }
+  .nav-footer-left {
+    justify-content: flex-start;
+  }
+  .nav-footer-center {
+    justify-content: center;
+  }
+  .nav-footer-right {
+    justify-content: flex-end;
+  }
+}
+@include media-breakpoint-down(md) {
+  body .nav-footer > div {
+    justify-content: center;
+  }
+}
+@include media-breakpoint-up(lg) {
+  @if variable-exists(content-padding-top) {
+    body:has(#quarto-header .navbar):has(
+        #title-block-header .quarto-title-banner
+      )
+      #quarto-sidebar:is(.floating, .docked):not(
+        :has(
+          .sidebar-search,
+          .sidebar-title,
+          .sidebar-logo,
+          .quarto-sidebar-header,
+          .sidebar-tools-main,
+          .sidebar-tools-collapse
+        )
+      ) {
+      padding-top: calc(#{$content-padding-top} + 0.3rem);
+    }
+    body #quarto-content > .page-navigation {
+      padding-top: $content-padding-top * 0.5;
+    }
+  }
+}

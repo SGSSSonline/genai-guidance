@@ -1,0 +1,89 @@
+$constellate-callout-colors: ();
+
+@if not $dark-mode {
+  $constellate-callout-colors: (
+    "note": (
+        "header-bg": $blue-050,
+        "body-bg": $blue-025,
+        "text": $blue-1000,
+        "link": $blue-950,
+        "visited": $purple-1000,
+        "hover": $cyan-1150,
+      ),
+    "tip": (
+        "header-bg": $green-050,
+        "body-bg": $green-025,
+        "text": $green-1000,
+        "link": $blue-950,
+        "visited": $purple-950,
+        "hover": $cyan-1100,
+      ),
+    "warning": (
+        "header-bg": $yellow-050,
+        "body-bg": $yellow-025,
+        "text": $yellow-1000,
+        "link": $blue-950,
+        "visited": $purple-900,
+        "hover": $cyan-1000,
+      ),
+    "caution": (
+        "header-bg": $orange-050,
+        "body-bg": $orange-025,
+        "text": $orange-1000,
+        "link": $blue-950,
+        "visited": $purple-950,
+        "hover": $cyan-1050,
+      ),
+    "important": (
+        "header-bg": $red-050,
+        "body-bg": $red-025,
+        "text": $red-1000,
+        "link": $blue-1050,
+        "visited": $purple-1050,
+        "hover": $cyan-1200,
+      ),
+  );
+} @else {
+  $constellate-callout-colors: (
+    "note": (
+        "header-bg": $blue-1000,
+        "body-bg": $blue-1050,
+        "text": $blue-050,
+        "link": $blue-200,
+        "visited": $purple-200,
+        "hover": $ctp-sky,
+      ),
+    "tip": (
+        "header-bg": $green-1000,
+        "body-bg": $green-1050,
+        "text": $green-050,
+        "link": $blue-050,
+        "visited": $purple-100,
+        "hover": $cyan-300,
+      ),
+    "warning": (
+        "header-bg": $yellow-1000,
+        "body-bg": $yellow-1050,
+        "text": $yellow-050,
+        "link": $blue-050,
+        "visited": $purple-050,
+        "hover": $cyan-200,
+      ),
+    "caution": (
+        "header-bg": $orange-1000,
+        "body-bg": $orange-1050,
+        "text": $orange-050,
+        "link": $blue-100,
+        "visited": $purple-100,
+        "hover": $cyan-400,
+      ),
+    "important": (
+        "header-bg": $red-1000,
+        "body-bg": $red-1050,
+        "text": $red-050,
+        "link": $blue-200,
+        "visited": $purple-200,
+        "hover": $ctp-sky,
+      ),
+  );
+}

@@ -1,6 +1,9 @@
 ---
-title: "About"
+title: About
+sidebar: false
 ---
+
+
 
 These online Critical GenAI Literacies pages are produced by [Alasdair B R Stewart](https://www.gla.ac.uk/schools/socialpolitical/staff/alasdairstewart/), University of Glasgow and SGSSS Training Network member, for the Scottish Graduate School of Social Science.
 

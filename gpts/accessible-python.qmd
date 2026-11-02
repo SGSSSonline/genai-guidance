@@ -1,13 +1,17 @@
 ---
-title: "Accessible Python"
+title: Accessible Python
+sidebar: gpts
 ---
 
 
-![](images/accessible-python.png){fig-align="center"}
+
+![](images/accessible-python.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-qLSnxgmeJ-accessible-python)
 
-> **Making Python accessible for beginner programmers.**
+::: {.gpt-summary}
+**Making Python accessible for beginner programmers.**
+:::
 
 With code and programming, genAI has a tendency to be overly direct and terse in its explanations. This is worsened by it generating sizeable big blocks of code, followed by short explanations that assume a reasonable degree of prior knowledge. Sometimes even prompting "explain in way that is understable for a beginner" is insufficient to get it out of that default behaviour.
 
@@ -15,7 +19,7 @@ This GPT is an attempt at writing instructions that more consistently provide re
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 
 This GPT, Accessible Python GPT, is an absolue beginner-friendly Python assistant designed to help people absolutely new to programming learn Python. It answers questions, explains concepts, and guides users through examples in an approachable, clear way. It always introduces and explains Python syntax and programming concepts such as for loops and defining functions used in its responses, breaking down what any code is doing line by line, elaborates on what any functions and arguments do, and offers to provide more explanation on relevant Python and programming concepts, syntax, libraries, and functions used in any code it provides in its responses.

@@ -1,12 +1,16 @@
 ---
-title: "Simple Short Email Advice"
+title: Simple Short Email Advice
+sidebar: gpts
 ---
 
-![](images/simple-short-email.png){fig-align="center"}
+
+![](images/simple-short-email.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-wFyMdZQZX-simple-short-email-advice)
 
-> **Provides advice for writing simple and short emails, never writing the emails for you. **
+::: {.gpt-summary}
+**Provides advice for writing simple and short emails, never writing the emails for you.**
+:::
 
 ChatGPT loves to write emails for you, so much so it will fabricate answers to questions on your behalf. Likely due to the untold mass of spam emails in its training data, it also tends to write emails that are overloaded with salutations, platitudes, and sign-offs. This GPT is an attempt to see whether can more consistently get ChatGPT to simply provide advice without making assumptions nor writing the email for you.
 
@@ -16,7 +20,7 @@ Ensure to remove all names and any other personal information from emails / draf
 
 ### Instructions
 
-::: important
+::: {.surface-instructions}
 ```markdown
 
 This GPT, 'Email Advice,' assists users in managing emails to reduce email overwhelm.

@@ -1,0 +1,19 @@
+:root {
+  --constellate-scrollbar-thumb: #{$constellate-scrollbar-thumb};
+  --constellate-scrollbar-track: #{$constellate-scrollbar-track};
+  color-scheme: #{if($dark-mode, dark, light)};
+  scrollbar-color: var(--constellate-scrollbar-thumb)
+    var(--constellate-scrollbar-track);
+}
+ul.task-list input[type="checkbox"] {
+  accent-color: $ctp-blue;
+}
+
+:where(a[href], button, input, select, textarea, summary, [role="button"]):focus-visible {
+  outline: $focus-ring-width solid $constellate-focus-color;
+  outline-offset: $focus-ring-width;
+}
+
+:where(.panel-tabset [role="tab"]) {
+  @include constellate-code-roles($code-block-bg, $ctp-text, $ctp-text);
+}

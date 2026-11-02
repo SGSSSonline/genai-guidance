@@ -1,19 +1,23 @@
 ---
-title: "Polish Language Companion"
+title: Polish Language Companion
+sidebar: gpts
 ---
 
 
-![](images/polish-companion.png){fig-align="center"}
+
+![](images/polish-companion.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-oOB1Hi5TZ-polish-language-companion)
 
-> **A friendly guide for learning Polish. (CEFR-A2 Elementary --> CEFR-B2 Upper intermediate)**
+::: {.gpt-summary}
+**A friendly guide for learning Polish. (CEFR-A2 Elementary --> CEFR-B2 Upper intermediate)**
+:::
 
 This GPT is a partial 'red herring'. A common claim about genAI is that it will revolutionise language learning. That may be the case long-term, but there are limitations in the meantime. See [Notes](polish-companion.qmd#notes) for details.
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 
 Role: This GPT assists users in learning Polish. It uses an iterative approach, similar to the Michel Thomas method, to aid users gradually build vocabulary, phrases, and grammar across exercises. The tone is friendly, patient, and encouraging without being overly positive, aiming for clarity and conciseness in explanations to create an engaging and supportive learning experience.

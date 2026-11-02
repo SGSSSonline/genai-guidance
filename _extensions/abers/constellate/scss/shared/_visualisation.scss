@@ -1,0 +1,239 @@
+@import "visualisation-colours";
+:root {
+  --constellate-viz-hues: #{$constellate-diagram-hues};
+  --constellate-viz-series-hues: #{$constellate-diagram-series-hues};
+  --constellate-viz-flow-opacity: #{$constellate-viz-flow-opacity};
+  @each $role, $value in $constellate-viz-colours {
+    @if $role != muted and $role != axis {
+      --constellate-viz-#{$role}: #{$value};
+    }
+  }
+  --constellate-viz-dark-mode: #{$dark-mode};
+  --constellate-diagram-font-size: 16px;
+  --mermaid-font-family: #{$font-family-base};
+  --mermaid-font-weight: #{$font-weight-base};
+}
+svg[id^="constellate-mermaid-"][aria-roledescription="sequence"] .sequenceNumber {
+  font-family: var(--mermaid-font-family);
+  font-size: calc(var(--constellate-diagram-font-size) * 0.65);
+}
+svg[id^="constellate-mermaid-"][aria-roledescription]
+  :is(.label, .nodeLabel, .edgeLabel)
+  p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+}
+svg[id^="constellate-mermaid-"][aria-roledescription]
+  :is(.edgeLabel p, .labelBkg) {
+  background-color: var(--constellate-viz-label-background) !important;
+  color: var(--constellate-viz-text);
+}
+svg[id^="constellate-mermaid-"][aria-roledescription="gantt"]
+  .titleText {
+  font-size: var(--constellate-diagram-font-size) !important;
+}
+svg[id^="constellate-mermaid-"][aria-roledescription="gantt"]
+  .tick
+  text {
+  font-size: calc(var(--constellate-diagram-font-size) * 0.8) !important;
+}
+svg[id^="constellate-mermaid-"][aria-roledescription="sankey"] {
+  .node-labels {
+    font-size: var(--constellate-diagram-font-size);
+    fill: var(--constellate-viz-text);
+  }
+  .links {
+    stroke-opacity: var(--constellate-viz-flow-opacity);
+  }
+  .link {
+    mix-blend-mode: normal !important;
+  }
+}
+svg[id^="constellate-mermaid-"][aria-roledescription="journey"] {
+  > text {
+    fill: var(--constellate-viz-text);
+  }
+  rect.task {
+    fill: var(--constellate-viz-node-fill);
+    stroke: var(--constellate-viz-node-border);
+  }
+  :is(text.task, .task .label) {
+    fill: var(--constellate-viz-text);
+    color: var(--constellate-viz-text);
+  }
+  [stroke="#666"],
+  circle[stroke="#000"] {
+    stroke: var(--constellate-viz-node-border);
+  }
+  .mouth,
+  [fill="#666"] {
+    fill: var(--constellate-viz-text) !important;
+    stroke: var(--constellate-viz-text) !important;
+  }
+  .face {
+    fill: var(--constellate-viz-background) !important;
+    stroke: var(--constellate-viz-node-border) !important;
+  }
+}
+svg[id^="constellate-mermaid-"][aria-roledescription="timeline"]
+  > text {
+  font-size: var(--constellate-diagram-font-size);
+  fill: var(--constellate-viz-text);
+}
+svg[id^="constellate-mermaid-"][aria-roledescription="timeline"]
+  .lineWrapper
+  line {
+  stroke: var(--constellate-viz-edge) !important;
+}
+svg[id^="constellate-mermaid-"][aria-roledescription="timeline"]
+  marker
+  path {
+  fill: var(--constellate-viz-edge) !important;
+  stroke: var(--constellate-viz-edge) !important;
+}
+@for $i from 0 through length($constellate-diagram-series-hues) - 1 {
+  $hue: nth($constellate-diagram-series-hues, $i + 1);
+  svg[id^="constellate-mermaid-"][aria-roledescription="gitGraph"] {
+    .commit#{$i} {
+      fill: var(--constellate-viz-solid-#{$hue}) !important;
+    }
+    .branch#{$i} {
+      stroke: var(--constellate-viz-solid-#{$hue}) !important;
+    }
+  }
+  svg[id^="constellate-mermaid-"][aria-roledescription="journey"] {
+    circle.actor-#{$i},
+    rect.journey-section.section-type-#{$i} {
+      fill: var(--constellate-viz-solid-#{$hue}) !important;
+    }
+    text.journey-section.section-type-#{$i},
+    .journey-section.section-type-#{$i} .label {
+      fill: var(--constellate-viz-on-solid) !important;
+      color: var(--constellate-viz-on-solid) !important;
+    }
+  }
+}
+
+svg[id^="constellate-mermaid-"][aria-roledescription="class"]
+  .marker
+  path {
+  fill: var(--constellate-viz-edge) !important;
+  stroke: var(--constellate-viz-edge) !important;
+}
+svg[id^="constellate-mermaid-"][aria-roledescription="class"]
+  .marker:is(.aggregation, .extension)
+  path {
+  fill: var(--constellate-viz-background) !important;
+}
+
+@each $hue in $constellate-diagram-hues {
+  svg[id^="constellate-mermaid-"] .node-soft-#{$hue},
+  .constellate-dot svg g.node.node-soft-#{$hue} {
+    --constellate-node-fill: var(--constellate-viz-soft-#{$hue});
+    --constellate-node-ink: var(--constellate-viz-ink-soft-#{$hue});
+    --constellate-node-border: var(--constellate-viz-border-soft-#{$hue});
+  }
+  svg[id^="constellate-mermaid-"] .node-solid-#{$hue},
+  .constellate-dot svg g.node.node-solid-#{$hue} {
+    --constellate-node-fill: var(--constellate-viz-solid-#{$hue});
+    --constellate-node-ink: var(--constellate-viz-on-solid);
+    --constellate-node-border: var(--constellate-viz-on-solid);
+  }
+  svg[id^="constellate-mermaid-"] {
+    :is(.node-soft-#{$hue}, .node-solid-#{$hue}) {
+      :is(rect, polygon, ellipse, circle, path, line, polyline):not(foreignObject *) {
+        stroke: var(--constellate-node-border) !important;
+      }
+      :is(rect, polygon, ellipse, circle, path):not(foreignObject *) {
+        fill: var(--constellate-node-fill) !important;
+      }
+      :is(text, tspan) {
+        fill: var(--constellate-node-ink) !important;
+      }
+      foreignObject :is(div, span, p) {
+        color: var(--constellate-node-ink) !important;
+      }
+    }
+  }
+  svg[id^="constellate-mermaid-"][aria-roledescription]
+    .accent-#{$hue} {
+    > :is(rect, polygon, ellipse, path) {
+      fill: var(--constellate-viz-background) !important;
+      stroke: var(--constellate-viz-text-#{$hue}) !important;
+    }
+    :is(text, tspan) {
+      fill: var(--constellate-viz-text-#{$hue}) !important;
+    }
+    :is(.nodeLabel, .nodeLabel p, .nodeLabel span) {
+      color: var(--constellate-viz-text-#{$hue}) !important;
+    }
+  }
+  .constellate-dot svg .accent-#{$hue} {
+    :is(rect, polygon, ellipse, path) {
+      stroke: var(--constellate-viz-text-#{$hue}) !important;
+    }
+    text {
+      fill: var(--constellate-viz-text-#{$hue}) !important;
+    }
+  }
+  .constellate-dot svg {
+    g.node:is(.node-soft-#{$hue}, .node-solid-#{$hue}) {
+      :is(rect, polygon, ellipse, circle, path, line, polyline) {
+        stroke: var(--constellate-node-border) !important;
+      }
+      :is(rect, polygon, ellipse, circle, path):not([fill="none"]),
+      :is(rect, polygon, ellipse, circle, path):nth-child(
+        1 of :not(title, desc)
+      ) {
+        fill: var(--constellate-node-fill) !important;
+      }
+      :is(text, tspan) {
+        fill: var(--constellate-node-ink) !important;
+      }
+    }
+    g.edge.edge-#{$hue} {
+      :is(path, line, polyline, polygon, ellipse, circle) {
+        stroke: var(--constellate-viz-series-#{$hue}) !important;
+      }
+      :is(polygon, ellipse, circle, path)[fill]:not([fill="none"]):not(
+          [fill="white"]
+        ) {
+        fill: var(--constellate-viz-series-#{$hue}) !important;
+      }
+    }
+  }
+}
+
+.constellate-dot svg {
+  > g.graph > polygon[fill="white"] {
+    fill: var(--constellate-viz-background);
+  }
+  g.node :is(ellipse, polygon, rect, path)[fill="lightgrey"] {
+    fill: var(--constellate-viz-node-fill);
+  }
+  g.node :is(ellipse, polygon, rect, path)[fill="black"] {
+    fill: var(--constellate-viz-node-border);
+  }
+  :is(.node, .cluster) [stroke="black"] {
+    stroke: var(--constellate-viz-node-border);
+  }
+  .edge [stroke="black"] {
+    stroke: var(--constellate-viz-edge);
+  }
+  .edge [fill="black"] {
+    fill: var(--constellate-viz-edge);
+  }
+  .edge [fill="white"] {
+    fill: var(--constellate-viz-background);
+  }
+  text:not([fill]),
+  text[fill="black"] {
+    fill: var(--constellate-viz-text);
+  }
+}
+
+.constellate-dot svg {
+  max-width: 100%;
+  height: auto;
+}

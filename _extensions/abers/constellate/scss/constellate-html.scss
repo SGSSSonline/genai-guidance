@@ -1,0 +1,571 @@
+// Constellate HTML theme
+/*-- scss:uses --*/
+
+@use "sass:color";
+@use "sass:map";
+
+/*-- scss:functions --*/
+
+@import "shared/functions";
+
+/*-- scss:defaults --*/
+
+// Sizes
+
+$font-size-root: 20px !default;
+$title-banner-bg: transparent !default;
+$code-block-font-size: 1rem;
+
+// Colours
+
+@import "shared/defaults";
+
+$white: mode($ctp-base, $ctp-text);
+
+$gray-100: mode($ctp-crust, $ctp-subtext1);
+$gray-200: mode($ctp-surface0, $ctp-subtext0);
+$gray-300: mode($ctp-surface1, $ctp-overlay2);
+$gray-400: mode($ctp-surface2, $ctp-overlay1);
+$gray-500: $ctp-overlay0;
+$gray-600: mode($ctp-overlay1, $ctp-surface2);
+$gray-700: mode($ctp-overlay2, $ctp-surface1);
+$gray-800: mode($ctp-subtext0, $ctp-surface0);
+$gray-900: mode($ctp-subtext1, $ctp-base);
+
+$black: mode($ctp-text, $ctp-crust);
+
+// Bootstrap named colours
+
+$blue: $ctp-blue !default;
+$indigo: $ctp-lavender !default;
+$purple: $ctp-mauve !default;
+$pink: $ctp-pink !default;
+$red: $ctp-red !default;
+$orange: $ctp-peach !default;
+$yellow: $ctp-yellow !default;
+$green: $ctp-green !default;
+$teal: $ctp-teal !default;
+$cyan: $ctp-sky !default;
+
+// Body colours
+
+$body-emphasis-color: $ctp-text;
+
+$body-secondary-color: $ctp-subtext1;
+$body-tertiary-color: $ctp-overlay1;
+
+$body-secondary-bg: $ctp-surface1;
+$body-tertiary-bg: $ctp-surface0;
+
+$text-muted: $ctp-overlay1;
+
+// Bootstrap body alias
+$body-secondary: $ctp-subtext1;
+
+// Borders and focus
+
+$border-color: $ctp-overlay0;
+
+$input-focus-border-color: $constellate-focus-color;
+$form-select-focus-box-shadow: $focus-ring-box-shadow;
+
+// Semantic colours
+
+$primary: $ctp-pink;
+$secondary: $ctp-sky;
+$component-active-bg: $ctp-lavender;
+
+$success: $ctp-green;
+$info: $ctp-blue;
+// $ctp-yellow for callout-caution
+$warning: $ctp-peach;
+$danger: $ctp-red;
+
+$link-hover-color: $ctp-sky;
+
+// On this page
+
+$toc-active-border: $primary !default;
+$toc-inactive-border: $ctp-overlay0 !default;
+
+// Navbar
+
+$navbar-padding-y: 2rem !default;
+$navbar-bg: $ctp-mantle !default;
+$navbar-fg: $ctp-text !default;
+$navbar-hl: $ctp-blue !default;
+$navbar-hover-color: $ctp-sky !default;
+$navbar-disabled-color: $ctp-overlay1 !default;
+
+$nav-link-font-weight: 600;
+
+$navbar-brand: $ctp-pink;
+$navbar-brand-hl: $ctp-sky;
+
+// Sidebar
+
+$sidebar-border: false;
+
+$sidebar-fg: $ctp-text !default;
+$sidebar-hover-color: $ctp-sky;
+$sidebar-active-color: $ctp-lavender;
+$sidebar-disabled-color: $ctp-overlay1;
+
+// Footer
+
+$footer-bg: $ctp-mantle !default;
+$footer-fg: $ctp-subtext1 !default;
+
+$table-group-separator-color: $ctp-overlay0 !default;
+$table-group-separator-color-lighter: $ctp-surface2 !default;
+
+// Tables
+
+$table-bg-scale: 0% !default;
+$table-striped-bg: $ctp-surface0 !default;
+$table-hover-bg: $ctp-surface1 !default;
+
+// Dropdowns
+
+$dropdown-bg: $ctp-surface0 !default;
+$dropdown-header-color: $ctp-subtext1 !default;
+
+$dropdown-link-hover-bg: rgba($ctp-overlay2, 0.2) !default;
+$dropdown-link-active-color: $ctp-text !default;
+$dropdown-link-active-bg: rgba($ctp-overlay2, 0.3) !default;
+
+// Forms (listings/search controls)
+
+$input-bg: $ctp-surface0 !default;
+$input-placeholder-color: mode($ctp-text, $ctp-subtext1) !default;
+$input-group-addon-bg: $ctp-surface1 !default;
+$form-select-indicator-color: $ctp-text !default;
+$progress-bar-color: mode($ctp-base, $ctp-crust) !default;
+
+// Pagination
+
+$pagination-color: $ctp-text !default;
+$pagination-bg: $ctp-mantle !default;
+$pagination-border-width: 0px !default;
+
+$pagination-hover-color: $ctp-text !default;
+$pagination-hover-bg: $ctp-surface0 !default;
+$pagination-focus-color: $pagination-hover-color !default;
+$pagination-focus-bg: $pagination-hover-bg !default;
+
+$pagination-active-color: $ctp-base !default;
+$pagination-active-bg: $ctp-lavender !default;
+
+$pagination-disabled-bg: $ctp-mantle !default;
+
+// Listing cards and popovers
+
+$card-bg: $ctp-surface0 !default;
+$card-cap-bg: $ctp-surface1 !default;
+
+$popover-bg: $ctp-surface0 !default;
+
+// Breadcrumbs
+
+$breadcrumb-padding-y: 0.375rem !default;
+$breadcrumb-padding-x: 0.75rem !default;
+$breadcrumb-border-radius: 0.25rem !default;
+
+// Buttons
+
+$btn-close-opacity: 0.4 !default;
+$btn-close-hover-opacity: 1 !default;
+
+// Typography
+
+$h1-font-size: 3rem !default;
+$h2-font-size: 2.5rem !default;
+$h3-font-size: 2rem !default;
+
+/*-- scss:rules --*/
+@import "shared/prose";
+
+// Hero + 'page' style main content
+
+body:has(#title-block-header .quarto-title-banner) {
+  --article-padding: clamp(1rem, 3vw, 2rem);
+
+  background-color: var(--constellate-page-background, #{$ctp-mantle});
+}
+
+#title-block-header.quarto-title-block:has(.quarto-title-banner) {
+  background-color: var(
+    --constellate-hero-background,
+    #{mode($ctp-crust, $ctp-surface0)}
+  );
+  color: $ctp-text;
+
+  margin-bottom: 0;
+  padding-bottom: 1.5rem;
+
+  .quarto-title-banner {
+
+    margin-bottom: 0;
+    padding-top: 3rem;
+    padding-bottom: 0.5rem;
+  }
+
+  h1.title {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.2;
+  }
+
+  .subtitle,
+  .description {
+    color: $ctp-subtext1;
+    a:any-link {
+      color: $constellate-link-on-shade;
+      &:visited {
+        color: $constellate-visited-on-shade;
+      }
+      &:is(:hover, :focus-visible) {
+        color: $constellate-sapphire-on-shade;
+      }
+    }
+  }
+
+  .quarto-title .quarto-categories {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .quarto-title-meta,
+  .quarto-title-meta-author {
+    color: $ctp-subtext1;
+    padding-top: 0;
+  }
+
+  .quarto-title-meta {
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+  }
+
+  .quarto-title-meta-heading {
+    margin-top: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 1;
+  }
+
+  .quarto-title-meta-contents {
+    font-size: 0.95rem;
+  }
+
+  .quarto-title-meta:empty {
+    display: none;
+  }
+}
+
+#quarto-content > main#quarto-document-content.quarto-banner-title-block {
+  position: relative;
+
+  margin-top: 0;
+  margin-bottom: 1rem;
+
+  --constellate-article-inline-padding: var(--article-padding);
+  --constellate-article-background: #{$ctp-base};
+
+  padding: 1.25rem var(--constellate-article-flow-padding, var(--constellate-article-inline-padding));
+
+  background-color: var(--constellate-article-background);
+  color: $ctp-text;
+
+  > section:first-of-type > :is(h1, h2, h3, h4):first-child {
+    margin-top: 0;
+  }
+
+  > :is(h1, h2, h3, h4):first-child {
+    margin-top: 0;
+  }
+}
+
+:where(
+  body:not(:has(#quarto-sidebar.docked)),
+  html:has(meta[name="constellate-layout-article-card"][content="true"]) body
+) {
+  #title-block-header.quarto-title-block:has(.quarto-title-banner) {
+    padding-bottom: 6rem;
+  }
+  #quarto-content > main#quarto-document-content.quarto-banner-title-block {
+    margin-top: -4rem;
+    border-radius: 4px;
+  }
+}
+
+#quarto-content .about-links .about-link:any-link {
+  color: $constellate-linked-box-ink;
+  border-color: currentColor;
+  &:hover,
+  &:focus-visible {
+    color: $ctp-sapphire;
+  }
+}
+
+.quarto-about-jolla main :is(ul, ol) {
+  width: fit-content;
+  margin-inline: auto;
+  text-align: start;
+}
+
+:is(#title-block-header, #quarto-document-content)
+  .quarto-categories
+  .quarto-category {
+  color: $ctp-text;
+  background-color: $ctp-base;
+  border: 1px solid $ctp-overlay0;
+  border-radius: 0;
+  opacity: 1;
+  > a:any-link {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+:is(#title-block-header, #quarto-document-content)
+  .quarto-categories
+  .quarto-category:has(> a[href]) {
+  color: $constellate-linked-box-ink;
+  border-color: currentColor;
+}
+:is(#title-block-header, #quarto-document-content)
+  .quarto-categories
+  .quarto-category:has(> a[href]):is(:hover, :focus-within) {
+  color: $ctp-sapphire;
+}
+
+@include media-breakpoint-up(md) {
+  #title-block-header:has(.quarto-title-banner) {
+    .quarto-title-banner .quarto-title,
+    .quarto-title-meta,
+    .quarto-title-meta-author {
+      padding-inline: var(--article-padding);
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #quarto-content.page-columns
+    > main#quarto-document-content.quarto-banner-title-block {
+    grid-column: screen-start / screen-end;
+
+    margin-inline: 0;
+
+    --constellate-article-inline-padding: #{$grid-column-gutter-width};
+    padding: 1.25rem var(--constellate-article-flow-padding, var(--constellate-article-inline-padding));
+
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+// Catppuccin aligned
+
+// Links
+
+:where(#quarto-document-content) a:where(:visited) {
+  color: $ctp-mauve;
+}
+
+.nav-footer {
+  @include constellate-prose-roles(mode($blue-700, $ctp-blue), mode($purple-600, $ctp-mauve), $ctp-sapphire);
+}
+
+:where(#quarto-document-content) :where(.card, .quarto-grid-item, #quarto-appendix.default) {
+  @include constellate-prose-roles($constellate-link-on-shade, $constellate-visited-on-shade, $constellate-sapphire-on-shade);
+  @include constellate-code-roles($code-block-bg, $ctp-text);
+}
+.tippy-box[data-theme~="quarto"] {
+  @include constellate-prose-roles($constellate-link-on-shade, $constellate-visited-on-shade, $constellate-sapphire-on-shade);
+  @include constellate-code-roles($code-bg, $code-color, $code-color);
+}
+
+:where(#quarto-document-content) :where(.card, #quarto-appendix) #{$constellate-prose-anchor}:any-link,
+:is(body, #quarto-document-content) .tippy-box[data-theme~="quarto"] #{$constellate-prose-anchor}:any-link {
+  @include constellate-prose-states($constellate-link-on-shade, $constellate-visited-on-shade, $constellate-sapphire-on-shade, ':hover, :focus-visible');
+}
+
+// Catppuccin recommends Overlay2 at 20-30% opacity for selections
+::selection {
+  background-color: rgba($ctp-overlay2, 0.2);
+}
+
+// Quarto default is gray-100
+kbd,
+.kbd {
+  background-color: $body-tertiary-bg;
+}
+
+// Quarto default is 2% dim body colour
+#quarto-content .quarto-sidebar-toggle {
+  background: $body-tertiary-bg;
+}
+
+.btn {
+  --bs-btn-focus-box-shadow: #{$focus-ring-box-shadow};
+}
+
+:where(.btn) {
+  @include constellate-code-roles($code-block-bg, $ctp-text, $ctp-text);
+}
+
+:is(.code-copy-button, .navbar-toggler):focus-visible {
+  outline: 0;
+  box-shadow: $focus-ring-box-shadow;
+}
+
+.callout.callout-style-default .callout-body
+  > .code-copy-outer-scaffold:first-child {
+  padding-top: 0;
+}
+
+// Annotation markers
+dl.code-annotation-container-grid dt {
+  color: $body-secondary-color;
+  border-color: $body-secondary-color;
+}
+
+@import "shared/callout-colors";
+@import "shared/components";
+@import "shared/utilities";
+@import "shared/global";
+@import "shared/surfaces";
+@import "html-buttons";
+@import "activities";
+#quarto-document-content {
+  @include constellate-components($paragraph-margin-bottom);
+  @include constellate-utilities;
+
+  .quarto-listing {
+    :is(.quarto-post, tr):has(a[href]:is(:hover, :focus-visible)):not(
+        :has(.listing-category:hover)
+      ) {
+      .listing-title,
+      .listing-title a {
+        color: $ctp-sapphire;
+      }
+      .listing-title a {
+        text-decoration: underline;
+      }
+    }
+    .quarto-grid-item {
+      background-color: mode($ctp-crust, $card-bg);
+    }
+    .quarto-grid-link:is(:hover, :focus-visible):not(
+        :has(.listing-category:hover)
+      )
+      .listing-title {
+      color: $constellate-sapphire-on-shade;
+    }
+    .listing-title a:hover {
+      text-decoration: underline;
+    }
+    .listing-category:is(a[href], [onclick]):is(:hover, :focus-visible) {
+      color: $ctp-sapphire;
+      border-color: currentColor;
+    }
+    .listing-category,
+    .card-attribution,
+    .metadata {
+      color: $ctp-text;
+      opacity: 1;
+    }
+    .listing-category {
+      border-color: currentColor;
+    }
+    .listing-title {
+      opacity: 1;
+    }
+    a:has(.listing-category),
+    a.listing-category {
+      text-decoration: none;
+    }
+
+    .quarto-grid-item .listing-category[onclick]:is(:hover, :focus-visible) {
+      color: $constellate-sapphire-on-shade;
+    }
+
+    // Disabled pagination
+    .pagination .disabled > .page-link {
+      color: var(--bs-pagination-disabled-color);
+    }
+  }
+}
+
+@media screen {
+  #quarto-document-content
+    pre.numberSource.code-overflow-wrap
+    > code.sourceCode
+    > span {
+    text-indent: -4em;
+    padding-left: 4em;
+  }
+}
+
+#quarto-document-content
+  .callout.callout-style-default:not(.no-icon)
+  > .callout-header
+  > .callout-title-container {
+  align-self: center;
+  margin-block: -0.5px;
+}
+
+#quarto-document-content div.callout.callout-style-default .callout-toggle::before {
+  mask-image: escape-svg($accordion-button-icon);
+}
+
+// Headings
+
+main.content h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+main.content h1,
+#title-block-header h1.title {
+  font-family: $constellate-page-title-font;
+}
+
+@import "shared/visualisation";
+
+#quarto-margin-sidebar .quarto-listing-category {
+  .category:hover {
+    color: $ctp-sapphire;
+  }
+  .category.active {
+    color: $ctp-lavender;
+  }
+}
+
+// Back to top
+body #quarto-back-to-top {
+  box-shadow: none;
+  color: $ctp-text;
+  background-color: $ctp-mantle;
+  border: 1px solid mode($ctp-overlay2, $ctp-overlay1);
+  &:hover,
+  &:focus-visible {
+    color: $constellate-sapphire-on-shade;
+    border-color: $constellate-sapphire-on-shade;
+  }
+}
+
+.code-copy-outer-scaffold:has(pre.code-annotated) > .code-copy-button {
+  font-size: $code-block-font-size;
+  margin-right: calc(0.5em + 25px);
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 3px;
+}
+
+main#quarto-document-content {
+  --surface-canvas: var(--constellate-article-background, var(--surface-base));
+}
+
+#quarto-document-content #{$constellate-contextual-prose-anchor},
+.nav-footer #{$constellate-prose-anchor}:any-link {
+  @include constellate-prose-states($ctp-blue, $ctp-mauve, $ctp-sapphire);
+}

@@ -1,0 +1,7 @@
+project:
+  render:
+  - slides/AISymposium/Prompting.qmd
+  - slides/age-of-ai.qmd
+  - slides/crit-student-supervisors.qmd
+  - slides/sgsss-core.qmd
+  - slides.qmd

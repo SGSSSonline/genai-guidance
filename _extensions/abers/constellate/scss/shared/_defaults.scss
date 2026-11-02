@@ -1,0 +1,33 @@
+$dark-mode: color.channel($ctp-base, "lightness", $space: hsl) <
+  color.channel($ctp-text, "lightness", $space: hsl);
+$link-color: $ctp-blue;
+$constellate-focus-color: $ctp-lavender !default;
+$focus-ring-width: 2px !default;
+$focus-ring-color: rgba($constellate-focus-color, 0.25) !default;
+$focus-ring-box-shadow: 0 0 0 $focus-ring-width $constellate-focus-color,
+  0 0 0 ($focus-ring-width + 1px) $focus-ring-color !default;
+$code-block-bg: mode($ctp-mantle, $ctp-crust) !default;
+$constellate-sapphire-on-shade: mode($ctp-sapphire-950, $ctp-sapphire) !default;
+$constellate-link-on-shade: mode($blue-800, $ctp-blue) !default;
+$constellate-visited-on-shade: mode($purple-800, $ctp-mauve) !default;
+$constellate-component-paragraph-spacing-scale: 0.5 !default;
+$constellate-linked-box-ink: color.mix(
+  $ctp-blue,
+  $ctp-subtext1,
+  mode(50%, 35%)
+) !default;
+$constellate-component-radius: 4px !default;
+$constellate-code-title-bg: mode($ctp-crust, $ctp-mantle) !default;
+$constellate-output-bg: mode($ctp-crust, $ctp-mantle) !default;
+$constellate-table-header-rule-width: 2px !default;
+$constellate-scrollbar-thumb: mode($indigo-700, $indigo-950) !default;
+$constellate-scrollbar-track: $ctp-mantle !default;
+$constellate-duotone-highlight: $brand-ctp-macchiato-lavender !default;
+$constellate-duotone-shadow: $brand-ctp-macchiato-crust !default;
+$constellate-image-border-color: mode(
+  color.scale($ctp-text, $lightness: -25%),
+  color.scale($ctp-crust, $lightness: -25%)
+) !default;
+
+$code-annotation-higlight-bg: $ctp-base !default;
+$code-annotation-higlight-color: mode($ctp-overlay2, $ctp-overlay1) !default;

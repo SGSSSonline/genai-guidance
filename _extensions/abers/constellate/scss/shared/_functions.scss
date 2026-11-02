@@ -1,0 +1,6 @@
+@function mode($light-value, $dark-value) {
+  @if $dark-mode {
+    @return $dark-value;
+  }
+  @return $light-value;
+}

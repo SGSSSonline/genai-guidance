@@ -1,19 +1,23 @@
 ---
-title: "UK Bull Dung Checker"
+title: UK Bull Dung Checker
+sidebar: gpts
 ---
 
 
-![](images/uk-bull-dung.png){fig-align="center"}
+
+![](images/uk-bull-dung.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-cm2X3wdqG-uk-bull-dung-checker)
 
-> **Fact-checking claims you've seen in the news and social media.**
+::: {.gpt-summary}
+**Fact-checking claims you've seen in the news and social media.**
+:::
 
 GenAI presents significant risks for increasing the spread of disinformation. Can it also be used to combat disinformation? This GPT uses the 'Web Search' capability to fact-check claims provided to it with information it can find online. Its responses being more irreverent if the claim is debunked.
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 
 #### Mission Statement

@@ -1,7 +1,10 @@
 ---
-title: "Assorted Pages"
+title: Assorted Pages
 listing:
   contents: assorted
+sidebar: false
 ---
+
+
 
 This is a test.

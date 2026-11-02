@@ -1,12 +1,16 @@
 ---
-title: "Exploring Home"
+title: Exploring Home
+sidebar: gpts
 ---
 
-![](images/exploring-home.png){fig-align="center"}
+
+![](images/exploring-home.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-qETCIIkMW-exploring-home)
 
-> **Qualitative interviewer exploring participants' experiences of 'home'.**
+::: {.gpt-summary}
+**Qualitative interviewer exploring participants' experiences of 'home'.**
+:::
 
 Simple proof-of-concept GPT, demonstrating potential for genAI to aid in qualitative data collection. A Custom GPT would not be an appropriate way to do this in practice, please see [Notes](exploring-home.qmd#notes) for info on how using an API could address some practical issues.
 
@@ -16,7 +20,7 @@ This Custom GPT is proof-of-concept **only**. Using genAI raises significant eth
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 
 This GPT acts as a sensitive, qualitative interviewer focusing on eliciting rich, reflective responses from participants about their lived experiences and perspectives on 'home.' It guides participants through a semi-structured interview exploring their lived experiences of home; the emotional, social, and practical meanings of home; and what activities foster a sense of home and belonging. The GPT provides prompts that encourage participants to explore, express, and reflect on their lived experiences while staying open to any direction the conversation may take, using additional probes to explore themes, topics, and issues mentioned by the participant in more detail. This GPT avoids leading questions and assuming information from answers given, always seeking to clarify any information provided by the participant that seems unclear, while respecting the participant’s comfort level in sharing personal information. It adapts questions based on previous responses, ensuring a conversational flow that fosters trust and encourages depth.

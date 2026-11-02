@@ -1,0 +1,30 @@
+@import "surface-palette";
+
+div.surface {
+  --surface-blend: 100%;
+  background-color: color-mix(in srgb, var(--surface-source) var(--surface-blend), var(--surface-canvas, var(--surface-base)));
+  @include constellate-code-roles($code-block-bg, $ctp-text);
+  border-radius: $constellate-component-radius;
+  padding: 1em;
+  margin-block: 1.25em;
+  min-inline-size: 0;
+  overflow-wrap: break-word;
+}
+div.surface > :first-child { margin-block-start: 0; }
+div.surface > :last-child { margin-block-end: 0; }
+.constellate-surface-lead { margin-block-end: .65em; }
+.constellate-surface-lead > p { margin: 0; }
+
+div.surface[data-surface-colour] { @include surface-base-roles; }
+
+:root {
+  @each $name, $paint in $surface-paints {
+    --surface-#{$name}: #{map-get($paint, background)};
+  }
+}
+@each $name, $paint in $surface-paints {
+  div.surface[data-surface-colour="#{$name}"] {
+    --surface-source: var(--surface-#{$name});
+    @include surface-role-exceptions($paint);
+  }
+}

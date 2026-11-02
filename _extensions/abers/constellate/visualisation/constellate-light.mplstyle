@@ -1,0 +1,16 @@
+figure.facecolor: "#eff1f5"
+axes.facecolor: "#eff1f5"
+text.color: "#4c4f69"
+axes.labelcolor: "#4c4f69"
+xtick.color: "#4c4f69"
+ytick.color: "#4c4f69"
+axes.edgecolor: "#6c6f85"
+grid.color: "#ccd0da"
+axes.grid: True
+axes.axisbelow: True
+axes.spines.top: False
+axes.spines.right: False
+font.family: Open Sans
+font.monospace: Inconsolata
+legend.edgecolor: "#eff1f5"
+axes.prop_cycle: cycler('color', ["#1e66f5", "#ba5da1", "#3d9929", "#e05708", "#8839ef", "#b27015", "#179299", "#d20f39"])

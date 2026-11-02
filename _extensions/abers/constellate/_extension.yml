@@ -1,0 +1,78 @@
+title: Quarto-Constellate
+author: Alasdair B R Stewart
+version: 1.0.0
+quarto-required: ">=1.9.0"
+contributes:
+  metadata:
+    project:
+      brand: brand.yml
+  formats:
+    html:
+      shortcodes:
+        - shortcodes/course-heading.lua
+      filters:
+        - at: pre-quarto
+          path: filters/html-components.lua
+        - filters/website.lua
+        - filters/slide-links.lua
+      template-partials:
+        - templates/title-metadata.html
+      title-block-banner: true
+      date-format: Do MMMM, YYYY
+      toc: true
+      toc-expand: true
+      code-copy: true
+      code-overflow: wrap
+      respect-user-color-scheme: true
+      grid:
+        body-width: 1160px
+        gutter-width: 1rem
+      theme:
+        light:
+          - scss/constellate-html.scss
+          - scss/ctp-cortado.scss
+          - scss/ctp-latte.scss
+          - brand
+          - scss/layout.scss
+          - scss/navigation.scss
+        dark:
+          - scss/constellate-html.scss
+          - scss/ctp-macchiato.scss
+          - brand
+          - scss/layout.scss
+          - scss/navigation.scss
+      syntax-highlighting:
+        light: syntax/cortado.theme
+        dark: syntax/macchiato.theme
+      website:
+        page-footer:
+          border: false
+
+    common:
+      filters:
+        - at: pre-ast
+          path: filters/graphviz.lua
+        - at: pre-ast
+          path: filters/mermaid.lua
+        - filters/quote-attribution.lua
+        - at: pre-quarto
+          path: filters/surfaces.lua
+      shortcodes:
+        - shortcodes/made-with.lua
+    revealjs:
+      filters:
+        - filters/title-slide.lua
+      brand-mode: dark
+      theme:
+        - scss/constellate-revealjs.scss
+        - scss/ctp-macchiato.scss
+        - brand
+      syntax-highlighting: syntax/macchiato.theme
+      template-partials:
+        - templates/title-slide.html
+      transition: slide
+      transition-speed: fast
+      slide-number: c/t
+      center: true
+      code-line-numbers: false
+      date-format: Do MMMM YYYY

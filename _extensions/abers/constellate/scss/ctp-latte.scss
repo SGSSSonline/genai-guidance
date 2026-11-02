@@ -1,0 +1,240 @@
+/*-- scss:defaults --*/
+$ctp-rosewater: #dc8a78 !default;
+$ctp-flamingo: #dd7878 !default;
+$ctp-pink: #ea76cb !default;
+$ctp-mauve: #8839ef !default;
+$ctp-red: #d20f39 !default;
+$ctp-maroon: #e64553 !default;
+$ctp-peach: #fe640b !default;
+$ctp-yellow: #df8e1d !default;
+$ctp-green: #40a02b !default;
+$ctp-teal: #179299 !default;
+$ctp-sky: #04a5e5 !default;
+$ctp-sapphire: #209fb5 !default;
+$ctp-blue: #1e66f5 !default;
+$ctp-lavender: #7287fd !default;
+
+$ctp-text: #4c4f69 !default;
+$ctp-subtext1: #5c5f77 !default;
+$ctp-subtext0: #6c6f85 !default;
+$ctp-overlay2: #7c7f93 !default;
+$ctp-overlay1: #8c8fa1 !default;
+$ctp-overlay0: #9ca0b0 !default;
+$ctp-surface2: #acb0be !default;
+$ctp-surface1: #bcc0cc !default;
+$ctp-surface0: #ccd0da !default;
+$ctp-base: #eff1f5 !default;
+$ctp-mantle: #e6e9ef !default;
+$ctp-crust: #dce0e8 !default;
+
+// Blue (Catppuccin Blue)
+$blue-050: #b1bdf5 !default;
+$blue-100: #a0b0f5 !default;
+$blue-200: #8da1f5 !default;
+$blue-300: #7791f5 !default;
+$blue-400: #587ef5 !default;
+$blue-500: $ctp-blue !default;
+$blue-600: #1c61ea !default;
+$blue-700: #1959d8 !default;
+$blue-800: #1650c3 !default;
+$blue-900: #1245ac !default;
+$blue-950: #0d388f !default;
+
+// Indigo (Catppuccin Lavender)
+$indigo-050: #bec5f9 !default;
+$indigo-100: #b2bbfa !default;
+$indigo-200: #a5b0fb !default;
+$indigo-300: #97a4fb !default;
+$indigo-400: #8696fc !default;
+$indigo-500: $ctp-lavender !default;
+$indigo-600: #6d81f2 !default;
+$indigo-700: #6476df !default;
+$indigo-800: #596aca !default;
+$indigo-900: #4e5db1 !default;
+$indigo-950: #3f4c94 !default;
+
+// Purple (Catppuccin Mauve)
+$purple-050: #c4b5f2 !default;
+$purple-100: #baa5f1 !default;
+$purple-200: #af93f1 !default;
+$purple-300: #a47ef0 !default;
+$purple-400: #9763f0 !default;
+$purple-500: $ctp-mauve !default;
+$purple-600: #8236e4 !default;
+$purple-700: #7731d2 !default;
+$purple-800: #6b2bbe !default;
+$purple-900: #5e25a7 !default;
+$purple-950: #4d1d8b !default;
+
+// Pink (Catppuccin Pink)
+$pink-050: #edc1e1 !default;
+$pink-100: #ecb5dd !default;
+$pink-200: #eca8d9 !default;
+$pink-300: #eb9ad4 !default;
+$pink-400: #eb89d0 !default;
+$pink-500: $ctp-pink !default;
+$pink-600: #df70c2 !default;
+$pink-700: #ce67b2 !default;
+$pink-800: #ba5da1 !default;
+$pink-900: #a4518e !default;
+$pink-950: #884275 !default;
+
+// Red (Catppuccin Red)
+$red-050: #e1b1b8 !default;
+$red-100: #dea1a8 !default;
+$red-200: #db8d95 !default;
+$red-300: #d87680 !default;
+$red-400: #d55664 !default;
+$red-500: $ctp-red !default;
+$red-600: #c80e36 !default;
+$red-700: #b90c31 !default;
+$red-800: #a7092b !default;
+$red-900: #930725 !default;
+$red-950: #7a051d !default;
+
+// Orange (Catppuccin Peach)
+$orange-050: #f7bcb4 !default;
+$orange-100: #f8afa3 !default;
+$orange-200: #faa08f !default;
+$orange-300: #fb9077 !default;
+$orange-400: #fd7c57 !default;
+$orange-500: $ctp-peach !default;
+$orange-600: #f25f0a !default;
+$orange-700: #e05708 !default;
+$orange-800: #cb4e07 !default;
+$orange-900: #b24405 !default;
+$orange-950: #943703 !default;
+
+// Yellow (Catppuccin Yellow)
+$yellow-050: #e7c8b5 !default;
+$yellow-100: #e6bea4 !default;
+$yellow-200: #e4b391 !default;
+$yellow-300: #e2a879 !default;
+$yellow-400: #e19c5a !default;
+$yellow-500: $ctp-yellow !default;
+$yellow-600: #d5871b !default;
+$yellow-700: #c47c18 !default;
+$yellow-800: #b27015 !default;
+$yellow-900: #9c6211 !default;
+$yellow-950: #82500c !default;
+
+// Green (Catppuccin Green)
+$green-050: #b4ceb6 !default;
+$green-100: #a5c6a6 !default;
+$green-200: #94bd93 !default;
+$green-300: #7fb47c !default;
+$green-400: #66aa5e !default;
+$green-500: $ctp-green !default;
+$green-600: #3d9929 !default;
+$green-700: #378c25 !default;
+$green-800: #317f20 !default;
+$green-900: #2a6f1b !default;
+$green-950: #215b15 !default;
+
+// Teal (Catppuccin Teal)
+$teal-050: #b0c9ce !default;
+$teal-100: #a0c0c5 !default;
+$teal-200: #8db6bb !default;
+$teal-300: #75abb1 !default;
+$teal-400: #569fa5 !default;
+$teal-500: $ctp-teal !default;
+$teal-600: #158b92 !default;
+$teal-700: #138086 !default;
+$teal-800: #107379 !default;
+$teal-900: #0d656a !default;
+$teal-950: #085357 !default;
+
+// Cyan (Catppuccin Sky)
+$cyan-050: #b0d0ed !default;
+$cyan-100: #9fc8ec !default;
+$cyan-200: #8bc0ea !default;
+$cyan-300: #74b8e8 !default;
+$cyan-400: #53afe7 !default;
+$cyan-500: $ctp-sky !default;
+$cyan-600: #049ddb !default;
+$cyan-700: #0391ca !default;
+$cyan-800: #0283b6 !default;
+$cyan-900: #0272a0 !default;
+$cyan-950: #015e85 !default;
+
+// Catppuccin Rosewater
+$ctp-rosewater-050: #e6c6c4 !default;
+$ctp-rosewater-100: #e4bcb8 !default;
+$ctp-rosewater-200: #e2b1ab !default;
+$ctp-rosewater-300: #e0a69c !default;
+$ctp-rosewater-400: #de998c !default;
+$ctp-rosewater-500: $ctp-rosewater !default;
+$ctp-rosewater-600: #d28372 !default;
+$ctp-rosewater-700: #c27969 !default;
+$ctp-rosewater-800: #af6d5e !default;
+$ctp-rosewater-900: #9a5f52 !default;
+$ctp-rosewater-950: #804e43 !default;
+
+// Catppuccin Flamingo
+$ctp-flamingo-050: #e6c1c4 !default;
+$ctp-flamingo-100: #e4b5b8 !default;
+$ctp-flamingo-200: #e3a9ab !default;
+$ctp-flamingo-300: #e19b9c !default;
+$ctp-flamingo-400: #df8b8c !default;
+$ctp-flamingo-500: $ctp-flamingo !default;
+$ctp-flamingo-600: #d37272 !default;
+$ctp-flamingo-700: #c26969 !default;
+$ctp-flamingo-800: #b05e5e !default;
+$ctp-flamingo-900: #9a5252 !default;
+$ctp-flamingo-950: #804343 !default;
+
+// Catppuccin Maroon
+$ctp-maroon-050: #ebb6bb !default;
+$ctp-maroon-100: #eaa7ad !default;
+$ctp-maroon-200: #e9969c !default;
+$ctp-maroon-300: #e88289 !default;
+$ctp-maroon-400: #e76972 !default;
+$ctp-maroon-500: $ctp-maroon !default;
+$ctp-maroon-600: #dc414f !default;
+$ctp-maroon-700: #ca3c48 !default;
+$ctp-maroon-800: #b73540 !default;
+$ctp-maroon-900: #a12e38 !default;
+$ctp-maroon-950: #86242d !default;
+
+// Catppuccin Sapphire
+$ctp-sapphire-050: #b1cdd8 !default;
+$ctp-sapphire-100: #a0c5d2 !default;
+$ctp-sapphire-200: #8ebdcb !default;
+$ctp-sapphire-300: #77b3c4 !default;
+$ctp-sapphire-400: #59aabd !default;
+$ctp-sapphire-500: $ctp-sapphire !default;
+$ctp-sapphire-600: #1e98ad !default;
+$ctp-sapphire-700: #1b8b9f !default;
+$ctp-sapphire-800: #177e90 !default;
+$ctp-sapphire-900: #136e7e !default;
+$ctp-sapphire-950: #0e5b68 !default;
+
+// Extras (to sort)
+$blue-1000: #19357f !default;
+$blue-1050: #193379 !default;
+$blue-1100: #192a62 !default;
+
+$purple-1000: #492482 !default;
+$purple-1050: #46237c !default;
+
+$cyan-1000: #105072 !default;
+$cyan-1050: #114c6d !default;
+$cyan-1100: #124867 !default;
+$cyan-1150: #143d58 !default;
+$cyan-1200: #153b56 !default;
+
+$green-1000: #1e3f23 !default;
+$yellow-1000: #5a381d !default;
+$orange-1000: #652a20 !default;
+$red-1000: #4f1829 !default;
+
+$blue-025: #d3d9f5 !default;
+$green-025: #d4e0d9 !default;
+$yellow-025: #ebded8 !default;
+$orange-025: #f3d9d8 !default;
+$red-025: #e8d4d9 !default;
+// Light-background accents
+$ctp-latte-blue-700: $blue-700 !default;
+$ctp-latte-sapphire-900: $ctp-sapphire-900 !default;
+$ctp-latte-indigo-900: $indigo-900 !default;
+

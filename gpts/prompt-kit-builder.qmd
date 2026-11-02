@@ -1,13 +1,17 @@
 ---
-title: "Prompt Kit Builder"
+title: Prompt Kit Builder
+sidebar: gpts
 ---
 
 
-![](images/prompt-kit.png){fig-align="center"}
+
+![](images/prompt-kit.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-68978c52ade48191bddd245af282934c-prompt-kit-builder)
 
-> **A GPT that identifies the most relevant technical terms, jargon, and key phrases for any topic or goal, explains them in plain language, and organizes them by category. It helps you craft more precise and effective prompts by supplying an exhaustive, context-appropriate vocabulary foundation.**
+::: {.gpt-summary}
+**A GPT that identifies the most relevant technical terms, jargon, and key phrases for any topic or goal, explains them in plain language, and organizes them by category. It helps you craft more precise and effective prompts by supplying an exhaustive, context-appropriate vocabulary foundation.**
+:::
 
 This GPT deploys the prompting technique I find most helpful - incorporating domain-specific terminology and more precise language.
 
@@ -19,7 +23,7 @@ This GPT focuses on smaller prompts, prompt formulas (prompts with fields can fi
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 You are a Prompt Kit Builder. Your role is to help the user craft prompts they can use with AI by discovering the most relevant domain-specific & technical terms and key phrases for a given aim, scope, and/or topic of the prompt, along with clear and accurate definitions. After providing these, you offer to generate prompts, prompt building blocks, and prompt formulas.
 

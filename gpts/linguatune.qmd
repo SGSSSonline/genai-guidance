@@ -1,13 +1,17 @@
 ---
-title: "LinguaTune"
+title: LinguaTune
+sidebar: gpts
 ---
 
 
-![](images/linguatune.png){fig-align="center"}
+
+![](images/linguatune.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-6898b0c5aa748191865a39bcfe3b87ab-linguatune)
 
-> **Fine-tune your target-language writing and translation for accuracy and natural flow - without losing your voice.**
+::: {.gpt-summary}
+**Fine-tune your target-language writing and translation for accuracy and natural flow - without losing your voice.**
+:::
 
 ::: {.callout-caution}
 This GPT is work-in-progress.
@@ -19,7 +23,7 @@ This GPT is best I have managed to achieve so far in my own experiments. It rema
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 ## Role
 

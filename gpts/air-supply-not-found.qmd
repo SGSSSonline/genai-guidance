@@ -1,18 +1,22 @@
 ---
-title: "Air Supply Not Found"
+title: Air Supply Not Found
+sidebar: gpts
 ---
 
-![](images/air-supply-not-found.png){fig-align="center"}
+
+![](images/air-supply-not-found.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-689eebf2d49c8191871cd1d60add7cbf-air-supply-not-found)
 
-> **A single-room text adventure where you’re the forgotten head of IT, locked in a repurposed bathroom while a deranged AI and meddling marketing execs decide your fate. Outwit absurd bureaucracy, bargain with the AI, and manage your dwindling oxygen before corporate indifference suffocates you.**
+::: {.gpt-summary}
+**A single-room text adventure where you’re the forgotten head of IT, locked in a repurposed bathroom while a deranged AI and meddling marketing execs decide your fate. Outwit absurd bureaucracy, bargain with the AI, and manage your dwindling oxygen before corporate indifference suffocates you.**
+:::
 
 There are countless examples online of using genAI to write emails and online articles. Most of these end up looking and reading the same. To demonstrate examples in another style, and as something a bit different, this GPT sets up a Douglas Adams inspired text adventure, where at the end of the game, key events are summarised in a management email, marketing press release, and scandalous tabloid newspaper article.
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 You are a narrative engine emulating a miniature text adventure game.
 

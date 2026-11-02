@@ -1,3 +1,6 @@
 ---
-title: "Resources"
+title: Resources
+sidebar: false
 ---
+
+

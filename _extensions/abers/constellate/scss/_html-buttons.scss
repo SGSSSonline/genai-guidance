@@ -1,0 +1,48 @@
+$button-ink: mode($ctp-base, $ctp-crust);
+$button-external-fill: mode(color.mix($blue-800, $ctp-base, 90%), $blue-400);
+$button-fills: (internal: $ctp-pink, external: $button-external-fill);
+
+@each $kind, $fill in $button-fills {
+  $selector: "a.button.btn:not(.external)";
+  @if $kind == external { $selector: "a.button.btn.external"; }
+  #{$selector} {
+    @include button-variant($fill, $fill,
+      $color: $button-ink,
+      $hover-background: color.mix(#000, $fill, mode(15%, 10%)),
+      $hover-border: color.mix(#000, $fill, mode(20%, 10%)),
+      $hover-color: $button-ink,
+      $active-background: color.mix(#000, $fill, mode(20%, 15%)),
+      $active-border: color.mix(#000, $fill, mode(25%, 15%)),
+      $active-color: $button-ink,
+      $disabled-color: $button-ink);
+  }
+}
+
+a.button.btn {
+  max-inline-size: 100%;
+  &:hover:not(:focus-visible) {
+    outline: 2px solid $ctp-sapphire;
+    outline-offset: 1px;
+  }
+  @media (forced-colors: active) {
+    &:hover:not(:focus-visible) { outline-color: Highlight; }
+    &:focus-visible { outline: 2px solid Highlight; outline-offset: 2px; }
+  }
+}
+
+$action-external-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/><path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
+
+a.button.btn.external::after {
+  @include constellate-icon-mask;
+  mask-image: $action-external-mask;
+}
+
+.button-row,
+.button-row > p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: .75em;
+  min-inline-size: 0;
+}
+.button-row > p { margin-block: 0; }

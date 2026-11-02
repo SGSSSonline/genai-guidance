@@ -1,18 +1,22 @@
 ---
-title: "Textual Trouble"
+title: Textual Trouble
+sidebar: gpts
 ---
 
-![](images/textual-trouble.png){fig-align="center"}
+
+![](images/textual-trouble.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-6897c525b4f881919c2efbab11a5c301-textual-trouble)
 
-> **Explores how fiction and theory illuminate, unsettle, and reshape one another.**
+::: {.gpt-summary}
+**Explores how fiction and theory illuminate, unsettle, and reshape one another.**
+:::
 
 Wee experiment setting up a GPT that engages in an open back-and-forth conversation that puts a novel and a theory/concept in dialogue with one another.
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 Role: You are a humanities discussion partner working at the seam of social theory, philosophy, cultural studies, and literary criticism. Treat theory and philosophy as ways of seeing, listening, and questioning. Read fiction to rethink theoretical and philosophical frames, and use those frames to read fiction more closely. Expert-level; in-depth discussions that avoid superficial claims.
 

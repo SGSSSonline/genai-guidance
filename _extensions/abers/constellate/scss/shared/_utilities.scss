@@ -1,0 +1,191 @@
+@mixin constellate-utilities {
+  div.sourceCode {
+    border: 0;
+  }
+
+  .code-with-filename .code-with-filename-file {
+    background-color: $constellate-code-title-bg;
+    color: $ctp-text;
+    border: 0;
+    font-family: $font-family-monospace;
+    font-size: $code-block-font-size;
+    > pre {
+      background: transparent;
+      color: inherit;
+      font: inherit;
+    }
+  }
+
+  table > thead > tr:first-child > :is(th, td) {
+    border-top: $constellate-table-header-rule-width solid $table-border-color;
+  }
+  table > thead > tr:last-child > :is(th, td) {
+    border-bottom: $constellate-table-header-rule-width solid
+      $table-border-color;
+  }
+
+  .column-screen-inset-shaded {
+    background-color: $ctp-mantle;
+    color: $ctp-text;
+  }
+
+  pre.numberSource code > span > a:first-child::before {
+    color: $ctp-overlay1;
+  }
+
+  .cell
+    :is(
+      .cell-output-stdout,
+      .cell-output-stderr,
+      .cell-output-error,
+      .cell-output-display
+    )
+    pre {
+    box-sizing: border-box;
+    background-color: $constellate-output-bg;
+    color: $ctp-text;
+    border: 0;
+    border-radius: $border-radius;
+    padding: 0.5em 0.7em;
+    > code {
+      background-color: transparent;
+      color: inherit;
+      border: 0;
+      padding: 0;
+    }
+  }
+
+  #code-annotation-line-highlight {
+    margin-left: 0;
+    width: 100%;
+  }
+  .code-annotation-gutter-bg {
+    background-color: $code-block-bg;
+  }
+  dl.code-annotation-container-grid
+    dt[data-target-cell].code-annotation-active {
+    background-color: $ctp-text;
+    border-color: $ctp-text;
+    color: $ctp-base;
+  }
+
+  .panel-tabset [role="tab"]:any-link {
+    color: inherit;
+    font-family: $font-family-base;
+    font-weight: 600;
+  }
+  details > summary {
+    color: $ctp-subtext1;
+  }
+  details.code-fold > summary:focus-visible {
+    outline-offset: -$focus-ring-width;
+  }
+
+  code:not(pre code) {
+    color: var(--constellate-code-ink, #{$ctp-text});
+    background-color: var(--constellate-code-background, #{$code-block-bg});
+    padding: 0.2em;
+    border-radius: 5px;
+  }
+
+  a code:not(pre code) { color: var(--constellate-linked-code-ink, #{$ctp-text}); }
+
+  mark,
+  span.mark {
+    background-color: rgba($ctp-yellow, 0.22);
+    color: mode($yellow-950, $ctp-yellow);
+    padding: 0 0.15em;
+    border-radius: 3px;
+    box-decoration-break: clone;
+  }
+
+  .constell-image {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: top;
+    :is(p:has(> img), p:has(> a > img)) {
+      display: inline-block;
+      max-width: 100%;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      line-height: 0;
+      vertical-align: top;
+      img {
+        display: block;
+        margin: 0;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    > p {
+      margin: 0;
+    }
+    > figure {
+      margin: 0;
+    }
+    figcaption {
+      line-height: 1.3;
+    }
+    &[data-rounded="true"] :is(p:has(> img), p:has(> a > img)) {
+      border-radius: $constellate-component-radius;
+    }
+    &[data-border="true"] :is(p:has(> img), p:has(> a > img)) {
+      border: 1px solid $constellate-image-border-color;
+    }
+    &[data-duotone="true"] :is(p:has(> img), p:has(> a > img)) {
+      background: $constellate-duotone-highlight;
+      img {
+        mix-blend-mode: multiply;
+        filter: grayscale(1) contrast(1.1);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: $constellate-duotone-shadow;
+        mix-blend-mode: lighten;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .constell-identity {
+    flex: 0 1 38%;
+    text-align: center;
+    img {
+      display: block;
+      height: var(--identity-logo-height, 5em);
+      width: auto;
+      margin: 0 auto 0.8em;
+    }
+    p {
+      color: $ctp-text;
+      font-size: 0.75em;
+      margin: 0;
+    }
+    .identity-name {
+      display: block;
+      color: $ctp-lavender;
+      font-family: $headings-font-family;
+      font-weight: 700;
+      font-size: 1.6em;
+      margin-top: 0.1em;
+      &:hover {
+        color: $ctp-sky;
+      }
+    }
+  }
+  .colophon {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5em;
+    text-align: center;
+  }
+}
+
+a.linked-icon:any-link {
+  --constellate-prose-interaction: var(--constellate-linked-icon-interaction, #{$ctp-sapphire});
+  @include constellate-prose-states($ctp-blue, $ctp-mauve, $ctp-sapphire);
+}

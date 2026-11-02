@@ -1,0 +1,29 @@
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "sass:math";
+
+@mixin export-colours($colours, $series, $sequential) {
+  $values: map.merge($colours, (
+    sequential-low: list.nth($sequential, 1),
+    sequential-high: list.nth($sequential, 2)
+  ));
+  @each $role, $value in $values {
+    --#{$role}: #{math.round(color.channel($value, "red", $space: rgb))} #{math.round(color.channel($value, "green", $space: rgb))} #{math.round(color.channel($value, "blue", $space: rgb))};
+  }
+  --series-hues: #{$series};
+}
+
+.light {
+  $dark-mode: false;
+  @import "ctp-latte";
+  @import "shared/visualisation-colours";
+  @include export-colours($constellate-viz-colours, $constellate-diagram-series-hues, $constellate-viz-sequential);
+}
+.dark {
+  $dark-mode: true;
+  @import "ctp-macchiato";
+  @import "shared/visualisation-colours";
+  @include export-colours($constellate-viz-colours, $constellate-diagram-series-hues, $constellate-viz-sequential);
+}
+

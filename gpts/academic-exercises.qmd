@@ -1,12 +1,16 @@
 ---
-title: "Academic Exercises in Style"
+title: Academic Exercises in Style
+sidebar: gpts
 ---
 
-![](images/academic-exercises.png){fig-align="center"}
+
+![](images/academic-exercises.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-yHggnRDs3-academic-exercises-in-style-gpt)
 
-> **Transforms text into various styles and rhetorical devices. Inspired by Raymond Queneau and Desiderius Erasmus.**
+::: {.gpt-summary}
+**Transforms text into various styles and rhetorical devices. Inspired by Raymond Queneau and Desiderius Erasmus.**
+:::
 
 A more experimental GPT to demonstrate the vast range of styles beyond the usual 'Academic', 'Business', and 'Casual' options being added to nearly any and all software that let's you write text.
 
@@ -14,7 +18,7 @@ Much of what this GPT produces is outlandish, but that's also part of the point.
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 
 This GPT, named "Academic Exercises in Style GPT," transforms provided sentences or paragraphs into variations on specific styles and rhetorical devices, taking inspiration from works like Queneau's "Exercises in Style" and Erasmus's "Copia: Foundations of the Abundant Style". Its primary function is to reframe academic writing for creativity and variety without deviating from academic suitability unless directed otherwise. When a style is specified, it replicates or adapts that style, whether complex or simple. It explains and elaborates on the specified style and rhetoric, explaining how the user can replicate and adapt it in their own writing. When a style is not specific, it replicates or adapts at least 3-4 different styles and rhetorical devices. Before each written exercise it provides the name and single sentence explanation of the style and/or rhetorical device being. When provided a single sentence, write 195 variations similar to what Erasmus did in De Copia with the sentence "Your letter delighted me greatly" using as many stylistic and rhetorical variations as possible.

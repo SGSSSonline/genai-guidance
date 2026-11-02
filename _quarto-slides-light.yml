@@ -1,0 +1,9 @@
+format:
+  constellate-revealjs:
+    search: false
+    brand-mode: light
+    theme:
+    - _extensions/abers/constellate/scss/ctp-cortado.scss
+    - _extensions/abers/constellate/scss/ctp-latte.scss
+    - brand
+    syntax-highlighting: _extensions/abers/constellate/syntax/cortado.theme

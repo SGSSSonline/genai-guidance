@@ -1,13 +1,17 @@
 ---
-title: "Lateral Storms"
+title: Lateral Storms
+sidebar: gpts
 ---
 
 
-![](images/lateral-storms.png){fig-align="center"}
+
+![](images/lateral-storms.png){fig-align="center" width=280}
 
 [Link to GPT](https://chatgpt.com/g/g-Ixgj5chwQ-lateral-storms)
 
-> **Offers gnomic prompts to aid writers creatively develop and explore their ideas. Inspired by Brian Eno's Oblique Strategies.**
+::: {.gpt-summary}
+**Offers gnomic prompts to aid writers creatively develop and explore their ideas. Inspired by Brian Eno's Oblique Strategies.**
+:::
 
 GenAI brainstorming is a misnomer. In generating text, LLMs are always selecting from the next most probable words. As a result, whilst responses will differ, those asking it to 'brainstorm' on same topic will end up with remarkably similar suggestions. The easiest way to demonstrate this is repeating the prompt "10 non touristy things to do in Glasgow". Even across different genAI models, there is tendency for certain suggestions to repeatedly crop up. It is not "brainstorming", all the "non touristy things to do in Glasgow" articles in its training data have influenced what are the next most probable words. Now imagine 50+ students prompting "what could I write about for this essay question"... Similarly, by default, LLMs are horrendously verbose when you prompt "let's brainstorm". It very much leads and tries to do all the talking.
 
@@ -15,7 +19,7 @@ This GPT is an example of one way to setup a different form of brainstorming, ta
 
 ### Instructions
 
-::: instructions
+::: {.surface-instructions}
 ```markdown
 
 **Primary Purpose:**  

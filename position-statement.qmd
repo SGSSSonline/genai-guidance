@@ -1,6 +1,9 @@
 ---
-title: "Position Statement"
+title: Position Statement
+sidebar: false
 ---
+
+
 
 ### Avoiding Hype and Cynicism
 

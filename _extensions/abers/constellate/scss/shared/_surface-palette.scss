@@ -1,0 +1,111 @@
+$surface-paints: (
+  "rosewater": (
+    background: mode(color.mix($brand-ctp-latte-rosewater, $ctp-base, 33%), color.mix($brand-ctp-latte-rosewater, $ctp-base, 22%)),
+    visited: mode($purple-800, $ctp-mauve)
+  ),
+  "flamingo": (
+    background: mode(color.mix($brand-ctp-mocha-flamingo, $ctp-base, 85%), color.mix($brand-ctp-latte-flamingo, $ctp-mantle, 19%))
+  ),
+  "pink": (
+    background: mode(color.mix($pink-050, $ctp-base, 66%), color.mix($ctp-pink, $ctp-crust, 29%)),
+    link: mode($blue-800, $blue-300),
+    visited: mode($purple-700, $purple-300),
+    interaction: mode($ctp-sapphire-950, $ctp-sapphire-400)
+  ),
+  "mauve": (
+    background: mode(color.mix($purple-050, $ctp-base, 52%), color.mix($ctp-mauve, $ctp-base, 13%))
+  ),
+  "red": (
+    background: mode(color.mix($brand-ctp-frappe-red, $ctp-base, 42%), color.mix($ctp-red, $ctp-base, 12%)),
+    link: mode($blue-900, $ctp-blue),
+    visited: mode($purple-800, $ctp-mauve)
+  ),
+  "maroon": (
+    background: mode(color.mix($ctp-maroon-800, $ctp-base, 23%), color.mix($ctp-maroon-950, $ctp-crust, 65%)),
+    link: mode($blue-900, $blue-300),
+    visited: mode($purple-800, $purple-300),
+    interaction: mode($ctp-sapphire-950, $ctp-sapphire-400)
+  ),
+  "peach": (
+    background: mode(color.mix($brand-ctp-macchiato-peach, $ctp-base, 51%), color.mix($ctp-peach, $ctp-base, 24%)),
+    link: mode($blue-800, $blue-300),
+    visited: mode($purple-800, $purple-400)
+  ),
+  "yellow": (
+    background: mode(color.mix($brand-ctp-mocha-yellow, $ctp-base, 89%), color.mix($yellow-950, $ctp-mantle, 50%)),
+    link: mode($blue-700, $blue-200),
+    visited: mode($purple-600, $purple-300),
+    interaction: mode($ctp-sapphire, $ctp-sapphire-400)
+  ),
+  "green": (
+    background: mode(color.mix($brand-ctp-macchiato-green, $ctp-base, 45%), color.mix($ctp-green, $ctp-base, 11%))
+  ),
+  "teal": (
+    background: mode(color.mix($brand-ctp-macchiato-teal, $ctp-base, 36%), color.mix($ctp-teal, $ctp-base, 9%)),
+    link: mode($blue-700, $ctp-blue)
+  ),
+  "sky": (
+    background: mode(color.mix($cyan-050, $ctp-base, 57%), color.mix($ctp-sky, $ctp-base, 16%)),
+    link: mode($blue-800, $blue-400)
+  ),
+  "sapphire": (
+    background: mode(color.mix($ctp-sapphire-100, $ctp-base, 48%), color.mix($ctp-sapphire, $ctp-base, 14%))
+  ),
+  "blue": (
+    background: mode(color.mix($brand-ctp-frappe-blue, $ctp-base, 37%), color.mix($ctp-blue, $ctp-base, 9%)),
+    visited: mode($purple-800, $ctp-mauve)
+  ),
+  "lavender": (
+    background: mode(color.mix($brand-ctp-frappe-lavender, $ctp-base, 58%), color.mix($ctp-lavender, $ctp-base, 15%)),
+    visited: mode($purple-800, $ctp-mauve)
+  ),
+  "crust": (
+    background: $ctp-crust,
+    link: mode($blue-700, $ctp-blue)
+  ),
+  "mantle": (
+    background: $ctp-mantle,
+    link: mode($blue-700, $ctp-blue),
+    visited: mode($purple-600, $ctp-mauve),
+    interaction: $ctp-sapphire
+  ),
+  "base": (
+    background: $ctp-base,
+    link: mode($blue-700, $ctp-blue),
+    visited: mode($purple-600, $ctp-mauve),
+    interaction: $ctp-sapphire
+  ),
+  "surface0": (
+    background: $ctp-surface0,
+    visited: mode($purple-800, $ctp-mauve)
+  ),
+  "surface1": (
+    background: $ctp-surface1,
+    ink: mode($brand-ctp-macchiato-crust, $ctp-text),
+    link: mode($blue-900, $blue-300),
+    visited: mode($purple-900, $purple-300),
+    interaction: mode(color.mix($ctp-sapphire-950, $brand-ctp-macchiato-crust, 92%), $ctp-sapphire-400)
+  ),
+  "surface2": (
+    background: $ctp-surface2,
+    ink: mode($brand-ctp-macchiato-crust, $brand-ctp-latte-base),
+    link: mode($blue-950, color.mix($blue-050, $brand-ctp-latte-base, 80%)),
+    visited: mode($purple-950, $purple-050),
+    interaction: mode(color.mix($ctp-sapphire-950, $brand-ctp-macchiato-crust, 73%), $ctp-sapphire-050),
+    focus: mode($indigo-950, $constellate-focus-color)
+  )
+);
+
+@mixin surface-base-roles {
+  color: $ctp-text;
+  @include constellate-prose-roles(mode($blue-800, $ctp-blue), mode($purple-700, $ctp-mauve), mode($ctp-sapphire-950, $ctp-sapphire), var(--constellate-prose-interaction));
+}
+
+@mixin surface-role-exceptions($paint) {
+  @if map-has-key($paint, ink) { color: map-get($paint, ink); }
+  @each $role in link, visited, interaction, focus {
+    @if map-has-key($paint, $role) {
+      --constellate-prose-#{$role}: #{map-get($paint, $role)};
+    }
+  }
+}
