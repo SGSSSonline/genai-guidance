@@ -1,0 +1,26 @@
+/* Intermediate slide size: normal 100%, small 85%, native smaller 70%.
+   Apply to the slide heading: ## Title {.small}; do not combine with .smaller.
+   Match Quarto's smaller helper by preserving ordinary heading sizes. */
+.reveal .slides section.small { font-size: .85em; }
+.reveal .slides section.small h1 { font-size: calc(2.5em / .85); }
+.reveal .slides section.small h2 { font-size: calc(1.6em / .85); }
+.reveal .slides section.small h3 { font-size: calc(1.3em / .85); }
+
+/* Opt-in spacing for existing dense teaching slides; keep brand font roles. */
+.reveal .slides section.slide-tight { line-height: 1.18; }
+.reveal .slides section.slide-tight p { margin-block: .4em; }
+.reveal .slides section.slide-tight li { margin-block: .2em; }
+.reveal .slides section.slide-tight h2 { margin-block-end: .3em; }
+.reveal .slides section.slide-tight div.surface { padding: .45em; margin-block: .4em; }
+
+.reveal .slides section.slide-tight :is(p, li) { line-height: inherit; }
+.reveal .slides section.slide-tight h2 { font-size: 1.6em; line-height: 1.12; }
+
+/* Quarto only constrains non-centred slides by default. A scrollable slide
+   still needs a viewport when the deck's center option is true. */
+@media screen {
+  html:not(.print-pdf) .reveal .slides section.slide.scrollable:not(.reveal-scroll *) {
+    height: 100%;
+    box-sizing: border-box;
+  }
+}

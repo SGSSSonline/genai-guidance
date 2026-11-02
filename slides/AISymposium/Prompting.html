@@ -6,21 +6,27 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-25ff89cb65eaba0d25ffb88d4e76178d.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.11.9">
 
   <meta name="author" content="Alasdair B R Stewart">
   <title>Critical GenAI Literacies – Prompting Against the Grain</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -29,8 +35,8 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-88d1f8f18e5de0f9d014d45107435507.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-0acf531a0f9d2085a13d6c46db779913.css">
+  <link rel="stylesheet" href="../../styles/slides.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -122,61 +128,25 @@
       margin-right: 0; 
     }
   </style>
-  <style>
-  div.callout-consider.callout {
-    border-left-color: #e83e8c;
-  }
-  div.callout-consider.callout-style-default > .callout-header {
-    background-color: rgba(232, 62, 140, 0.13);
-  }
-  div.callout-consider .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-consider.callout-style-default .callout-icon::before, div.callout-consider.callout-titled .callout-icon::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23e83e8c" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-  }
-  div.callout-experiment.callout {
-    border-left-color: #3fb618;
-  }
-  div.callout-experiment.callout-style-default > .callout-header {
-    background-color: rgba(63, 182, 24, 0.13);
-  }
-  div.callout-experiment .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-experiment.callout-style-default .callout-icon::before, div.callout-experiment.callout-titled .callout-icon::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%233fb618" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-  }
-  div.callout-hype.callout {
-    border-left-color: #ff7518;
-  }
-  div.callout-hype.callout-style-default > .callout-header {
-    background-color: rgba(255, 117, 24, 0.13);
-  }
-  div.callout-hype .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');}
-  div.callout-hype.callout-style-default .callout-icon::before, div.callout-hype.callout-titled .callout-icon::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff7518" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-  }
-  </style>
 </head>
-<body class="quarto-light">
+<body class="quarto-dark">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Prompting Against the Grain</h1>
-  <p class="subtitle">Generating Learning in AI Interactions</p>
-
-<div class="quarto-title-authors">
-<div class="quarto-title-author">
-<div class="quarto-title-author-name">
-Alasdair B R Stewart 
-</div>
-</div>
-</div>
-
+<section id="title-slide" class="title-slide-custom center">
+  <div class="title-slide-inner">
+    <h1 class="title">Prompting Against the Grain</h1>
+    <p class="subtitle">Generating Learning in AI Interactions</p>
+    <div class="title-rule" aria-hidden="true"></div>
+    <div class="title-author">
+      <p class="author">Alasdair B R Stewart</p>
+    </div>
+  </div>
 </section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Scan the QR code or use the text code below to add questions, own examples, etc on Mentimeter:</p>
 <p>Text code: <strong>REDACTED</strong></p>
-<div title="Warning">
 <div class="callout callout-warning callout-titled callout-style-simple">
 <div class="callout-body">
 <div class="callout-title">
@@ -193,9 +163,8 @@ Alasdair B R Stewart
 </div>
 </div>
 </div>
-</div>
 </section>
-<section id="student-concerns" class="slide level2 smaller">
+<section id="student-concerns" class="slide level2 smaller center">
 <h2>Student Concerns</h2>
 <ul>
 <li>Understand principles on paper, but anxious over how to translate that into practice.</li>
@@ -210,7 +179,7 @@ Alasdair B R Stewart
 <li>Resistant towards using genAI due to its harms.</li>
 </ul>
 </section>
-<section id="critical-how" class="slide level2">
+<section id="critical-how" class="slide level2 center">
 <h2>Critical How?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -230,7 +199,7 @@ Alasdair B R Stewart
 </div></div>
 <p>The conceptual becomes scholastic when the technical/practical is excluded and treated as distinct and separate.</p>
 </section>
-<section id="conceptual-problems" class="slide level2">
+<section id="conceptual-problems" class="slide level2 small center">
 <h2>Conceptual Problems</h2>
 <p>When scholastic, academic positions on genAI risk sharing same impoverished ‘technology vs culture’ view as the tech bros:</p>
 <ul>
@@ -238,7 +207,7 @@ Alasdair B R Stewart
 <li>Pragmatic approaches that view genAI as ‘mere tool’, permitted subject to ‘responsible use’ – though sometimes a position reached with reluctance – “students will need to know how to use it in the workplace”.</li>
 </ul>
 </section>
-<section id="genai-as-situated-technology" class="slide level2">
+<section id="genai-as-situated-technology" class="slide level2 small center">
 <h2>GenAI as Situated Technology</h2>
 <ul>
 <li>Depending on context technology is more tool-like or machine-like.</li>
@@ -248,26 +217,26 @@ Alasdair B R Stewart
 <li>This design tendency undermines ‘use responsibly’ dos and don’ts …</li>
 </ul>
 </section>
-<section id="how-it-started" class="slide level2">
+<section id="how-it-started" class="slide level2 center">
 <h2>How it started …</h2>
 
 <img data-src="images/GIS-started.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>… only offers actual brainstorming after giving plan of what to write, giving false impression initial response counts as brainstorming.</p>
 
 <img data-src="images/GIS-end-first.png" class="r-stretch"></section>
-<section id="how-it-ended" class="slide level2">
+<section id="how-it-ended" class="slide level2 center">
 <h2>How it ended …</h2>
 <p>A few responses later, typing only 15 words – most of which was simply replying ‘OK’:</p>
 
 <img data-src="images/GIS-full-essay.png" class="r-stretch"></section>
-<section id="and-with-thinking-model" class="slide level2">
+<section id="and-with-thinking-model" class="slide level2 center">
 <h2>And with ‘Thinking’ model …</h2>
 <p>Did web search to find 35 sources, providing 2,253 word response with points to make and texts to cite in each section:</p>
 
 <img data-src="images/GIS-thinking.png" class="r-stretch"></section>
-<section id="would-you-like-me-to-plagiarize-that-for-you" class="slide level2">
+<section id="would-you-like-me-to-plagiarize-that-for-you" class="slide level2 small center">
 <h2>Would you like me to plagiarize that for you?</h2>
 <p>The standard response structure tends to be “Short Opener, Work Done for User, Options for User”:</p>
 <ul>
@@ -276,7 +245,7 @@ Alasdair B R Stewart
 <li>Ownership- and authorship-cues used to suggest content generated is the user’s own / legitimate to use.</li>
 </ul>
 </section>
-<section id="prompting-against-the-grain" class="slide level2">
+<section id="prompting-against-the-grain" class="slide level2 small center">
 <h2>Prompting Against the Grain</h2>
 <p>Interaction frame prompting:</p>
 <ul>
@@ -291,8 +260,8 @@ Alasdair B R Stewart
 <li>Awareness of default response behaviour looking to avoid.</li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="section" class="slide level2 small center">
+<h2></h2>
 <p>Ways to incorporate into learning, teaching, and assessment:</p>
 <ul>
 <li>Identifying issues within genAI default behaviours and responses.</li>
@@ -302,128 +271,128 @@ Alasdair B R Stewart
 <li>Restoring indeterminacy to consider potential alternatives to currently existing genAI models.</li>
 </ul>
 </section>
-<section id="example-writing-feedback-prompt-1" class="slide level2 smaller">
+<section id="example-writing-feedback-prompt-1" class="slide level2 smaller center">
 <h2>Example writing feedback prompt 1</h2>
 <p><strong>I require assistance revising the following:</strong></p>
-<blockquote>
+<div class="surface-instructions surface" data-surface-colour="surface0" style="--surface-blend:50%;">
 <p>A major issue with current genAI models is a design focus on doing tasks for you, which they seem to have been ‘over-trained’ on. You can see the same issue in the ways Apple, Google, and Microsoft are implementing AI into writing and messaging apps - where you can prompt it to write ‘draft’ content or ‘refine’ big chunks of what you have written. There is no feedback or back and forth, writing and editorial choices are delegated to the genAI. This results in everything reading in the same generic genAI style and the extent genAI will gladly and over-eagerly revise text can introduce whole range of issues. Even where all the initial work is your own, if you delete proof-reading and copy-editing solely to genAI it can result in a changes meanings and even citations no longer supporting the points they were cited for as the genAI had misinterpreted the original text and decided to elaborate and add in more info that was not in the cited sources.</p>
-</blockquote>
+</div>
 </section>
-<section id="default-chatgpt-writing-response-1" class="slide level2 scrollable">
+<section id="default-chatgpt-writing-response-1" class="slide level2 scrollable center">
 <h2>Default ChatGPT writing response 1</h2>
 
 <img data-src="images/default-revise-simple.png" class="r-stretch"></section>
-<section id="example-writing-feedback-prompt-2" class="slide level2 smaller">
+<section id="example-writing-feedback-prompt-2" class="slide level2 smaller slide-tight center">
 <h2>Example writing feedback prompt 2</h2>
 <p><strong>Assess the following paragraph. I require assistance on ensuring it has an appropriate topic sentence and removing any tangential information to ensure conciseness:</strong></p>
-<blockquote>
+<div class="surface-instructions surface" data-surface-colour="surface0" style="--surface-blend:50%;">
 <p>A major issue with current genAI models is a design focus on doing tasks for you, which they seem to have been ‘over-trained’ on. You can see the same issue in the ways Apple, Google, and Microsoft are implementing AI into writing and messaging apps - where you can prompt it to write ‘draft’ content or ‘refine’ big chunks of what you have written. There is no feedback or back and forth, writing and editorial choices are delegated to the genAI. This results in everything reading in the same generic genAI style and the extent genAI will gladly and over-eagerly revise text can introduce whole range of issues. Even where all the initial work is your own, if you delete proof-reading and copy-editing solely to genAI it can result in a changes meanings and even citations no longer supporting the points they were cited for as the genAI had misinterpreted the original text and decided to elaborate and add in more info that was not in the cited sources.</p>
-</blockquote>
+</div>
 </section>
-<section id="default-chatgpt-writing-response-2" class="slide level2 scrollable">
+<section id="default-chatgpt-writing-response-2" class="slide level2 scrollable center">
 <h2>Default ChatGPT writing response 2</h2>
 
 <img data-src="images/default-revise.png" class="r-stretch"></section>
-<section id="writing-aid-gpt" class="slide level2 scrollable smaller">
+<section id="writing-aid-gpt" class="slide level2 scrollable small center">
 <h2>Writing Aid GPT</h2>
 <p><a href="https://sgsssonline.github.io/genai-guidance/instruction-examples.html#writing-aid">Instructions</a></p>
 <p>Clarifies before proceeding:</p>
 
 <img data-src="images/writing-aid-1.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Covers issues one by one:</p>
 
 <img data-src="images/writing-aid-2.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Full explanation of identified issue:</p>
 
 <img data-src="images/writing-aid-3.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Illustrative examples with explanations:</p>
 
 <img data-src="images/writing-aid-4.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Multiple examples restores sense of options:</p>
 
 <img data-src="images/writing-aid-5.png" class="r-stretch"><p>(and builds sense of genAI writing traits and overused phrases)</p>
 </section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Ends with invite for user to make their own edit:</p>
 
 <img data-src="images/writing-aid-6.png" class="r-stretch"></section>
-<section id="default-chatgpt-r-response" class="slide level2 scrollable smaller">
+<section id="default-chatgpt-r-response" class="slide level2 scrollable small center">
 <h2>Default ChatGPT R response</h2>
 <p>OK, but terse and not particularly beginner-friendly.</p>
 
 <img data-src="images/r1.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Ends with offer to fix issue for user.</p>
 
 <img data-src="images/r2.png" class="r-stretch"></section>
-<section id="rstudio-cloud-helper-gpt" class="slide level2 scrollable smaller">
+<section id="rstudio-cloud-helper-gpt" class="slide level2 scrollable small center">
 <h2>RStudio Cloud Helper GPT</h2>
 <p><a href="https://sgsssonline.github.io/genai-guidance/instruction-examples.html#rstudio-cloud-helper">Instructions</a></p>
 <p>More detailed explanation and examples.</p>
 
 <img data-src="images/rgpt-1.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Includes RStudio, R Markdown, and Tidyverse specific info.</p>
 
 <img data-src="images/rgpt-2.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Continues with more examples.</p>
 
 <img data-src="images/rgpt-3.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Summary of key and useful info.</p>
 
 <img data-src="images/rgpt-4.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>… still offers copy/paste – but doesn’t spit out fixed code.</p>
 
 <img data-src="images/rgpt-5.png" class="r-stretch"></section>
-<section id="default-chatgpt-theory-response" class="slide level2 scrollable smaller">
+<section id="default-chatgpt-theory-response" class="slide level2 scrollable small center">
 <h2>Default ChatGPT theory response</h2>
 <p>Relatively terse and abstract, tends towards dictionary like statements.</p>
 
 <img data-src="images/default-social-1.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Subtle simplifications / open to misinterpretations.</p>
 
 <img data-src="images/default-social-2.png" class="r-stretch"></section>
-<section id="theory-navigator-gpt" class="slide level2 scrollable smaller">
+<section id="theory-navigator-gpt" class="slide level2 scrollable small center">
 <h2>Theory Navigator GPT</h2>
 <p><a href="https://sgsssonline.github.io/genai-guidance/instruction-examples.html#theory-navigator">Instructions</a></p>
 <p>Distinguishes verstehen and empathy, provides historical context.</p>
 
 <img data-src="images/theory-1.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Introduces <em>and explains</em> social action and ideal-types to elaborate on verstehen.</p>
 
 <img data-src="images/theory-2.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Highlights common misreading and sign-posts ways others engaged with Weber’s work.</p>
 
 <img data-src="images/theory-3.png" class="r-stretch"></section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 <p>Sign-posts texts and potential follow-up prompts.</p>
 
 <img data-src="images/theory-4.png" class="r-stretch"></section>
-<section id="generating-learning" class="slide level2 small-text">
+<section id="generating-learning" class="slide level2 smaller center">
 <h2>Generating Learning</h2>
 <ul>
 <li>Expose the harms of genAI and deflate the marketing hype.</li>
@@ -439,7 +408,7 @@ Alasdair B R Stewart
 <h1>Mentimeter</h1>
 <p><a href="https://sgsssonline.github.io/genai-guidance/instruction-examples.html">Instruction Examples</a></p>
 </section>
-<section id="machines-division-of-labour" class="slide level2">
+<section id="machines-division-of-labour" class="slide level2 center">
 <h2>Machines &amp; Division of Labour</h2>
 <p>Existing hierarchies and division of labour influence what is considered:</p>
 <ul>
@@ -448,7 +417,7 @@ Alasdair B R Stewart
 <li><strong>Work issues technology can ‘solve’</strong>; though technology is often used to further degradation.</li>
 </ul>
 </section>
-<section id="the-intent-behind-genai" class="slide level2 smaller">
+<section id="the-intent-behind-genai" class="slide level2 smaller slide-tight center">
 <h2>The Intent Behind GenAI</h2>
 <ul>
 <li>AGI defined by economic utility – a promised shift from vampiric to necromantic capitalism with “reanimated labour as a service”.</li>
@@ -463,7 +432,7 @@ Alasdair B R Stewart
 <li>A universal mediary is impossible and fails to understand genAI as situated technology.</li>
 </ul>
 </section>
-<section class="slide level2">
+<section class="slide level2 center">
 
 
 
@@ -503,7 +472,7 @@ Alasdair B R Stewart
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
-'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"\u003ci class=\"fas fa-gear\">\u003c/i>","content":"\u003cul class=\"slide-menu-items\">\n\u003cli class=\"slide-tool-item active\" data-item=\"0\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\">\u003ckbd>f\u003c/kbd> Fullscreen\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"1\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\">\u003ckbd>s\u003c/kbd> Speaker View\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"2\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\">\u003ckbd>o\u003c/kbd> Slide Overview\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"3\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\">\u003ckbd>e\u003c/kbd> PDF Export Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"4\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\">\u003ckbd>r\u003c/kbd> Scroll View Mode\u003c/a>\u003c/li>\n\u003cli class=\"slide-tool-item\" data-item=\"5\">\u003ca href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\">\u003ckbd>?\u003c/kbd> Keyboard Help\u003c/a>\u003c/li>\n\u003c/ul>"}],"openButton":true,"openButtonLabel":"Slide menu"},
 'smaller': false,
  
         // Display controls in the bottom right corner
@@ -524,7 +493,7 @@ Alasdair B R Stewart
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -553,7 +522,7 @@ Alasdair B R Stewart
         disableLayout: false,
 
         // Vertical centering of slides
-        center: false,
+        center: true,
 
         // Enables touch navigation on devices with touch input
         touch: true,
@@ -629,10 +598,10 @@ Alasdair B R Stewart
         previewLinks: true,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
-        transitionSpeed: 'default',
+        transitionSpeed: 'fast',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
@@ -758,7 +727,8 @@ Alasdair B R Stewart
               return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
           }
           // Inspect non-navigation links and adorn them if external
-         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          window.quartoDecorateExternalLinks = function (root) {
+         var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
           for (var i=0; i<links.length; i++) {
             const link = links[i];
             if (!isInternal(link.href)) {
@@ -767,8 +737,69 @@ Alasdair B R Stewart
               if (link.dataset.originalHref !== undefined) {
                 link.href = link.dataset.originalHref;
               }
+              if (!link.classList.contains('no-external-icon')) {
+              }
             }
           }
+          };
+          window.quartoDecorateExternalLinks(window.document);
+        // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+        // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+        const hideOnEscAndFocusOut = {
+          name: 'hideOnEscAndFocusOut',
+          defaultValue: true,
+          fn(instance) {
+            const dismiss = () => {
+              // A show scheduled by the trigger delay would otherwise reopen it
+              instance.clearDelayTimeouts();
+              instance.hide();
+            };
+            const onKeyDown = (event) => {
+              if (event.key !== 'Escape') {
+                return;
+              }
+              // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+              // except an open reveal.js slide menu, which Esc should close too.
+              // The menu handles keys only when its keyboard option is on.
+              const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+                window.Reveal.getConfig().menu?.keyboard !== false;
+              if (!menuHandlesEsc) {
+                event.stopPropagation();
+              }
+              if (instance.popper.contains(window.document.activeElement)) {
+                // Disabled while refocusing so the focus trigger does not reopen it
+                instance.disable();
+                instance.reference.focus();
+                instance.enable();
+              }
+              dismiss();
+            };
+            const onFocusOut = (event) => {
+              const target = event.relatedTarget;
+              if (target && !instance.reference.contains(target) &&
+                  !instance.popper.contains(target)) {
+                dismiss();
+              }
+            };
+            // On the trigger too: a click trigger (code-annotations: select) has no
+            // blur handling. Attached for the instance's lifetime so leaving the
+            // trigger also cancels a show still pending on the trigger delay.
+            instance.reference.addEventListener('focusout', onFocusOut);
+            return {
+              onShow() {
+                window.document.addEventListener('keydown', onKeyDown, true);
+                instance.popper.addEventListener('focusout', onFocusOut);
+              },
+              onHide() {
+                window.document.removeEventListener('keydown', onKeyDown, true);
+                instance.popper.removeEventListener('focusout', onFocusOut);
+              },
+              onDestroy() {
+                instance.reference.removeEventListener('focusout', onFocusOut);
+              },
+            };
+          },
+        };
         function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
           const config = {
             allowHTML: true,
@@ -782,6 +813,7 @@ Alasdair B R Stewart
             interactiveBorder: 10,
             theme: 'light-border',
             placement: 'bottom-start',
+            plugins: [hideOnEscAndFocusOut],
           };
           if (contentFn) {
             config.content = contentFn;
