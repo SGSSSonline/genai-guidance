@@ -10,62 +10,50 @@ window.quartoListingCategory = (category) => {
   }
 };
 
-const wiredListings = new Set();
-
-// Apply the category and per-listing page stored in the URL hash
-function applyListingHash() {
-  const hash = getHash();
-  if (!hash || !window["quarto-listings"]) {
-    return;
-  }
-
-  // If there is a category, switch to that
-  if (hash.category) {
-    // category hash are URI encoded so we need to decode it before processing
-    // so that we can match it with the category element processed in JS
-    activateCategory(decodeURIComponent(hash.category));
-  }
-  // Paginate a specific listing
-  for (const listingId of Object.keys(window["quarto-listings"])) {
-    const page = hash[getListingPageKey(listingId)];
-    if (page) {
-      showPage(listingId, page);
-    }
-  }
-}
-
 window["quarto-listing-loaded"] = () => {
   // Process any existing hash
-  applyListingHash();
+  const hash = getHash();
 
-  // Each listing calls this once its List is created, so wire each one once
-  for (const listingId of Object.keys(window["quarto-listings"])) {
-    if (wiredListings.has(listingId)) {
-      continue;
+  if (hash) {
+    // If there is a category, switch to that
+    if (hash.category) {
+      // category hash are URI encoded so we need to decode it before processing
+      // so that we can match it with the category element processed in JS
+      activateCategory(decodeURIComponent(hash.category));
     }
-    wiredListings.add(listingId);
+    // Paginate a specific listing
+    const listingIds = Object.keys(window["quarto-listings"]);
+    for (const listingId of listingIds) {
+      const page = hash[getListingPageKey(listingId)];
+      if (page) {
+        showPage(listingId, page);
+      }
+    }
+  }
 
+  const listingIds = Object.keys(window["quarto-listings"]);
+  for (const listingId of listingIds) {
     // The actual list
     const list = window["quarto-listings"][listingId];
 
-    // Record the page hash on pagination clicks
-    attachPaginationHandler(listingId);
+    // Update the handlers for pagination events
+    refreshPaginationHandlers(listingId);
 
     // Render any visible items that need it
     renderVisibleProgressiveImages(list);
 
-    // Whenever the list is updated, refresh any newly visible items.
+    // Whenever the list is updated, we also need to
+    // attach handlers to the new pagination elements
+    // and refresh any newly visible items.
     list.on("updated", function () {
       renderVisibleProgressiveImages(list);
-      window.quartoDecorateExternalLinks?.(list.list);
+      setTimeout(() => refreshPaginationHandlers(listingId));
 
       // Show or hide the no matching message
       toggleNoMatchingMessage(list);
     });
   }
 };
-
-window.addEventListener("hashchange", applyListingHash);
 
 window.document.addEventListener("DOMContentLoaded", function (_event) {
   // Attach click handlers to categories
@@ -127,26 +115,18 @@ function getListingPageKey(listingId) {
   return `${listingId}-page`;
 }
 
-function attachPaginationHandler(listingId) {
-  // list.js rebuilds the page links on every update but keeps their
-  // container, so a single listener there covers every link.
+function refreshPaginationHandlers(listingId) {
   const listingEl = window.document.getElementById(listingId);
-  const paginationEl = listingEl.querySelector(".pagination");
-  if (!paginationEl) {
-    return;
+  const paginationEls = listingEl.querySelectorAll(
+    ".pagination li.page-item:not(.disabled) .page.page-link"
+  );
+  for (const paginationEl of paginationEls) {
+    paginationEl.onclick = (sender) => {
+      setPageHash(listingId, sender.target.getAttribute("data-i"));
+      showPage(listingId, sender.target.getAttribute("data-i"));
+      return false;
+    };
   }
-  paginationEl.addEventListener("click", (event) => {
-    const pageLink = event.target.closest(
-      "li.page-item:not(.disabled) .page.page-link"
-    );
-    if (!pageLink) {
-      return;
-    }
-    // list.js's pagination plugin shows the page from its own click
-    // listener on the pagination list; this handler only records the hash.
-    event.preventDefault();
-    setPageHash(listingId, pageLink.getAttribute("data-i"));
-  });
 }
 
 function renderVisibleProgressiveImages(list) {
